@@ -1,0 +1,54 @@
+# Ignore Unity auto-generated files
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+UserSettings/
+
+# Avoid uploading crash reports
+*.pidb
+*.mdb
+*.opendb
+*.svd
+
+# Ignore local cache directory
+/[Cc]ache/
+
+# Ignore temporary files
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb.meta
+*.pidb
+*.booproj
+*.svd
+
+# Auto-generated VS/VSCode/JetBrains Rider files
+.vscode/
+.idea/
+*.sln
+*.csproj
+
+# Ignore asset files that don’t need versioning
+*.orig
+
+# Ignore builds
+/Build/
+/Builds/
+
+# Ignore build log files
+*.stacktrace
+
+# Ignore Unity auto-generated metadata files
+Assets/**/*.meta
+
+# Ignore settings files
+ProjectSettings/EditorBuildSettings.asset
+ProjectSettings/ProjectSettings.asset
