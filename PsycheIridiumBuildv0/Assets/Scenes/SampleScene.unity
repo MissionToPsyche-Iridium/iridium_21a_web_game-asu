@@ -443,7 +443,9 @@ MonoBehaviour:
 
     Space - Play
 
-    R - Reset'
+    R - Reset
+
+    test 1'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -546,13 +548,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1280215703}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 150b4111c585f6846a80d993aab800aa, type: 3}
+  m_Script: {fileID: 11500000, guid: c9ba17ee13b35475dbdb52a802a3d288, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spacecraft: {fileID: 568991316}
   partPrefabs:
-  - {fileID: 2183563274802772687, guid: 446759c61ba6bf243bbeaedab111d1bb, type: 3}
-  - {fileID: 2686799867321595127, guid: 9c68f8c7d7c6b4f42810ffd6055cde63, type: 3}
+  - {fileID: 2183563274802772687, guid: 58409ddf9572043be8581a289828f8d3, type: 3}
+  - {fileID: 2686799867321595127, guid: 71903178c55cd407fa9f7ad496761146, type: 3}
 --- !u!4 &1280215705
 Transform:
   m_ObjectHideFlags: 0
