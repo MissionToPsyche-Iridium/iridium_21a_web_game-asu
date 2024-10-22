@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
     HashSet<GameObject> connectedParts = new();
     [SerializeField] GameObject ConnectionAlertText;
 
+    [SerializeField] Camera mainCamera;
+
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +41,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        mainCamera.transform.position = new Vector3(spacecraft.transform.position.x, spacecraft.transform.position.y, mainCamera.transform.position.z);
+
         if (Input.GetKeyDown(KeyCode.R))
         {
             Restart();
