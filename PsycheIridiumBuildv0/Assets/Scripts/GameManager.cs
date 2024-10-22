@@ -1,10 +1,11 @@
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static bool EditMode { get; private set; }
+    public static bool IsEditMode { get; private set; }
 
     // Parent object for all parts
     [SerializeField] GameObject spacecraft;
@@ -14,12 +15,17 @@ public class GameManager : MonoBehaviour
     static GameObject selectedPrefab;
     static GameObject selectedPart;
 
-    List<GameObject> placedParts = new();
+    HashSet<GameObject> placedParts = new();
+    GameObject lastPlacedPart;
+
+    HashSet<GameObject> connectedParts = new();
+    [SerializeField] GameObject ConnectionAlertText;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        // Assign keycodes to each part
         for (int i = 0; i < partPrefabs.Length; i++)
         {
             partKeyCodes.Add(KeyCode.Alpha1 + i);
@@ -43,8 +49,9 @@ public class GameManager : MonoBehaviour
             EndEditMode();
         }
 
-        if (EditMode)
+        if (IsEditMode)
         {
+            // Selected part follows cursor
             selectedPart.transform.position = GetMouseGridPosition();
 
             if (Input.GetMouseButton(0))
@@ -78,29 +85,42 @@ public class GameManager : MonoBehaviour
 
     void StartEditMode()
     {
-        EditMode = true;
+        IsEditMode = true;
         Time.timeScale = 0f;
         selectedPrefab = partPrefabs[0];
         selectedPart = Instantiate(selectedPrefab, spacecraft.transform);
     }
     void EndEditMode()
     {
-        EditMode = false;
+        if (!AreAllPartsConnected())
+        {
+            ConnectionAlertText.SetActive(true);
+            return;
+        }
+        ConnectionAlertText.SetActive(false);
+
+        IsEditMode = false;
         Time.timeScale = 1f;
         Destroy(selectedPart);
     }
+
     Vector3 GetMouseGridPosition()
     {
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        // Dont allow mousePosition to be offscreen
+        mousePosition.x = Mathf.Clamp(mousePosition.x, -8f, 8f);
+        mousePosition.y = Mathf.Clamp(mousePosition.y, -4f, 4f);
+
         return new Vector3(Mathf.Round(mousePosition.x), Mathf.Round(mousePosition.y), 0f);
     }
     void PlacePart()
     {
-        DeletePart(); // Clears the position of any existing part
-        GameObject placedPart = Instantiate(selectedPrefab, spacecraft.transform);
-        placedPart.transform.position = GetMouseGridPosition();
-        placedPart.transform.rotation = selectedPart.transform.rotation;
-        placedParts.Add(placedPart);
+        // Replace the selected position's part with the selected part
+        DeletePart();
+        lastPlacedPart = Instantiate(selectedPrefab, spacecraft.transform);
+        lastPlacedPart.transform.SetPositionAndRotation(GetMouseGridPosition(), selectedPart.transform.rotation);
+        placedParts.Add(lastPlacedPart);
     }
     void DeletePart()
     {
@@ -125,8 +145,47 @@ public class GameManager : MonoBehaviour
     {
         selectedPart.transform.Rotate(0f, 0f, degrees);
     }
+
     void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    bool AreAllPartsConnected()
+    {
+        connectedParts.Clear();
+        SetConnectedParts(lastPlacedPart);
+        return placedParts.SetEquals(connectedParts);
+    }
+    void SetConnectedParts(GameObject parentPart)
+    {
+        connectedParts.Add(parentPart);
+        foreach (GameObject childPart in placedParts)
+        {
+            if (Vector3.Distance(parentPart.transform.position, childPart.transform.position) <= 1f)
+            {
+                if (!connectedParts.Contains(childPart))
+                {
+                    SetConnectedParts(childPart);
+                }
+            }
+        }
+    }
+
+    void LogParts()
+    {
+        int i = 0;
+        foreach (GameObject part in placedParts)
+        {
+            Debug.Log("placedParts " + i, part);
+            i++;
+        }
+
+        i = 0;
+        foreach (GameObject part in connectedParts)
+        {
+            Debug.Log("connectedParts " + i, part);
+            i++;
+        }
     }
 }

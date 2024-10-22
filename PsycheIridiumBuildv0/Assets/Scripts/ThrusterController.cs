@@ -13,7 +13,7 @@ public class ThrusterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!GameManager.EditMode)
+        if (!GameManager.IsEditMode)
         {
             rb.AddForce(transform.up * 1f);
         }
