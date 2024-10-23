@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.U2D;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -15,8 +16,7 @@ public class GameManager : MonoBehaviour
     static GameObject selectedPrefab;
     static GameObject selectedPart;
 
-    HashSet<GameObject> placedParts = new();
-    static GameObject lastPlacedPart;
+    List<GameObject> placedParts = new();
 
     HashSet<GameObject> connectedParts = new();
     [SerializeField] GameObject ConnectionAlertText;
@@ -42,11 +42,43 @@ public class GameManager : MonoBehaviour
         // Move camera to spacecraft
         Camera.main.transform.position = new Vector3(spacecraft.transform.position.x, spacecraft.transform.position.y, Camera.main.transform.position.z);
 
-        // Make selected object transparent
-        if (selectedPart.GetComponent<Renderer>() != null) { 
-            Color selectedPartColor = selectedPart.GetComponent<Renderer>().material.color;
-            selectedPartColor.a = 0.5f;
-            selectedPart.GetComponent<Renderer>().material.color = selectedPartColor;
+        // Make selected part transparent and on top
+        if (selectedPart != null) {
+            // Add selected part's sprites to list
+            List<SpriteRenderer> selectedPartSpriteRenderers = new();
+            List<SpriteShapeRenderer> selectedPartSpriteShapeRenderers = new();
+            foreach (SpriteRenderer spriteRenderer in selectedPart.GetComponents<SpriteRenderer>())
+            {
+                selectedPartSpriteRenderers.Add(spriteRenderer);
+            }
+            foreach (SpriteShapeRenderer spriteShapeRenderer in selectedPart.GetComponents<SpriteShapeRenderer>())
+            {
+                selectedPartSpriteShapeRenderers.Add(spriteShapeRenderer);
+            }
+            foreach (SpriteRenderer spriteRenderer in selectedPart.GetComponentsInChildren<SpriteRenderer>())
+            {
+                selectedPartSpriteRenderers.Add(spriteRenderer);
+            }
+            foreach (SpriteShapeRenderer spriteShapeRenderer in selectedPart.GetComponentsInChildren<SpriteShapeRenderer>())
+            {
+                selectedPartSpriteShapeRenderers.Add(spriteShapeRenderer);
+            }
+
+            // Make all sprites in list transparent and on top
+            foreach (SpriteRenderer spriteRenderer in selectedPartSpriteRenderers)
+            {
+                Color selectedPartColor = spriteRenderer.color;
+                selectedPartColor.a = 0.5f;
+                spriteRenderer.color = selectedPartColor;
+                spriteRenderer.sortingOrder = 1;
+            }
+            foreach (SpriteShapeRenderer spriteShapeRenderer in selectedPartSpriteShapeRenderers)
+            {
+                Color selectedPartColor = spriteShapeRenderer.color;
+                selectedPartColor.a = 0.5f;
+                spriteShapeRenderer.color = selectedPartColor;
+                spriteShapeRenderer.sortingOrder = 1;
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.R))
@@ -128,7 +160,7 @@ public class GameManager : MonoBehaviour
     {
         // Replace the selected position's part with the selected part
         DeletePart();
-        lastPlacedPart = Instantiate(selectedPrefab, spacecraft.transform);
+        GameObject lastPlacedPart = Instantiate(selectedPrefab, spacecraft.transform);
         lastPlacedPart.transform.SetPositionAndRotation(GetMouseGridPosition(), selectedPart.transform.rotation);
         placedParts.Add(lastPlacedPart);
     }
@@ -163,9 +195,13 @@ public class GameManager : MonoBehaviour
 
     bool AreAllPartsConnected()
     {
+        if (placedParts.Count == 0)
+        {
+            return false;
+        }
         connectedParts.Clear();
-        SetConnectedParts(lastPlacedPart);
-        return placedParts.SetEquals(connectedParts);
+        SetConnectedParts(placedParts[0]);
+        return connectedParts.SetEquals(placedParts);
     }
     void SetConnectedParts(GameObject parentPart)
     {
