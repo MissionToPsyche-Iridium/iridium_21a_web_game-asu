@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static bool IsEditMode { get; private set; }
 
     // Parent object for all parts
-    [SerializeField] GameObject spacecraft;
+    [SerializeField] public GameObject spacecraft;
 
     [SerializeField] GameObject[] partPrefabs;
     List<KeyCode> partKeyCodes = new();
@@ -16,12 +16,10 @@ public class GameManager : MonoBehaviour
     static GameObject selectedPart;
 
     HashSet<GameObject> placedParts = new();
-    GameObject lastPlacedPart;
+    static GameObject lastPlacedPart;
 
     HashSet<GameObject> connectedParts = new();
     [SerializeField] GameObject ConnectionAlertText;
-
-    [SerializeField] Camera mainCamera;
 
 
     // Start is called before the first frame update
@@ -41,7 +39,15 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        mainCamera.transform.position = new Vector3(spacecraft.transform.position.x, spacecraft.transform.position.y, mainCamera.transform.position.z);
+        // Move camera to spacecraft
+        Camera.main.transform.position = new Vector3(spacecraft.transform.position.x, spacecraft.transform.position.y, Camera.main.transform.position.z);
+
+        // Make selected object transparent
+        if (selectedPart.GetComponent<Renderer>() != null) { 
+            Color selectedPartColor = selectedPart.GetComponent<Renderer>().material.color;
+            selectedPartColor.a = 0.5f;
+            selectedPart.GetComponent<Renderer>().material.color = selectedPartColor;
+        }
 
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -108,7 +114,7 @@ public class GameManager : MonoBehaviour
         Destroy(selectedPart);
     }
 
-    Vector3 GetMouseGridPosition()
+    static Vector3 GetMouseGridPosition()
     {
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
@@ -145,12 +151,12 @@ public class GameManager : MonoBehaviour
         selectedPart = Instantiate(selectedPrefab, spacecraft.transform);
         selectedPart.transform.position = GetMouseGridPosition();
     }
-    void RotatePart(float degrees)
+    static void RotatePart(float degrees)
     {
         selectedPart.transform.Rotate(0f, 0f, degrees);
     }
 
-    void Restart()
+    static void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
