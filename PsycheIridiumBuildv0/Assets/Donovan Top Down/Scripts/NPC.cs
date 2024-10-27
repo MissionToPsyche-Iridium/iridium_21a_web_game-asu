@@ -5,11 +5,11 @@ using UnityEngine;
 public class NPC : MonoBehaviour
 {
     [Header("Dialogue Testing")]
-    [SerializeField] private string name;
+    [SerializeField] private string textName;
     [SerializeField] private string[] text;
 
     [Header("Object References")]
-    [SerializeField] private GameManager manager;
+    [SerializeField] private HUD hud;
     [SerializeField] private PlayerController player;
 
     private bool playerNearby = false;
@@ -29,19 +29,19 @@ public class NPC : MonoBehaviour
             player.EnterInteraction();
             speaking = true;
             currentTextbox = 0;
-            manager.ShowTextbox(name, text[currentTextbox]);
+            hud.ShowTextbox(textName, text[currentTextbox]);
             currentTextbox++;
         }
         else if (speaking && currentTextbox < text.Length)
         {
             // Advance to next textbox.
-            manager.ShowTextbox(name, text[currentTextbox]);
+            hud.ShowTextbox(textName, text[currentTextbox]);
             currentTextbox++;
         }
         else if (speaking && currentTextbox >= text.Length)
         {
             // End interaction, hide textbox, and unfreeze player.
-            manager.HideTextbox();
+            hud.HideTextbox();
             currentTextbox = -1;
             speaking = false;
             player.ExitInteraction();
