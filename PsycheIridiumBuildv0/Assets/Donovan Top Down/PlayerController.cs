@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,6 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Player Settings")]
     [SerializeField] private float moveSpeed;
+    [SerializeField] private Vector2 startPosition;
 
     [Header("Sprites")]
     [SerializeField] private Sprite upSprite;
@@ -33,6 +35,7 @@ public class PlayerController : MonoBehaviour
     private InputAction leftAction;
     private InputAction rightAction;
     private InputAction interactAction;
+    private InputAction respawnAction;
 
     // Other Attributes
     private bool interacting;
@@ -53,9 +56,11 @@ public class PlayerController : MonoBehaviour
         leftAction = inputActions.FindAction("Left");
         rightAction = inputActions.FindAction("Right");
         interactAction = inputActions.FindAction("Interact");
+        respawnAction = inputActions.FindAction("Respawn");
 
         // Bind action events.
         interactAction.started += InteractAction_performed;
+        respawnAction.started += RespawnAction_performed;
 
         // Set the initial sprite.
         spriteRenderer.sprite = downSprite;
@@ -112,6 +117,12 @@ public class PlayerController : MonoBehaviour
         return interacting;
     }
 
+    public void Respawn()
+    {
+        transform.position = new Vector3(startPosition.x, startPosition.y, transform.position.z);
+        rb.velocity = Vector3.zero;
+    }
+
     // Unused event callbacks.
     public void UpAction_performed(InputAction.CallbackContext context)
     {
@@ -136,5 +147,10 @@ public class PlayerController : MonoBehaviour
     public void InteractAction_performed(InputAction.CallbackContext context)
     {
         Interact();
+    }
+
+    public void RespawnAction_performed(InputAction.CallbackContext context)
+    {
+        Respawn();
     }
 }
