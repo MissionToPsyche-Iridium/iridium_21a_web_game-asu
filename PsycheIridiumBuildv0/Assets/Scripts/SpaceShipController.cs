@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class SpaceshipController : MonoBehaviour
 {
     public float thrustForce = .04f;
     public float maxVelocity = .4f;
     public float damping = 0.00001f;
     public float wrapDelayMargin = 0.1f;
+    public float rotationSpeed = 10000f;
     private Rigidbody2D rb;
     private Camera mainCamera;
 
@@ -21,11 +21,30 @@ public class SpaceshipController : MonoBehaviour
 
     void Update()
     {
+        // Apply thrust
         Vector2 thrust = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         rb.AddForce(thrust * thrustForce);
         rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxVelocity);
         rb.velocity *= damping;
+
+        // Handle rotation based on player input
+        HandleRotation();
+
+        // Wrap the spaceship around the screen
         ScreenWrap();
+    }
+
+    void HandleRotation()
+    {
+        // Apply torque (rotational speed) based on Q and E input
+        if (Input.GetKey(KeyCode.Q))
+        {
+            rb.AddTorque(rotationSpeed * Time.deltaTime); // Turn counter-clockwise
+        }
+        else if (Input.GetKey(KeyCode.E))
+        {
+            rb.AddTorque(-rotationSpeed * Time.deltaTime); // Turn clockwise
+        }
     }
 
     void ScreenWrap()

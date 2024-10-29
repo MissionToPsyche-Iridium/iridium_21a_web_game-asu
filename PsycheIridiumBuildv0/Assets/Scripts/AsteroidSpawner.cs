@@ -31,7 +31,7 @@ public class AsteroidSpawner : MonoBehaviour
 
         Rigidbody2D rb = asteroid.GetComponent<Rigidbody2D>();
         Vector2 directionToScreen = (GetScreenCenter() - spawnPosition).normalized; // Always move toward screen center
-        float speed = Random.Range(2f, 6f);
+        float speed = Random.Range(200f, 600f);
         rb.velocity = directionToScreen * speed;
 
         asteroid.AddComponent<AsteroidBehavior>().Init(this);
