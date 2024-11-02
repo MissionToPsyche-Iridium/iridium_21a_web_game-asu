@@ -327,6 +327,7 @@ GameObject:
   m_Component:
   - component: {fileID: 568991318}
   - component: {fileID: 568991319}
+  - component: {fileID: 568991320}
   m_Layer: 0
   m_Name: Spacecraft
   m_TagString: Untagged
@@ -376,6 +377,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &568991320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568991316}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 797b5f7383dcd2441a49c6f1cbb21c72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1024085954
 GameObject:
   m_ObjectHideFlags: 0
@@ -688,6 +701,7 @@ MonoBehaviour:
   partPrefabs:
   - {fileID: 2183563274802772687, guid: 58409ddf9572043be8581a289828f8d3, type: 3}
   - {fileID: 2686799867321595127, guid: 71903178c55cd407fa9f7ad496761146, type: 3}
+  placedParts: []
   ConnectionAlertText: {fileID: 1024085954}
 --- !u!4 &1280215705
 Transform:
@@ -961,7 +975,7 @@ SpriteShapeRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.37254903, g: 0.37254903, b: 0.37254903, a: 1}
   m_MaskInteraction: 0
   m_ShapeTexture: {fileID: 2800000, guid: b281b91a70a624a0da1c43adc1c30c7b, type: 3}
   m_Sprites:
@@ -1050,8 +1064,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07183da1ee034184da1235ebded17361, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxEffect: 0.5
   backgroundPrefab: {fileID: 7278741035055965056, guid: 6567d4d63afda574598761f02b5c7dda, type: 3}
+  parallaxScale: 0
 --- !u!4 &2024742795
 Transform:
   m_ObjectHideFlags: 0

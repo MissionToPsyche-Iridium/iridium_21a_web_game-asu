@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Building Minigame - Jake Gresh/Scenes/GameScene.unity
     guid: 677fcae352b6b4803bc66163d09747c3
   m_configObjects: {}

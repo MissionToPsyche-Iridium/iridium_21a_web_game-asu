@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.U2D;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class EditorManager : MonoBehaviour
 {
     public static bool IsEditMode { get; private set; }
 
@@ -13,10 +13,11 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] GameObject[] partPrefabs;
     List<KeyCode> partKeyCodes = new();
+
     static GameObject selectedPrefab;
     static GameObject selectedPart;
 
-    List<GameObject> placedParts = new();
+    public List<GameObject> placedParts = new();
 
     HashSet<GameObject> connectedParts = new();
     [SerializeField] GameObject ConnectionAlertText;
@@ -39,48 +40,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Move camera to spacecraft
-        Camera.main.transform.position = new Vector3(spacecraft.transform.position.x, spacecraft.transform.position.y, Camera.main.transform.position.z);
-
-        // Make selected part transparent and on top
-        if (selectedPart != null) {
-            // Add selected part's sprites to list
-            List<SpriteRenderer> selectedPartSpriteRenderers = new();
-            List<SpriteShapeRenderer> selectedPartSpriteShapeRenderers = new();
-            foreach (SpriteRenderer spriteRenderer in selectedPart.GetComponents<SpriteRenderer>())
-            {
-                selectedPartSpriteRenderers.Add(spriteRenderer);
-            }
-            foreach (SpriteShapeRenderer spriteShapeRenderer in selectedPart.GetComponents<SpriteShapeRenderer>())
-            {
-                selectedPartSpriteShapeRenderers.Add(spriteShapeRenderer);
-            }
-            foreach (SpriteRenderer spriteRenderer in selectedPart.GetComponentsInChildren<SpriteRenderer>())
-            {
-                selectedPartSpriteRenderers.Add(spriteRenderer);
-            }
-            foreach (SpriteShapeRenderer spriteShapeRenderer in selectedPart.GetComponentsInChildren<SpriteShapeRenderer>())
-            {
-                selectedPartSpriteShapeRenderers.Add(spriteShapeRenderer);
-            }
-
-            // Make all sprites in list transparent and on top
-            foreach (SpriteRenderer spriteRenderer in selectedPartSpriteRenderers)
-            {
-                Color selectedPartColor = spriteRenderer.color;
-                selectedPartColor.a = 0.5f;
-                spriteRenderer.color = selectedPartColor;
-                spriteRenderer.sortingOrder = 1;
-            }
-            foreach (SpriteShapeRenderer spriteShapeRenderer in selectedPartSpriteShapeRenderers)
-            {
-                Color selectedPartColor = spriteShapeRenderer.color;
-                selectedPartColor.a = 0.5f;
-                spriteShapeRenderer.color = selectedPartColor;
-                spriteShapeRenderer.sortingOrder = 1;
-            }
-        }
-
         if (Input.GetKeyDown(KeyCode.R))
         {
             Restart();
@@ -96,9 +55,11 @@ public class GameManager : MonoBehaviour
             // Selected part follows cursor
             selectedPart.transform.position = GetMouseGridPosition();
 
+            SelectedPartEffects();
+
             if (Input.GetMouseButton(0))
             {
-                PlacePart(); 
+                PlacePart();
             }
 
             if (Input.GetMouseButton(1))
@@ -144,6 +105,8 @@ public class GameManager : MonoBehaviour
         IsEditMode = false;
         Time.timeScale = 1f;
         Destroy(selectedPart);
+
+        spacecraft.GetComponent<SpacecraftController>().enabled = true;
     }
 
     static Vector3 GetMouseGridPosition()
@@ -218,20 +181,43 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void LogParts()
+    // Make selected part transparent and on top
+    void SelectedPartEffects()
     {
-        int i = 0;
-        foreach (GameObject part in placedParts)
+        // Add selected part's sprites to list
+        List<SpriteRenderer> selectedPartSpriteRenderers = new();
+        List<SpriteShapeRenderer> selectedPartSpriteShapeRenderers = new();
+        foreach (SpriteRenderer spriteRenderer in selectedPart.GetComponents<SpriteRenderer>())
         {
-            Debug.Log("placedParts " + i, part);
-            i++;
+            selectedPartSpriteRenderers.Add(spriteRenderer);
+        }
+        foreach (SpriteShapeRenderer spriteShapeRenderer in selectedPart.GetComponents<SpriteShapeRenderer>())
+        {
+            selectedPartSpriteShapeRenderers.Add(spriteShapeRenderer);
+        }
+        foreach (SpriteRenderer spriteRenderer in selectedPart.GetComponentsInChildren<SpriteRenderer>())
+        {
+            selectedPartSpriteRenderers.Add(spriteRenderer);
+        }
+        foreach (SpriteShapeRenderer spriteShapeRenderer in selectedPart.GetComponentsInChildren<SpriteShapeRenderer>())
+        {
+            selectedPartSpriteShapeRenderers.Add(spriteShapeRenderer);
         }
 
-        i = 0;
-        foreach (GameObject part in connectedParts)
+        // Make all sprites in list transparent and on top
+        foreach (SpriteRenderer spriteRenderer in selectedPartSpriteRenderers)
         {
-            Debug.Log("connectedParts " + i, part);
-            i++;
+            Color selectedPartColor = spriteRenderer.color;
+            selectedPartColor.a = 0.5f;
+            spriteRenderer.color = selectedPartColor;
+            spriteRenderer.sortingOrder = 1;
+        }
+        foreach (SpriteShapeRenderer spriteShapeRenderer in selectedPartSpriteShapeRenderers)
+        {
+            Color selectedPartColor = spriteShapeRenderer.color;
+            selectedPartColor.a = 0.5f;
+            spriteShapeRenderer.color = selectedPartColor;
+            spriteShapeRenderer.sortingOrder = 1;
         }
     }
 }
