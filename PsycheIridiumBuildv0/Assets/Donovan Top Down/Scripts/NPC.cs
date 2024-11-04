@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class NPC : MonoBehaviour
 {
-    [Header("Dialogue Testing")]
-    [SerializeField] private string textName;
-    [SerializeField] private string[] text;
-
     [Header("Object References")]
     [SerializeField] private HUD hud;
     [SerializeField] private PlayerController player;
+
+    [Header("Dialogue")]
+    [SerializeField] private string textName;
+    [SerializeField] private string[] text;
+
+    [Header("Minigame")]
+    [SerializeField] private bool minigameNPC;
+    [SerializeField] private string minigameScene;
+    [SerializeField] private string minigameName;
+    [SerializeField] private string minigameDesc;
 
     private bool playerNearby = false;
     private bool speaking = false;
@@ -40,11 +46,22 @@ public class NPC : MonoBehaviour
         }
         else if (speaking && currentTextbox >= text.Length)
         {
-            // End interaction, hide textbox, and unfreeze player.
-            hud.HideTextbox();
-            currentTextbox = -1;
-            speaking = false;
-            player.ExitInteraction();
+            if (minigameNPC)
+            {
+                // Hide textbox and show minigame preview.
+                hud.HideTextbox();
+                currentTextbox = -1;
+                speaking = false;
+                hud.ShowMinigamePreview(minigameScene, minigameName, minigameDesc);
+            }
+            else
+            {
+                // End interaction, hide textbox, and unfreeze player.
+                hud.HideTextbox();
+                currentTextbox = -1;
+                speaking = false;
+                player.ExitInteraction();
+            }
         }
     }
 
