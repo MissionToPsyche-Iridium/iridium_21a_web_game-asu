@@ -107,6 +107,10 @@ public class EditorManager : MonoBehaviour
         Destroy(selectedPart);
 
         spacecraft.GetComponent<SpacecraftController>().enabled = true;
+        foreach (ThrusterController thrusterController in spacecraft.GetComponentsInChildren<ThrusterController>())
+        {
+            thrusterController.enabled = true;
+        }
     }
 
     static Vector3 GetMouseGridPosition()

@@ -1,21 +1,41 @@
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class ThrusterController : MonoBehaviour
+public class ThrusterController : MonoBehaviour, IPointerClickHandler
 {
-    Rigidbody2D rb;
+    Rigidbody2D spacecraft;
+    [SerializeField] GameObject thrust;
+    bool _IsOn;
+    bool IsOn
+    {
+        get => _IsOn;
+        set
+        {
+            _IsOn = value;
+            thrust.SetActive(value);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponentInParent<Rigidbody2D>();
+        spacecraft = GetComponentInParent<Rigidbody2D>();
+        IsOn = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    // FixedUpdate is called once per physics frame
+    void FixedUpdate()
     {
-        if (!EditorManager.IsEditMode)
+        if (IsOn)
         {
-            rb.AddForce(transform.up * 1f);
+            spacecraft.AddForce(transform.up * 1f);
         }
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        IsOn = !IsOn;
     }
 }
