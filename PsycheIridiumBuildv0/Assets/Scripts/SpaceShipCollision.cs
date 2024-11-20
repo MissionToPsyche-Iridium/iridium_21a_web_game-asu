@@ -16,18 +16,19 @@ public class SpaceshipCollision : MonoBehaviour
             // If the collision is near the top of the asteroid
             // if (collisionPoint.y >= asteroidTop.y - (collision.collider.bounds.extents.y * 0.2f))
             // {
-                // Collect resources from the asteroid
-                Asteroid asteroid = collision.gameObject.GetComponent<Asteroid>();
-                if (asteroid != null)
-                {
-                    resourceManager.CollectResource(asteroid.asteroidType.ToString(), asteroid.resourceAmount);
-                    Debug.Log($"Collected {asteroid.resourceAmount} of {asteroid.asteroidType}");
-                    Destroy(collision.gameObject);
-                }
-                else
-                {
-                    Debug.LogWarning("Asteroid component not found on collided object!");
-                }
+            // Collect resources from the asteroid
+            Asteroid asteroid = collision.gameObject.GetComponent<Asteroid>();
+            if (asteroid != null)
+            {
+                // Use the asteroidType enum value instead of a string
+                resourceManager.CollectResource(asteroid.asteroidType, asteroid.resourceAmount);
+                Debug.Log($"Collected {asteroid.resourceAmount} of {asteroid.asteroidType}");
+                Destroy(collision.gameObject);
+            }
+            else
+            {
+                Debug.LogWarning("Asteroid component not found on collided object!");
+            }
             // }
             // else
             // {

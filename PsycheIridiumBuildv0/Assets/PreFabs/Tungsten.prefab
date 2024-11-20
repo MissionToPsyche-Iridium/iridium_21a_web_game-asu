@@ -161,5 +161,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f04bf27c0442442e4839758f714270a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asteroidType: Tungsten
-  resourceAmount: 0
+  asteroidType: 2

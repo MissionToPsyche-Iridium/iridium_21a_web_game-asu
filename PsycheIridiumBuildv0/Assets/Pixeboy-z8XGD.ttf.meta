@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 019aa7a7f0192d6ce825e8c8866ed69b
+guid: bd8adbfda8ed29b06b4db73208b3a9a4
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Pixel UniCode
+  - Pixeboy
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

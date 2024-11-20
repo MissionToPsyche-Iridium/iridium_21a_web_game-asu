@@ -9,20 +9,20 @@ public class ResourceManager : MonoBehaviour
     [System.Serializable]
     public class Resource
     {
-        public string name;
+        public Asteroid.AsteroidType type;
         public Sprite icon;
         public int amount;
     }
 
     public List<Resource> resources = new List<Resource>();
-    private Dictionary<string, TextMeshProUGUI> resourceTexts = new Dictionary<string, TextMeshProUGUI>();
+    private Dictionary<Asteroid.AsteroidType, TextMeshProUGUI> resourceTexts = new Dictionary<Asteroid.AsteroidType, TextMeshProUGUI>();
 
     public GameObject canvas;
     public float scaleFactor = 1f;
     public Vector2 startingPosition = new Vector2(-10, -10);
     public float verticalSpacing = 50f;
 
-    public float timerDuration = 60f; 
+    public float timerDuration = 60f;
     private TextMeshProUGUI timerText;
     private float timeRemaining;
 
@@ -49,7 +49,7 @@ public class ResourceManager : MonoBehaviour
 
         foreach (Resource resource in resources)
         {
-            GameObject resourceContainer = new GameObject(resource.name + "Container");
+            GameObject resourceContainer = new GameObject(resource.type + "Container");
             resourceContainer.transform.SetParent(canvas.transform, false);
 
             RectTransform containerRect = resourceContainer.AddComponent<RectTransform>();
@@ -64,21 +64,21 @@ public class ResourceManager : MonoBehaviour
             layoutGroup.childControlWidth = false;
             layoutGroup.childControlHeight = false;
 
-            GameObject iconObject = new GameObject(resource.name + "Icon");
+            GameObject iconObject = new GameObject(resource.type + "Icon");
             iconObject.transform.SetParent(resourceContainer.transform, false);
             Image iconImage = iconObject.AddComponent<Image>();
             iconImage.sprite = resource.icon;
             RectTransform iconRect = iconObject.GetComponent<RectTransform>();
             iconRect.sizeDelta = new Vector2(40, 40);
 
-            GameObject textObject = new GameObject(resource.name + "Text");
+            GameObject textObject = new GameObject(resource.type + "Text");
             textObject.transform.SetParent(resourceContainer.transform, false);
             TextMeshProUGUI text = textObject.AddComponent<TextMeshProUGUI>();
             text.text = "0";
             text.fontSize = 24;
             text.alignment = TextAlignmentOptions.Left;
 
-            resourceTexts.Add(resource.name, text);
+            resourceTexts.Add(resource.type, text);
             positionOffset += new Vector2(0, -verticalSpacing);
         }
     }
@@ -137,30 +137,52 @@ public class ResourceManager : MonoBehaviour
     IEnumerator FadeOutText(TextMeshProUGUI text, float delay)
     {
         yield return new WaitForSeconds(delay);
-        
+
         float fadeDuration = 1f;
         Color originalColor = text.color;
-        
+
         for (float t = 0; t < fadeDuration; t += Time.deltaTime)
         {
             text.color = Color.Lerp(originalColor, Color.clear, t / fadeDuration);
             yield return null;
         }
-        
+
         text.color = Color.clear;
     }
 
-    public void CollectResource(string resourceName, int amount)
+    public void CollectResource(Asteroid.AsteroidType resourceType, int amount)
     {
-        if (resourceTexts.ContainsKey(resourceName))
+        Debug.Log($"Attempting to collect {amount} of {resourceType}.");
+
+        if (resourceTexts.ContainsKey(resourceType))
         {
-            resources.Find(r => r.name == resourceName).amount += amount;
-            UpdateResourceUI(resourceName);
+            Debug.Log($"{resourceType} exists in resourceTexts.");
+            Resource resource = resources.Find(r => r.type == resourceType);
+            if (resource != null)
+            {
+                resource.amount += amount;
+                UpdateResourceUI(resourceType);
+            }
+            else
+            {
+                Debug.LogWarning($"Resource {resourceType} not found in resources list.");
+            }
+        }
+        else
+        {
+            Debug.LogWarning($"Resource {resourceType} not found in resourceTexts dictionary.");
         }
     }
 
-    void UpdateResourceUI(string resourceName)
+    void UpdateResourceUI(Asteroid.AsteroidType resourceType)
     {
-        resourceTexts[resourceName].text = resources.Find(r => r.name == resourceName).amount.ToString();
+        if (resourceTexts.ContainsKey(resourceType))
+        {
+            resourceTexts[resourceType].text = resources.Find(r => r.type == resourceType).amount.ToString();
+        }
+        else
+        {
+            Debug.LogWarning($"Resource {resourceType} not found in resourceTexts when updating UI.");
+        }
     }
 }
