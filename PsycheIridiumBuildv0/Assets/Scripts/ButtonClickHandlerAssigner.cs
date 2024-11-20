@@ -1,17 +1,25 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class ButtonClickHandlerAssigner : MonoBehaviour
 {
     public Button[] levelButtons; // Array of level buttons
     public Button shipUpgradeButton; // Button for ship upgrades
+    public TMPro.TextMeshProUGUI errorText; // Pre-existing Text UI element for displaying errors
 
     void Start()
     {
         if (levelButtons.Length != 4)
         {
             Debug.LogError("Expected exactly 4 level buttons for levels 1-4!");
+            return;
+        }
+
+        if (errorText == null)
+        {
+            Debug.LogError("ErrorText is not assigned! Please assign a Text UI element in the Inspector.");
             return;
         }
 
@@ -53,8 +61,8 @@ public class ButtonClickHandlerAssigner : MonoBehaviour
         }
         else
         {
-            // Notify the player that the level is locked
-            NotifyPlayer($"Level {level} is locked! You need to upgrade your ship to access this level.");
+            // Display an error message in the pre-existing Text UI element
+            DisplayError($"Level {level} is locked! You need to upgrade your ship to access this level.");
         }
     }
 
@@ -79,51 +87,22 @@ public class ButtonClickHandlerAssigner : MonoBehaviour
         }
     }
 
-    void NotifyPlayer(string message)
+    void DisplayError(string message)
     {
         Debug.LogWarning(message);
 
-        // Create a toast-like message dynamically
-        GameObject toastObject = new GameObject("Toast");
-        Canvas canvas = toastObject.AddComponent<Canvas>();
-        canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+        // Update the Text element with the error message
+        errorText.text = message;
 
-        CanvasScaler scaler = toastObject.AddComponent<CanvasScaler>();
-        scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
-        scaler.referenceResolution = new Vector2(1920, 1080);
+        // Start a coroutine to clear the error after 3 seconds
+        StartCoroutine(ClearErrorAfterDelay(3f));
+    }
 
-        toastObject.AddComponent<GraphicRaycaster>();
+    System.Collections.IEnumerator ClearErrorAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
 
-        GameObject panelObject = new GameObject("Panel");
-        panelObject.transform.SetParent(toastObject.transform, false);
-
-        Image panelImage = panelObject.AddComponent<Image>();
-        panelImage.color = new Color(0, 0, 0, 0.8f);
-
-        RectTransform panelRect = panelObject.GetComponent<RectTransform>();
-        panelRect.sizeDelta = new Vector2(600, 100);
-        panelRect.anchorMin = new Vector2(0.5f, 0.5f);
-        panelRect.anchorMax = new Vector2(0.5f, 0.5f);
-        panelRect.pivot = new Vector2(0.5f, 0.5f);
-        panelRect.anchoredPosition = Vector2.zero;
-
-        GameObject textObject = new GameObject("Text");
-        textObject.transform.SetParent(panelObject.transform, false);
-
-        Text text = textObject.AddComponent<Text>();
-        text.text = message;
-        text.font = Resources.GetBuiltinResource<Font>("Arial.ttf");
-        text.color = Color.white;
-        text.fontSize = 24;
-        text.alignment = TextAnchor.MiddleCenter;
-
-        RectTransform textRect = textObject.GetComponent<RectTransform>();
-        textRect.sizeDelta = new Vector2(580, 80);
-        textRect.anchorMin = new Vector2(0.5f, 0.5f);
-        textRect.anchorMax = new Vector2(0.5f, 0.5f);
-        textRect.pivot = new Vector2(0.5f, 0.5f);
-        textRect.anchoredPosition = Vector2.zero;
-
-        Destroy(toastObject, 3f); // Destroy the toast after 3 seconds
+        // Clear the error message
+        errorText.text = string.Empty;
     }
 }
