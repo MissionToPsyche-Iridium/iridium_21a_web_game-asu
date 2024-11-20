@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpacecraftController : MonoBehaviour
 {
     Rigidbody2D rb;
+    public Vector3 center;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +17,8 @@ public class SpacecraftController : MonoBehaviour
     void Update()
     {
         // Move camera to center of mass
-        Camera.main.transform.position = new Vector3(rb.worldCenterOfMass.x, rb.worldCenterOfMass.y, Camera.main.transform.position.z);
+        center = rb.worldCenterOfMass;
+        Camera.main.transform.position = new(center.x, center.y, Camera.main.transform.position.z);
 
         Debug.DrawLine(transform.position, rb.worldCenterOfMass, Color.red);
     }

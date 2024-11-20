@@ -1,19 +1,26 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
+using UnityEngine.VFX;
 
 public class BackgroundController : MonoBehaviour
 {
-    Vector3 startPosition;
-    float sideLength;
+    static Vector3 startPosition;
+    public static float sideLength;
     [SerializeField] GameObject backgroundPrefab;
     [SerializeField][Range(0, 1)] float parallaxScale;
+    ObstacleManager obstacleManager;
 
     // Start is called before the first frame update
     void Start()
     {
         startPosition = transform.position;
         sideLength = GetComponent<SpriteRenderer>().bounds.size.x;
+
+        obstacleManager = GetComponent<ObstacleManager>();
+        ObstacleManager.backgroundSideLength = sideLength;
+        obstacleManager.InitializeObstacleManager();
 
         // Initialize 8 surrounding background objects
         for (int i = -1; i <= 1; i++)
@@ -34,7 +41,13 @@ public class BackgroundController : MonoBehaviour
         Vector3 distance = Camera.main.transform.position * parallaxScale;
         Vector3 movement = Camera.main.transform.position * (1 - parallaxScale);
 
-        transform.position = new Vector3(startPosition.x + distance.x, startPosition.y + distance.y, 0f);
+        Vector3 newPosition = new Vector3(startPosition.x + distance.x, startPosition.y + distance.y, 0f);
+        if (transform.position != newPosition)
+        {
+            transform.position = newPosition;
+            obstacleManager.SpawnObstacles(new Vector2Int((int)newPosition.x, (int)newPosition.y) / (int)sideLength);
+            Vector2Int test = new(1, 2);
+        }
 
         if (movement.x > startPosition.x + sideLength)
         {

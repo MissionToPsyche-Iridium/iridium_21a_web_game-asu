@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimateThrust : MonoBehaviour
+public class ObstacleController : MonoBehaviour
 {
-    [SerializeField] int rotationSpeed;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +13,11 @@ public class AnimateThrust : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.rotation = transform.rotation * Quaternion.Euler(rotationSpeed * Time.deltaTime, 0f, 0f);
-    } 
+        
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        EditorManager.Restart();
+    }
 }

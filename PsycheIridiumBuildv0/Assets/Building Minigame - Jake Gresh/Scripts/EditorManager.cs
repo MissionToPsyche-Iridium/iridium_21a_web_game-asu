@@ -89,7 +89,9 @@ public class EditorManager : MonoBehaviour
     void StartEditMode()
     {
         IsEditMode = true;
-        Time.timeScale = 0f;
+        Time.timeScale = 1f;
+        Physics2D.simulationMode = SimulationMode2D.Script;
+
         selectedPrefab = partPrefabs[0];
         selectedPart = Instantiate(selectedPrefab, spacecraft.transform);
     }
@@ -103,7 +105,8 @@ public class EditorManager : MonoBehaviour
         ConnectionAlertText.SetActive(false);
 
         IsEditMode = false;
-        Time.timeScale = 1f;
+        Physics2D.simulationMode = SimulationMode2D.FixedUpdate;
+
         Destroy(selectedPart);
 
         spacecraft.GetComponent<SpacecraftController>().enabled = true;
@@ -155,7 +158,7 @@ public class EditorManager : MonoBehaviour
         selectedPart.transform.Rotate(0f, 0f, degrees);
     }
 
-    static void Restart()
+    public static void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
