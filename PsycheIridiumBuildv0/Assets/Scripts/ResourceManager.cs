@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ResourceManager : MonoBehaviour
 {
@@ -130,6 +131,7 @@ public class ResourceManager : MonoBehaviour
         {
             timeRemaining = 0;
             timerText.text = "00:00";
+            SceneManager.LoadScene("QuizScene");
         }
     }
 

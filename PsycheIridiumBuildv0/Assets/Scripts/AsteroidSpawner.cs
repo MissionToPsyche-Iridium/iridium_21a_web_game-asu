@@ -5,15 +5,20 @@ using UnityEngine;
 public class AsteroidSpawner : MonoBehaviour
 {
     public GameObject[] asteroidPrefabs; // Array of asteroid prefabs to spawn
-    public float spawnInterval = 0.5f;   // Time between spawns
-    public int maxAsteroids = 20;        // Maximum number of active asteroids
+    public float spawnInterval = 0.5f;   // Default time between spawns
+    public int maxAsteroids = 20;        // Default maximum number of active asteroids
     private List<GameObject> activeAsteroids = new List<GameObject>(); // List of currently active asteroids
     private Camera mainCamera;           // Reference to the main camera
 
     void Start()
     {
+        // Load parameters from PlayerPrefs
+        maxAsteroids = PlayerPrefs.GetInt("MaxAsteroids", maxAsteroids); // Use default if not set
+        spawnInterval = PlayerPrefs.GetFloat("AsteroidInterval", spawnInterval); // Use default if not set
+
+        Debug.Log($"AsteroidSpawner initialized with maxAsteroids={maxAsteroids}, spawnInterval={spawnInterval}");
+
         mainCamera = Camera.main;
-        Debug.Log("AsteroidSpawner started. Spawning initiated.");
         InvokeRepeating(nameof(TrySpawnAsteroid), spawnInterval, spawnInterval); // Start the spawning process
     }
 
