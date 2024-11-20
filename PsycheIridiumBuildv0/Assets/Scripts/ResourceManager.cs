@@ -13,7 +13,7 @@ public class ResourceManager : MonoBehaviour
         public Sprite icon;
         public int amount;
     }
-
+    public TMP_FontAsset eightBitFont;
     public List<Resource> resources = new List<Resource>();
     private Dictionary<Asteroid.AsteroidType, TextMeshProUGUI> resourceTexts = new Dictionary<Asteroid.AsteroidType, TextMeshProUGUI>();
 
@@ -27,7 +27,6 @@ public class ResourceManager : MonoBehaviour
     private float timeRemaining;
 
     private TextMeshProUGUI instructionText;
-    public TMP_FontAsset eightBitFont;
     private Color orangeColor = new Color(1f, 0.64f, 0f);
 
     void Start()
@@ -89,7 +88,7 @@ public class ResourceManager : MonoBehaviour
         timerObject.transform.SetParent(canvas.transform, false);
 
         timerText = timerObject.AddComponent<TextMeshProUGUI>();
-        timerText.font = eightBitFont;
+        timerText.font = eightBitFont; // Assign the 8-bit font
         timerText.fontSize = 45;
         timerText.color = orangeColor;
         timerText.alignment = TextAlignmentOptions.TopLeft;
@@ -105,7 +104,7 @@ public class ResourceManager : MonoBehaviour
         instructionObject.transform.SetParent(canvas.transform, false);
 
         instructionText = instructionObject.AddComponent<TextMeshProUGUI>();
-        instructionText.font = eightBitFont;
+        instructionText.font = eightBitFont; // Assign the 8-bit font
         instructionText.fontSize = 28;
         instructionText.alignment = TextAlignmentOptions.Bottom;
         instructionText.text = "Collect as many resources as you can!";
