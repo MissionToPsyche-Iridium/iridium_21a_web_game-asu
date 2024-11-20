@@ -25,6 +25,8 @@ public class PregameManager : MonoBehaviour
 
     void Start()
     {
+        GameState.Instance.LoadGameState();
+
         // Load resources (mocked for now, replace with save/load logic)
         totalResources = LoadResources();
 
