@@ -546,14 +546,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52c2fc5925a80406293e98ffd4b8b03a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eightBitFont: {fileID: 11400000, guid: 2f78e221c13f408b28611670989fa062, type: 2}
   resources:
-  - name: Iron
+  - type: 0
     icon: {fileID: 21300000, guid: e4fc169a5b62f18dea764b5bf0d0e1fb, type: 3}
     amount: 0
-  - name: Gold
+  - type: 1
     icon: {fileID: 21300000, guid: 934e3489423d697c48cb0286b84848e2, type: 3}
     amount: 0
-  - name: Platinum
+  - type: 2
     icon: {fileID: 21300000, guid: d1eb2a8123919a93eb2843f22648d006, type: 3}
     amount: 0
   canvas: {fileID: 839195541}
@@ -561,7 +562,6 @@ MonoBehaviour:
   startingPosition: {x: -10, y: -10}
   verticalSpacing: 50
   timerDuration: 60
-  eightBitFont: {fileID: 0}
 --- !u!4 &1370979556
 Transform:
   m_ObjectHideFlags: 0
