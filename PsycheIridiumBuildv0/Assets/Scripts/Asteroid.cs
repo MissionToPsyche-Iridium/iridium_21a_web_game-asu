@@ -4,27 +4,39 @@ using UnityEngine;
 
 public class Asteroid : MonoBehaviour
 {
-    public string asteroidType;
-    public int resourceAmount;
+    public enum AsteroidType
+    {
+        Iron,
+        Gold,
+        Tungsten
+    }
+
+    public AsteroidType asteroidType;
+    public int resourceAmount { get; private set; } // Encapsulation with a public getter
 
     void Start()
     {
-        SetResourceAmount();
+        InitializeResourceAmount();
     }
 
-    void SetResourceAmount()
+    void InitializeResourceAmount()
     {
         switch (asteroidType)
         {
-            case "Iron":
-                resourceAmount = Random.Range(5, 15); // Random range for Iron
+            case AsteroidType.Iron:
+                resourceAmount = Random.Range(5, 15);
                 break;
-            case "Gold":
-                resourceAmount = Random.Range(10, 20); // Random range for Gold
+            case AsteroidType.Gold:
+                resourceAmount = Random.Range(10, 20);
                 break;
-            case "Tungsten":
-                resourceAmount = Random.Range(20, 30); // Random range for Tungsten
+            case AsteroidType.Tungsten:
+                resourceAmount = Random.Range(20, 30);
+                break;
+            default:
+                Debug.LogError($"Unsupported asteroid type: {asteroidType}");
+                resourceAmount = 0; // Fallback value
                 break;
         }
+        Debug.Log($"Asteroid initialized: Type={asteroidType}, Resources={resourceAmount}");
     }
 }
