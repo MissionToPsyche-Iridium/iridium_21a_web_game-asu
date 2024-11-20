@@ -5,6 +5,17 @@ public class GameState : MonoBehaviour
     // Singleton instance
     public static GameState Instance;
 
+    public enum Level
+    {
+        None,
+        Level1,
+        Level2,
+        Level3,
+        Level4
+    }
+
+    public Level currentLevel = Level.None;
+
     // Resource counts
     public int iron = 0;
     public int gold = 0;
@@ -57,5 +68,18 @@ public class GameState : MonoBehaviour
         level4Purchased = PlayerPrefs.GetInt("Level4Purchased", 0) == 1;
 
         Debug.Log("Game state loaded.");
+    }
+
+    // Check if a level is unlocked
+    public bool IsLevelUnlocked(Level level)
+    {
+        switch (level)
+        {
+            case Level.Level1: return true; // Level 1 is always unlocked
+            case Level.Level2: return level2Purchased;
+            case Level.Level3: return level3Purchased;
+            case Level.Level4: return level4Purchased;
+            default: return false;
+        }
     }
 }
