@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.SceneManagement;
 
 public class ResourceManager : MonoBehaviour
 {
@@ -14,6 +13,7 @@ public class ResourceManager : MonoBehaviour
         public Sprite icon;
         public int amount;
     }
+
     public TMP_FontAsset eightBitFont;
     public List<Resource> resources = new List<Resource>();
     private Dictionary<Asteroid.AsteroidType, TextMeshProUGUI> resourceTexts = new Dictionary<Asteroid.AsteroidType, TextMeshProUGUI>();
@@ -131,7 +131,17 @@ public class ResourceManager : MonoBehaviour
         {
             timeRemaining = 0;
             timerText.text = "00:00";
-            SceneManager.LoadScene("QuizScene");
+
+            // Save collected resources to the persistent GameState object
+            GameState.Instance.SetCollectedResources(
+                iron: resources.Find(r => r.type == Asteroid.AsteroidType.Iron)?.amount ?? 0,
+                gold: resources.Find(r => r.type == Asteroid.AsteroidType.Gold)?.amount ?? 0,
+                tungsten: resources.Find(r => r.type == Asteroid.AsteroidType.Tungsten)?.amount ?? 0
+            );
+
+            // Save the game state and load the quiz scene
+            GameState.Instance.SaveGameState();
+            GameState.Instance.LoadQuizScene();
         }
     }
 

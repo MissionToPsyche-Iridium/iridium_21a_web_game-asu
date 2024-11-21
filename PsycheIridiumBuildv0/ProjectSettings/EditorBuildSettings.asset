@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/QuizScene.unity
     guid: a0ecb84e4e0580268ab4365e0e26dc02
+  - enabled: 1
+    path: Assets/Scenes/ShipUpgradeScene.unity
+    guid: 8be0b3c1a0c50236f878638beb79b42c
   m_configObjects: {}

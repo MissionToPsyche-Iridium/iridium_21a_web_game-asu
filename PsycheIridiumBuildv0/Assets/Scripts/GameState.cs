@@ -16,10 +16,15 @@ public class GameState : MonoBehaviour
 
     public Level currentLevel = Level.None;
 
-    // Resource counts
+    // Total resources
     public int iron = 0;
     public int gold = 0;
     public int tungsten = 0;
+
+    // Resources collected in the current level
+    public int collectedIron = 0;
+    public int collectedGold = 0;
+    public int collectedTungsten = 0;
 
     // Purchased instruments
     public bool level2Purchased = false;
@@ -48,6 +53,10 @@ public class GameState : MonoBehaviour
         PlayerPrefs.SetInt("Gold", gold);
         PlayerPrefs.SetInt("Tungsten", tungsten);
 
+        PlayerPrefs.SetInt("CollectedIron", collectedIron);
+        PlayerPrefs.SetInt("CollectedGold", collectedGold);
+        PlayerPrefs.SetInt("CollectedTungsten", collectedTungsten);
+
         PlayerPrefs.SetInt("Level2Purchased", level2Purchased ? 1 : 0);
         PlayerPrefs.SetInt("Level3Purchased", level3Purchased ? 1 : 0);
         PlayerPrefs.SetInt("Level4Purchased", level4Purchased ? 1 : 0);
@@ -62,6 +71,10 @@ public class GameState : MonoBehaviour
         iron = PlayerPrefs.GetInt("Iron", 0);
         gold = PlayerPrefs.GetInt("Gold", 0);
         tungsten = PlayerPrefs.GetInt("Tungsten", 0);
+
+        collectedIron = PlayerPrefs.GetInt("CollectedIron", 0);
+        collectedGold = PlayerPrefs.GetInt("CollectedGold", 0);
+        collectedTungsten = PlayerPrefs.GetInt("CollectedTungsten", 0);
 
         level2Purchased = PlayerPrefs.GetInt("Level2Purchased", 0) == 1;
         level3Purchased = PlayerPrefs.GetInt("Level3Purchased", 0) == 1;
@@ -81,5 +94,37 @@ public class GameState : MonoBehaviour
             case Level.Level4: return level4Purchased;
             default: return false;
         }
+    }
+
+    // Set resources collected in the current level
+    public void SetCollectedResources(int iron, int gold, int tungsten)
+    {
+        collectedIron = iron;
+        collectedGold = gold;
+        collectedTungsten = tungsten;
+
+        Debug.Log($"Collected resources set: Iron={collectedIron}, Gold={collectedGold}, Tungsten={collectedTungsten}");
+    }
+
+    // Add collected resources to total and reset collected values
+    public void AddCollectedToTotal()
+    {
+        iron += collectedIron;
+        gold += collectedGold;
+        tungsten += collectedTungsten;
+
+        collectedIron = 0;
+        collectedGold = 0;
+        collectedTungsten = 0;
+
+        Debug.Log($"Added collected resources to total: Iron={iron}, Gold={gold}, Tungsten={tungsten}");
+    }
+
+    // Transition to the quiz scene
+    public void LoadQuizScene()
+    {
+        Debug.Log("Loading Quiz Scene...");
+        SaveGameState(); // Ensure resources are saved before transitioning
+        UnityEngine.SceneManagement.SceneManager.LoadScene("QuizScene");
     }
 }
