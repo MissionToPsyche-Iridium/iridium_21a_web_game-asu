@@ -11,7 +11,6 @@ public class Resource
     public Sprite icon;               // Resource icon
 }
 
-
 public class PregameManager : MonoBehaviour
 {
     public GameObject canvas; // Reference to the Canvas
@@ -25,23 +24,23 @@ public class PregameManager : MonoBehaviour
 
     void Start()
     {
+        // Ensure game state is loaded
         GameState.Instance.LoadGameState();
 
-        // Load resources (mocked for now, replace with save/load logic)
-        totalResources = LoadResources();
+        // Load resources from GameState
+        totalResources = LoadResourcesFromGameState();
 
         // Generate resource UI
         GenerateResourceUI();
     }
 
-    private Dictionary<Asteroid.AsteroidType, int> LoadResources()
+    private Dictionary<Asteroid.AsteroidType, int> LoadResourcesFromGameState()
     {
-        // Replace this with actual save/load functionality
         return new Dictionary<Asteroid.AsteroidType, int>
         {
-            { Asteroid.AsteroidType.Iron, 100 },
-            { Asteroid.AsteroidType.Gold, 50 },
-            { Asteroid.AsteroidType.Tungsten, 25 }
+            { Asteroid.AsteroidType.Iron, GameState.Instance.iron },
+            { Asteroid.AsteroidType.Gold, GameState.Instance.gold },
+            { Asteroid.AsteroidType.Tungsten, GameState.Instance.tungsten }
         };
     }
 

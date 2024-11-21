@@ -15,6 +15,7 @@ public class QuizManager : MonoBehaviour
     }
 
     public List<Resource> resources = new List<Resource>(); // List of resources with icons and amounts
+    public List<Sprite> resourceIcons; // List of icons for resources to assign in the Unity editor
     private Dictionary<string, TextMeshProUGUI> resourceTexts = new Dictionary<string, TextMeshProUGUI>();
 
     public GameObject canvas; // Canvas for UI
@@ -42,21 +43,21 @@ public class QuizManager : MonoBehaviour
         resources.Add(new Resource
         {
             name = "Iron",
-            icon = null, // Assign your iron icon here
+            icon = resourceIcons.Count > 0 ? resourceIcons[0] : null,
             amount = GameState.Instance.collectedIron
         });
 
         resources.Add(new Resource
         {
             name = "Gold",
-            icon = null, // Assign your gold icon here
+            icon = resourceIcons.Count > 1 ? resourceIcons[1] : null,
             amount = GameState.Instance.collectedGold
         });
 
         resources.Add(new Resource
         {
             name = "Tungsten",
-            icon = null, // Assign your tungsten icon here
+            icon = resourceIcons.Count > 2 ? resourceIcons[2] : null,
             amount = GameState.Instance.collectedTungsten
         });
     }
@@ -130,7 +131,7 @@ public class QuizManager : MonoBehaviour
     {
         if (questionsAnswered >= 3)
         {
-            SaveResourcesToGameState();
+            FinalizeResources();
             SceneManager.LoadScene("PregameManager");
             return;
         }
@@ -176,13 +177,17 @@ public class QuizManager : MonoBehaviour
         }
     }
 
-    void SaveResourcesToGameState()
+    void FinalizeResources()
     {
-        GameState.Instance.SetCollectedResources(
-            iron: resources.Find(r => r.name == "Iron").amount,
-            gold: resources.Find(r => r.name == "Gold").amount,
-            tungsten: resources.Find(r => r.name == "Tungsten").amount
-        );
+        // Add updated resources to total
+        GameState.Instance.iron += resources.Find(r => r.name == "Iron").amount;
+        GameState.Instance.gold += resources.Find(r => r.name == "Gold").amount;
+        GameState.Instance.tungsten += resources.Find(r => r.name == "Tungsten").amount;
+
+        // Reset collected resources to 0
+        GameState.Instance.SetCollectedResources(0, 0, 0);
+
+        // Save game state
         GameState.Instance.SaveGameState();
     }
 

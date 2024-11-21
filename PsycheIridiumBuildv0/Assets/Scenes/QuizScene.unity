@@ -416,6 +416,10 @@ MonoBehaviour:
   - name: Platinum
     icon: {fileID: 21300000, guid: 207e431dac3f55a6ba5c05589a20e057, type: 3}
     amount: 0
+  resourceIcons:
+  - {fileID: 21300000, guid: e4fc169a5b62f18dea764b5bf0d0e1fb, type: 3}
+  - {fileID: 21300000, guid: 934e3489423d697c48cb0286b84848e2, type: 3}
+  - {fileID: 21300000, guid: d1eb2a8123919a93eb2843f22648d006, type: 3}
   canvas: {fileID: 1216277611}
   eightBitFont: {fileID: 11400000, guid: 2f78e221c13f408b28611670989fa062, type: 2}
   questionText: {fileID: 1756395606}
