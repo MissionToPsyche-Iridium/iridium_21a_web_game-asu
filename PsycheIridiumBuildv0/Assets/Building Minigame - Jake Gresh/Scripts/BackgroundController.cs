@@ -22,10 +22,10 @@ public class BackgroundController : MonoBehaviour
         ObstacleManager.backgroundSideLength = sideLength;
         obstacleManager.InitializeObstacleManager();
 
-        // Initialize 8 surrounding background objects
-        for (int i = -1; i <= 1; i++)
+        // Initialize surrounding background objects
+        for (int i = -2; i <= 2; i++)
         {
-            for (int j = -1; j <= 1; j++)
+            for (int j = -2; j <= 2; j++)
             {
                 if (!(i == 0 && j == 0))
                 {

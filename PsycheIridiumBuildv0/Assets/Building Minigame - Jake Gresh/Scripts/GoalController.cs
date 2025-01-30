@@ -10,6 +10,9 @@ public class GoalController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Randomize start position
+        transform.position = Random.insideUnitCircle.normalized * 200;
+
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.SetPosition(1, transform.position);
     }

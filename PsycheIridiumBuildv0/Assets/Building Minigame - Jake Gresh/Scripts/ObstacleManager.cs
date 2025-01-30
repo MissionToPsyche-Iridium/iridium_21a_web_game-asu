@@ -5,7 +5,7 @@ using UnityEngine;
 public class ObstacleManager : MonoBehaviour
 {
     [SerializeField] GameObject obstaclePrefab;
-    static Dictionary<Vector2Int, bool> objectAtPosition = new();
+    static HashSet<Vector2Int> objectAtPosition = new();
     public static float backgroundSideLength;
     static float spawnDistance;
 
@@ -24,23 +24,22 @@ public class ObstacleManager : MonoBehaviour
     public void InitializeObstacleManager()
     {
         objectAtPosition.Clear();
-        objectAtPosition.Add(new Vector2Int(0, 0), true);
-        SpawnObstacles(new Vector2Int(0, 0));
-
+        objectAtPosition.Add(new Vector2Int(0, 0));
         spawnDistance = backgroundSideLength / 3;
+        SpawnObstacles(new Vector2Int(0, 0));
     }
 
     public void SpawnObstacles(Vector2Int position)
     {
         Vector2Int originalPosition = position;
-        for (int i = -1; i <= 1; i++)
+        for (int i = -2; i <= 2; i++)
         {
-            for (int j = -1; j <= 1; j++)
+            for (int j = -2; j <= 2; j++)
             {
                 position = originalPosition + new Vector2Int(i, j);
-                if (!objectAtPosition.ContainsKey(position))
+                if (!objectAtPosition.Contains(position))
                 {
-                    objectAtPosition.Add(position, true);
+                    objectAtPosition.Add(position);
                     Instantiate(obstaclePrefab, new Vector3(position.x * backgroundSideLength + Random.Range(-spawnDistance, spawnDistance), position.y * backgroundSideLength + Random.Range(-spawnDistance, spawnDistance), 0f), Quaternion.Euler(0f, 0f, Random.Range(-180f, 180f)));
                 }
             }

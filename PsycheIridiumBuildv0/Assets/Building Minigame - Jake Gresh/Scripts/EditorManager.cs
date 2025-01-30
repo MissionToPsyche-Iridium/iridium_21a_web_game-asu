@@ -83,6 +83,13 @@ public class EditorManager : MonoBehaviour
             {
                 RotatePart(-90f);
             }
+
+            if (placedParts.Count > 0 && !AreAllPartsConnected())
+            {
+                ConnectionAlertText.SetActive(true);
+                return;
+            }
+            ConnectionAlertText.SetActive(false);
         }
     }
 
@@ -97,12 +104,10 @@ public class EditorManager : MonoBehaviour
     }
     void EndEditMode()
     {
-        if (!AreAllPartsConnected())
+        if (placedParts.Count == 0 || ConnectionAlertText.activeSelf == true)
         {
-            ConnectionAlertText.SetActive(true);
             return;
         }
-        ConnectionAlertText.SetActive(false);
 
         IsEditMode = false;
         Physics2D.simulationMode = SimulationMode2D.FixedUpdate;
@@ -114,6 +119,9 @@ public class EditorManager : MonoBehaviour
         {
             thrusterController.enabled = true;
         }
+
+        // Zoom out camera
+        Camera.main.orthographicSize = 10f;
     }
 
     static Vector3 GetMouseGridPosition()
