@@ -1,8 +1,8 @@
+using System;
 using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.U2D;
 using UnityEngine.SceneManagement;
+using UnityEngine.U2D;
 
 public class EditorManager : MonoBehaviour
 {
@@ -18,9 +18,14 @@ public class EditorManager : MonoBehaviour
     static GameObject selectedPart;
 
     public List<GameObject> placedParts = new();
+    public static Dictionary<Vector3, Tuple<KeyCode, Quaternion>> partStorage = PartStorage.partStorage;
+    public static KeyCode selectedPartKeyCode;
 
     HashSet<GameObject> connectedParts = new();
     [SerializeField] GameObject ConnectionAlertText;
+
+    const float gridWidth = 8f;
+    const float gridHeight = 4f;
 
 
     // Start is called before the first frame update
@@ -40,11 +45,6 @@ public class EditorManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            Restart();
-        }
-
         if (Input.GetKeyDown(KeyCode.Space))
         {
             EndEditMode();
@@ -91,6 +91,13 @@ public class EditorManager : MonoBehaviour
             }
             ConnectionAlertText.SetActive(false);
         }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                Restart();
+            }
+        }
     }
 
     void StartEditMode()
@@ -101,7 +108,34 @@ public class EditorManager : MonoBehaviour
 
         selectedPrefab = partPrefabs[0];
         selectedPart = Instantiate(selectedPrefab, spacecraft.transform);
+
+        selectedPartKeyCode = partKeyCodes[0];
+
+        if (partStorage.Count > 0)
+        {
+            LoadParts();
+        }
     }
+
+    void LoadParts()
+    {
+        for (float x = -gridWidth; x <= gridWidth; x++)
+        {
+            for (float y = -gridHeight; y <= gridHeight; y++)
+            {
+                Vector3 position = new Vector3(x, y, 0);
+                if (partStorage.ContainsKey(position))
+                {
+                    selectedPrefab = partPrefabs[partKeyCodes.IndexOf(partStorage[position].Item1)];
+                    GameObject part = Instantiate(selectedPrefab, spacecraft.transform);
+                    part.transform.position = position;
+                    part.transform.rotation = partStorage[position].Item2;
+                    placedParts.Add(part);
+                }
+            }
+        }
+    }
+
     void EndEditMode()
     {
         if (placedParts.Count == 0 || ConnectionAlertText.activeSelf == true)
@@ -129,8 +163,8 @@ public class EditorManager : MonoBehaviour
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         // Dont allow mousePosition to be offscreen
-        mousePosition.x = Mathf.Clamp(mousePosition.x, -8f, 8f);
-        mousePosition.y = Mathf.Clamp(mousePosition.y, -4f, 4f);
+        mousePosition.x = Mathf.Clamp(mousePosition.x, -gridWidth, gridWidth);
+        mousePosition.y = Mathf.Clamp(mousePosition.y, -gridHeight, gridHeight);
 
         return new Vector3(Mathf.Round(mousePosition.x), Mathf.Round(mousePosition.y), 0f);
     }
@@ -141,6 +175,9 @@ public class EditorManager : MonoBehaviour
         GameObject lastPlacedPart = Instantiate(selectedPrefab, spacecraft.transform);
         lastPlacedPart.transform.SetPositionAndRotation(GetMouseGridPosition(), selectedPart.transform.rotation);
         placedParts.Add(lastPlacedPart);
+
+        // Store the part in partStorage
+        partStorage[GetMouseGridPosition()] = new Tuple<KeyCode, Quaternion>(selectedPartKeyCode, lastPlacedPart.transform.rotation);
     }
     void DeletePart()
     {
@@ -149,6 +186,7 @@ public class EditorManager : MonoBehaviour
             if (part.transform.position == GetMouseGridPosition())
             {
                 placedParts.Remove(part);
+                partStorage.Remove(GetMouseGridPosition());
                 Destroy(part);
                 return;
             }
@@ -160,6 +198,8 @@ public class EditorManager : MonoBehaviour
         Destroy(selectedPart);
         selectedPart = Instantiate(selectedPrefab, spacecraft.transform);
         selectedPart.transform.position = GetMouseGridPosition();
+
+        selectedPartKeyCode = keyCode;
     }
     static void RotatePart(float degrees)
     {

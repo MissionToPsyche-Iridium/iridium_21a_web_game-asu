@@ -1,7 +1,5 @@
-using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 public class ThrusterController : MonoBehaviour, IPointerClickHandler
 {
