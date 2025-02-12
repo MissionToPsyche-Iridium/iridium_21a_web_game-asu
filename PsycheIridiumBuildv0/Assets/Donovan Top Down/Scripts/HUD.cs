@@ -81,7 +81,7 @@ public class HUD : MonoBehaviour
     {
         RectTransform rectTransform = minimapIndicator.GetComponent<RectTransform>();
         Vector3 playerPos = playerController.transform.position;
-        rectTransform.localPosition = new Vector3(Mathf.Round(playerPos.x / 5) * 10, Mathf.Round(playerPos.y / 5) * 10, 0);
+        rectTransform.localPosition = new Vector3(Mathf.Round(playerPos.x / 10) * 10, Mathf.Round(playerPos.y / 10) * 10, 0);
     }
 
     public void UpdateDamage(int damage)

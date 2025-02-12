@@ -10,6 +10,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private Vector2 startPosition;
 
+    [Header("Map Wrap Bounds")]
+    [SerializeField] private float topBound;
+    [SerializeField] private float bottomBound;
+    [SerializeField] private float leftBound;
+    [SerializeField] private float rightBound;
+    [SerializeField] private float boundBuffer;
+
     [Header("Sprites")]
     [SerializeField] private Sprite upSprite;
     [SerializeField] private Sprite downSprite;
@@ -98,6 +105,17 @@ public class PlayerController : MonoBehaviour
             if (!interacting) rb.AddForce(direction * moveSpeed);
         }
         else rb.velocity = Vector3.zero;
+
+        // Check to make sure the player isn't out of bounds and wrap them to the other side of the map if they are.
+        CheckBounds();
+    }
+
+    private void CheckBounds()
+    {
+        if (transform.position.y > topBound + boundBuffer) transform.position = new Vector3(transform.position.x, bottomBound + boundBuffer, transform.position.z);
+        if (transform.position.y < bottomBound - boundBuffer) transform.position = new Vector3(transform.position.x, topBound - boundBuffer, transform.position.z);
+        if (transform.position.x > rightBound + boundBuffer) transform.position = new Vector3(leftBound + boundBuffer, transform.position.y, transform.position.z);
+        if (transform.position.x < leftBound  - boundBuffer) transform.position = new Vector3(rightBound - boundBuffer, transform.position.y, transform.position.z);
     }
 
     public void EnterInteraction()
