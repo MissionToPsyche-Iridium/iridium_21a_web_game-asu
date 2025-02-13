@@ -6,9 +6,12 @@ public class ProgressBarController : MonoBehaviour
     public Image progressBarFillImage;  // Assign this in the Inspector
     public float fillDuration = 10f;    // Time in seconds for the bar to fill
     private float elapsedTime = 0f;
+    private bool isStopped = false;     // Flag to stop the progress bar
 
     void Update()
     {
+            if (isStopped) return; // Stop updating if collision has occurred
+            
             // Increase the elapsed time
             elapsedTime += Time.deltaTime;
 
@@ -24,6 +27,12 @@ public class ProgressBarController : MonoBehaviour
                 // Bar is fully filled; you can stop increasing elapsedTime or trigger other events here.
             }
         
+    }
+
+    // Call this method to stop the progress bar
+    public void StopProgress()
+    {
+        isStopped = true;
     }
 }
 
