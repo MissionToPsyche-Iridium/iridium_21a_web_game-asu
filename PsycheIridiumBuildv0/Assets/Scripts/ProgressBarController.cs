@@ -12,7 +12,7 @@ public class ProgressBarController : MonoBehaviour
     public TMP_Text distanceText;  // Assign TMP_Text for numerical distance
     public TMP_Text timeText;      // Assign TMP_Text for numerical time
 
-    public float maxDistance = 62f; // Example: 62 miles to reach space (100 km)
+    public float maxDistance = 430f; // Example: 62 miles to reach space (100 km)
     public float maxTime = 10f; // Example: 10 minutes for full ascent
 
     void Update()
