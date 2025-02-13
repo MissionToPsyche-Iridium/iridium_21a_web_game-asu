@@ -3,7 +3,6 @@ using UnityEngine;
 public class GoalController : MonoBehaviour
 {
     static LineRenderer lineRenderer;
-    [SerializeField] GameObject spacecraft;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +20,7 @@ public class GoalController : MonoBehaviour
         if (!EditorManager.IsEditMode)
         {
             lineRenderer.enabled = true;
-            lineRenderer.SetPosition(0, spacecraft.GetComponent<SpacecraftController>().center);
+            lineRenderer.SetPosition(0, SpacecraftController.CenterOfMass);
         }
     }
 

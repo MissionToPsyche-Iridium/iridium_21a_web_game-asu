@@ -37,12 +37,11 @@ public class BackgroundController : MonoBehaviour
         Vector3 distance = Camera.main.transform.position * parallaxScale;
         Vector3 movement = Camera.main.transform.position * (1 - parallaxScale);
 
-        Vector3 newPosition = new Vector3(startPosition.x + distance.x, startPosition.y + distance.y, 0f);
+        Vector3 newPosition = new(startPosition.x + distance.x, startPosition.y + distance.y, 0f);
         if (transform.position != newPosition)
         {
             transform.position = newPosition;
             obstacleManager.SpawnObstacles(new Vector2Int((int)newPosition.x, (int)newPosition.y) / (int)sideLength);
-            Vector2Int test = new(1, 2);
         }
 
         if (movement.x > startPosition.x + sideLength)
