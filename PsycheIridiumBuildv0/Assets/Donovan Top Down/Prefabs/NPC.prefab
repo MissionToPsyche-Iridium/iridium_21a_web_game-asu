@@ -75,8 +75,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 1416995283, guid: 7bc471b8da86a514ebb72eb47fbe7bce, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: -878061493, guid: 8b3f1b389b9c38c4f885130b9bd683e9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -189,9 +189,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 950f1fb44b02a4b4aa2be47b8300524c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hud: {fileID: 0}
+  player: {fileID: 0}
   textName: 
   text:
   - Hello there!
   - I am a test NPC!
-  hud: {fileID: 0}
-  player: {fileID: 0}
+  minigameNPC: 0
+  minigameScene: 
+  minigameName: 
+  minigameDesc: 
+  minigameThumbnail: {fileID: 0}

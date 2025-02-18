@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HUD : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class HUD : MonoBehaviour
 
     [Header("Minigame Preview")]
     [SerializeField] private GameObject minigamePreview;
+    [SerializeField] private Button startButton;
+    [SerializeField] private Button cancelButton;
     private TMP_Text previewName;
     private TMP_Text previewDesc;
     private SpriteRenderer previewImage;
@@ -63,6 +66,9 @@ public class HUD : MonoBehaviour
         previewScene = minigameScene;
 
         minigamePreview.SetActive(true);
+
+        startButton.interactable = true;
+        cancelButton.interactable = true;
     }
 
     public void StartMinigame()
@@ -73,6 +79,9 @@ public class HUD : MonoBehaviour
 
     public void HideMinigamePreview()
     {
+        startButton.interactable = false;
+        cancelButton.interactable = false;
+
         minigamePreview.SetActive(false);
         playerController.ExitInteraction();
     }

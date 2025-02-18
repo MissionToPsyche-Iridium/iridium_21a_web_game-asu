@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3c5703b65cf79d942bf22e3cf331ff4c
+guid: 8b3f1b389b9c38c4f885130b9bd683e9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 64
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Map Tileset_0
+      name: NPCs_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac2edbd6fa67d324f8ef7532ecd2d25a
-      internalID: 1543803520
+      spriteID: 2da819831a23859498414222585b358b
+      internalID: -878061493
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Map Tileset_1
+      name: NPCs_1
       rect:
         serializedVersion: 2
         x: 16
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32b5072a7d435c24584bd834dd80773d
-      internalID: 265087628
+      spriteID: 876398e659e245d4abaa1d7ffd8f83d8
+      internalID: 32680
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Map Tileset_2
+      name: NPCs_2
       rect:
         serializedVersion: 2
         x: 32
@@ -166,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 302a1831f16f15c4ca37f97389d6d72c
-      internalID: 258037244
+      spriteID: 554c03d2bab1c4d4a9d77437316bad99
+      internalID: -106180965
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Map Tileset_3
+      name: NPCs_3
       rect:
         serializedVersion: 2
         x: 48
@@ -187,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3628048649de360438234dfe9b651005
-      internalID: 1436893661
+      spriteID: 4788c833731f29c48958b56297f845a3
+      internalID: -1141717990
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Map Tileset_4
+      name: NPCs_4
       rect:
         serializedVersion: 2
         x: 0
@@ -208,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2ad8cd70cd1256419be4a8228791069
-      internalID: -488365637
+      spriteID: 45aa73925401df44b96eae43a066a5bd
+      internalID: -425824492
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Map Tileset_5
+      name: NPCs_5
       rect:
         serializedVersion: 2
         x: 16
@@ -229,14 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c8941b1964de3a040931a0466a73476a
-      internalID: 1559373756
+      spriteID: ad5374a7242bc244693b8ce9adcc64dc
+      internalID: 1922489620
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Map Tileset_6
+      name: NPCs_6
       rect:
         serializedVersion: 2
         x: 32
@@ -250,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a0c4b5ad99dccb47a316fb8ead03935
-      internalID: -1751132144
+      spriteID: 79bc0a17560f5884081a7480565a921b
+      internalID: 57341851
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Map Tileset_7
+      name: NPCs_7
       rect:
         serializedVersion: 2
         x: 48
@@ -271,14 +271,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 67f267f60c490fa40b5302a4cd6ff543
-      internalID: -1916239294
+      spriteID: a28d887a44b134a42ac8512b079b58fe
+      internalID: -1050663828
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Map Tileset_8
+      name: NPCs_8
       rect:
         serializedVersion: 2
         x: 0
@@ -292,14 +292,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 823a0dd9cfd2b884fad6022ced519f3a
-      internalID: -750401519
+      spriteID: 8d231526fac7c3a4a992e5eeb6683e66
+      internalID: 757530710
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Map Tileset_9
+      name: NPCs_9
       rect:
         serializedVersion: 2
         x: 16
@@ -313,14 +313,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2fb4ad696611436469653d318276bb29
-      internalID: -478852214
+      spriteID: ee0202765455b7a44a45d5f3b6790019
+      internalID: -441144804
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Map Tileset_10
+      name: NPCs_10
       rect:
         serializedVersion: 2
         x: 32
@@ -334,14 +334,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae52055829d6a8a46bb18f6afe14d0ac
-      internalID: -1694545759
+      spriteID: 4b3dd0e03c888df40a1831f1c4b6fe20
+      internalID: -471758317
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Map Tileset_11
+      name: NPCs_11
       rect:
         serializedVersion: 2
         x: 48
@@ -355,14 +355,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 864ebf9866e8ce74abecac0f87a5515b
-      internalID: 2092175236
+      spriteID: 3e4bae17d359fa2448b14f3bfd7520fa
+      internalID: -1608669151
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Map Tileset_12
+      name: NPCs_12
       rect:
         serializedVersion: 2
         x: 0
@@ -376,14 +376,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 018abd4f7e246cc48ba7dd10462d842b
-      internalID: -2019755085
+      spriteID: a2a14bf1ab070f04c92d46a535a29f63
+      internalID: -908001913
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Map Tileset_13
+      name: NPCs_13
       rect:
         serializedVersion: 2
         x: 16
@@ -397,14 +397,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aec42c14d246b35429c06d972ee23e33
-      internalID: 263177535
+      spriteID: dba0aa9b505322147918e0a9c1dada6e
+      internalID: 310453283
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Map Tileset_14
+      name: NPCs_14
       rect:
         serializedVersion: 2
         x: 32
@@ -418,14 +418,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1fffe6990e78194a8dd5e67584acbbb
-      internalID: 653592823
+      spriteID: d991712db6572454b9bd85554c6ba455
+      internalID: -1821231879
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Map Tileset_15
+      name: NPCs_15
       rect:
         serializedVersion: 2
         x: 48
@@ -439,8 +439,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92b48c684b7a3274e8da1127c0554228
-      internalID: -251606837
+      spriteID: bf05df3610fc1874b8f2cd6776509805
+      internalID: 1567670318
       vertices: []
       indices: 
       edges: []
@@ -456,22 +456,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Map Tileset_0: 1543803520
-      Map Tileset_1: 265087628
-      Map Tileset_10: -1694545759
-      Map Tileset_11: 2092175236
-      Map Tileset_12: -2019755085
-      Map Tileset_13: 263177535
-      Map Tileset_14: 653592823
-      Map Tileset_15: -251606837
-      Map Tileset_2: 258037244
-      Map Tileset_3: 1436893661
-      Map Tileset_4: -488365637
-      Map Tileset_5: 1559373756
-      Map Tileset_6: -1751132144
-      Map Tileset_7: -1916239294
-      Map Tileset_8: -750401519
-      Map Tileset_9: -478852214
+      NPCs_0: -878061493
+      NPCs_1: 32680
+      NPCs_10: -471758317
+      NPCs_11: -1608669151
+      NPCs_12: -908001913
+      NPCs_13: 310453283
+      NPCs_14: -1821231879
+      NPCs_15: 1567670318
+      NPCs_2: -106180965
+      NPCs_3: -1141717990
+      NPCs_4: -425824492
+      NPCs_5: 1922489620
+      NPCs_6: 57341851
+      NPCs_7: -1050663828
+      NPCs_8: 757530710
+      NPCs_9: -441144804
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

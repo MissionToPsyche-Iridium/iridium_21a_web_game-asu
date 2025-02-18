@@ -168,8 +168,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 1416995283, guid: 7bc471b8da86a514ebb72eb47fbe7bce, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: -878061493, guid: 8b3f1b389b9c38c4f885130b9bd683e9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -192,12 +192,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94691dbbf8cb3114b92b721f92783dd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInput: {fileID: 0}
   moveSpeed: 1
-  upSprite: {fileID: -42868502, guid: 7bc471b8da86a514ebb72eb47fbe7bce, type: 3}
-  downSprite: {fileID: 1416995283, guid: 7bc471b8da86a514ebb72eb47fbe7bce, type: 3}
-  leftSprite: {fileID: -1429760280, guid: 7bc471b8da86a514ebb72eb47fbe7bce, type: 3}
-  rightSprite: {fileID: -98462919, guid: 7bc471b8da86a514ebb72eb47fbe7bce, type: 3}
+  startPosition: {x: 0, y: 0}
+  topBound: 0
+  bottomBound: 0
+  leftBound: 0
+  rightBound: 0
+  boundBuffer: 0
+  upSprite: {fileID: -425824492, guid: 8b3f1b389b9c38c4f885130b9bd683e9, type: 3}
+  downSprite: {fileID: -878061493, guid: 8b3f1b389b9c38c4f885130b9bd683e9, type: 3}
+  leftSprite: {fileID: -908001913, guid: 8b3f1b389b9c38c4f885130b9bd683e9, type: 3}
+  rightSprite: {fileID: 757530710, guid: 8b3f1b389b9c38c4f885130b9bd683e9, type: 3}
+  gameManager: {fileID: 0}
+  playerInput: {fileID: 0}
 --- !u!50 &4933099324961450420
 Rigidbody2D:
   serializedVersion: 4

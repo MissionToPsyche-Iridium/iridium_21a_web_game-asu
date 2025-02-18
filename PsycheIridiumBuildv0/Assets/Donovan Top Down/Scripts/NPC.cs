@@ -17,6 +17,7 @@ public class NPC : MonoBehaviour
     [SerializeField] private string minigameScene;
     [SerializeField] private string minigameName;
     [SerializeField] private string minigameDesc;
+    [SerializeField] private Sprite minigameThumbnail;
 
     private bool playerNearby = false;
     private bool speaking = false;
@@ -29,38 +30,34 @@ public class NPC : MonoBehaviour
 
     private void Interacted()
     {
-        if (playerNearby && !player.Interacting() && !speaking)
+        if (playerNearby)
         {
-            // Freeze player and show first textbox.
-            player.EnterInteraction();
-            speaking = true;
-            currentTextbox = 0;
-            hud.ShowTextbox(textName, text[currentTextbox]);
-            currentTextbox++;
-        }
-        else if (speaking && currentTextbox < text.Length)
-        {
-            // Advance to next textbox.
-            hud.ShowTextbox(textName, text[currentTextbox]);
-            currentTextbox++;
-        }
-        else if (speaking && currentTextbox >= text.Length)
-        {
-            if (minigameNPC)
+            if (!player.Interacting() && !speaking)
+            {
+                // Freeze player and show first textbox.
+                player.EnterInteraction();
+                speaking = true;
+                currentTextbox = 0;
+                hud.ShowTextbox(textName, text[currentTextbox]);
+                currentTextbox++;
+            }
+            else if (speaking && currentTextbox < text.Length)
+            {
+                // Advance to next textbox.
+                hud.ShowTextbox(textName, text[currentTextbox]);
+                currentTextbox++;
+            }
+            else if (speaking && currentTextbox >= text.Length)
             {
                 // Hide textbox and show minigame preview.
-                hud.HideTextbox();
-                currentTextbox = -1;
-                speaking = false;
-                hud.ShowMinigamePreview(minigameScene, minigameName, minigameDesc);
-            }
-            else
-            {
+                if (minigameNPC) hud.ShowMinigamePreview(minigameScene, minigameName, minigameDesc);
                 // End interaction, hide textbox, and unfreeze player.
+                else player.ExitInteraction();
+
+                // End NPC interaction.
                 hud.HideTextbox();
                 currentTextbox = -1;
                 speaking = false;
-                player.ExitInteraction();
             }
         }
     }
