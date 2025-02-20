@@ -383,6 +383,22 @@ PrefabInstance:
       propertyPath: minigameScene
       value: Pidgeon
       objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[0]
+      value: Ow ow ow ow OW!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[1]
+      value: That debris hit me right in the head it did!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[2]
+      value: "A magnetometer like me can\u2019t work like this! You gotta help me!"
+      objectReference: {fileID: 0}
     - target: {fileID: 6187821529911711959, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: m_Size.x
       value: 6
@@ -492,6 +508,108 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27ab3c91f79735d4d90a7c636ae72962, type: 3}
+--- !u!1001 &142248278
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1874076755}
+    m_Modifications:
+    - target: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3623089025726051021, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_Name
+      value: Launch Date NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: hud
+      value: 
+      objectReference: {fileID: 1026541136}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1223576612}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 1378385865}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: textName
+      value: Test NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[0]
+      value: "Ugh\u2026we\u2019ve been cooped up in this thing since October 2023."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[1]
+      value: "Even when we get to Psyche we\u2019ll still be orbiting it for over
+        a year."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[2]
+      value: "What I wouldn\u2019t give for something exciting to happen\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[3]
+      value: "\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[4]
+      value: "What do you mean we\u2019ve been hit by space debris?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033966634432106422, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 310453283, guid: 8b3f1b389b9c38c4f885130b9bd683e9, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
 --- !u!1 &168133438
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,6 +810,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27ab3c91f79735d4d90a7c636ae72962, type: 3}
+--- !u!4 &275516683 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+  m_PrefabInstance: {fileID: 2103490140}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &319955252 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+  m_PrefabInstance: {fileID: 883592162}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &358738670
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,6 +1013,15 @@ PrefabInstance:
       propertyPath: minigameScene
       value: Spider
       objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[0]
+      value: "Oh\u2026oh me oh my\u2026what kind of multispectral imager can\u2019t
+        capture even a single wavelength of light!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[1]
+      value: "You\u2019re here to fix me up right? Oh please do!"
+      objectReference: {fileID: 0}
     - target: {fileID: 6187821529911711959, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: m_Size.x
       value: 8
@@ -927,6 +1064,103 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       insertIndex: -1
       addedObject: {fileID: 747475519}
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+--- !u!1001 &461315835
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1874076755}
+    m_Modifications:
+    - target: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 19.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3623089025726051021, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_Name
+      value: Craft Size NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: hud
+      value: 
+      objectReference: {fileID: 1026541136}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1223576612}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 1378385865}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: textName
+      value: Test NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[0]
+      value: This satellite is 81 feet wide with its solar panels spread!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[1]
+      value: "That\u2019s as wide as a tennis court is long!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[2]
+      value: Can you believe it?
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[3]
+      value: "I can. We\u2019re on it right now!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033966634432106422, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 32680, guid: 8b3f1b389b9c38c4f885130b9bd683e9, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
 --- !u!1 &465410781 stripped
@@ -1055,6 +1289,14 @@ PrefabInstance:
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameScene
       value: Tardigrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[0]
+      value: "That\u2019s more like it. Time to get back to work."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[1]
+      value: Huh? What, do you want to play my game again?
       objectReference: {fileID: 0}
     - target: {fileID: 6187821529911711959, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: m_Size.x
@@ -2549,6 +2791,14 @@ PrefabInstance:
       propertyPath: minigameScene
       value: Pidgeon
       objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[0]
+      value: "Phew! That wasn\u2019t pleasant! Glad to be back in shape!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[1]
+      value: Oh, were you wanting to play my game again?
+      objectReference: {fileID: 0}
     - target: {fileID: 6187821529911711959, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: m_Size.x
       value: 6
@@ -3054,6 +3304,103 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27ab3c91f79735d4d90a7c636ae72962, type: 3}
+--- !u!1001 &883592162
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1874076755}
+    m_Modifications:
+    - target: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -12.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3623089025726051021, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_Name
+      value: Project Start NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: hud
+      value: 
+      objectReference: {fileID: 1026541136}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1223576612}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 1378385865}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: textName
+      value: Test NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[0]
+      value: Our project was selected by NASA waaaaaaaaaaaaaaaaaaa
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[1]
+      value: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[2]
+      value: aaaaaaaaaaaaaaaaaaaaay back in September 2015!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[3]
+      value: "That\u2019s like, a whole bunch of years ago!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033966634432106422, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -471758317, guid: 8b3f1b389b9c38c4f885130b9bd683e9, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
 --- !u!4 &933925571 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4044184719971011459, guid: 27ab3c91f79735d4d90a7c636ae72962, type: 3}
@@ -120960,6 +121307,22 @@ PrefabInstance:
       propertyPath: minigameScene
       value: Spider
       objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[0]
+      value: "Yipee! I\u2019m feeling right as rain!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[1]
+      value: "I can\u2019t wait to scan that asteroid in every color of the rainbow!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[2]
+      value: If you want to play my game again, feel free!
+      objectReference: {fileID: 0}
     - target: {fileID: 6187821529911711959, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: m_Size.x
       value: 8
@@ -121269,6 +121632,27 @@ PrefabInstance:
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameScene
       value: Tardigrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[0]
+      value: "Well isn\u2019t this peachy? "
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[1]
+      value: "The Psyche mission\u2019s only gamma ray and neutron spectrometer,
+        all busted and broken."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[2]
+      value: "I can\u2019t analyze any gamma rays or neutrons like this!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[3]
+      value: "You\u2019ll help me out, right?"
       objectReference: {fileID: 0}
     - target: {fileID: 6187821529911711959, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: m_Size.x
@@ -121977,6 +122361,14 @@ PrefabInstance:
       propertyPath: minigameScene
       value: Jellyfish
       objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[0]
+      value: (The X-Band High Gain Antenna waves a tentacle at you.)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[1]
+      value: "(Looks like it\u2019s offering to let you play its game again.)"
+      objectReference: {fileID: 0}
     - target: {fileID: 6187821529911711959, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: m_Size.x
       value: 12
@@ -122115,6 +122507,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4044184719971011459, guid: 27ab3c91f79735d4d90a7c636ae72962, type: 3}
   m_PrefabInstance: {fileID: 1677357448}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1757840409 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+  m_PrefabInstance: {fileID: 142248278}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1778605949 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
@@ -122236,6 +122633,14 @@ PrefabInstance:
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameScene
       value: Jellyfish
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[0]
+      value: (The X-Band High Gain Antenna shifts slowly.)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[1]
+      value: "(It seems upset that it can\u2019t send any data back home right now.)"
       objectReference: {fileID: 0}
     - target: {fileID: 6187821529911711959, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: m_Size.x
@@ -122386,6 +122791,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1534143120438776227}
+  - {fileID: 319955252}
+  - {fileID: 1938243899}
+  - {fileID: 275516683}
+  - {fileID: 1757840409}
   - {fileID: 1778605949}
   - {fileID: 1406713922}
   - {fileID: 717303041}
@@ -122461,6 +122870,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27ab3c91f79735d4d90a7c636ae72962, type: 3}
+--- !u!4 &1938243899 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+  m_PrefabInstance: {fileID: 461315835}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1938508402
 GameObject:
   m_ObjectHideFlags: 0
@@ -131837,6 +132251,104 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7728891663212304340, guid: 0e827e1ed0b43fb4d865715384e0ba30, type: 3}
   m_PrefabInstance: {fileID: 8341541656337970131}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2103490140
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1874076755}
+    m_Modifications:
+    - target: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 25.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842285699845506885, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3623089025726051021, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_Name
+      value: Asteroid Origin NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: hud
+      value: 
+      objectReference: {fileID: 1026541136}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1223576612}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 1378385865}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: textName
+      value: Test NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[0]
+      value: "Everybody\u2019s been saying that 16 Psyche is part of a planetary
+        core."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[1]
+      value: "I think that it\u2019s a giant space potato."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[2]
+      value: "\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[3]
+      value: "I guess we\u2019ll all find out who\u2019s right when we get there."
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033966634432106422, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -106180965, guid: 8b3f1b389b9c38c4f885130b9bd683e9, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
 --- !u!1 &2110889321
 GameObject:
   m_ObjectHideFlags: 0
@@ -132040,7 +132552,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3623089025726051021, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: m_Name
-      value: NPC
+      value: Damage Repair NPC
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: hud
@@ -132057,6 +132569,24 @@ PrefabInstance:
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: textName
       value: Test NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[0]
+      value: Us repair bots always have to clean everything up. It seems like overkill
+        to me really.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[1]
+      value: "Those little cracks aren\u2019t going to cause us much issue. It\u2019s
+        the critters that really need fixing!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[2]
+      value: You can fix them if you want though. It is technically your job I suppose.
       objectReference: {fileID: 0}
     - target: {fileID: 9033966634432106422, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: m_Sprite

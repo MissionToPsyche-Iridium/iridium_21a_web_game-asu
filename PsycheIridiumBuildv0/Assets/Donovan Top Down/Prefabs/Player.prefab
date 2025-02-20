@@ -201,8 +201,8 @@ MonoBehaviour:
   boundBuffer: 0
   upSprite: {fileID: -425824492, guid: 8b3f1b389b9c38c4f885130b9bd683e9, type: 3}
   downSprite: {fileID: -878061493, guid: 8b3f1b389b9c38c4f885130b9bd683e9, type: 3}
-  leftSprite: {fileID: -908001913, guid: 8b3f1b389b9c38c4f885130b9bd683e9, type: 3}
-  rightSprite: {fileID: 757530710, guid: 8b3f1b389b9c38c4f885130b9bd683e9, type: 3}
+  leftSprite: {fileID: 757530710, guid: 8b3f1b389b9c38c4f885130b9bd683e9, type: 3}
+  rightSprite: {fileID: -908001913, guid: 8b3f1b389b9c38c4f885130b9bd683e9, type: 3}
   gameManager: {fileID: 0}
   playerInput: {fileID: 0}
 --- !u!50 &4933099324961450420
