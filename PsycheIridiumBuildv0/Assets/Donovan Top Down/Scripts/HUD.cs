@@ -40,6 +40,7 @@ public class HUD : MonoBehaviour
 
     [Header("Damage")]
     [SerializeField] TMP_Text damageIndicator;
+    [SerializeField] TMP_Text turboIndicator;
 
     private void Start()
     {
@@ -99,6 +100,7 @@ public class HUD : MonoBehaviour
         playerController.ExitInteraction();
     }
 
+    // Places the damaged creature indicators on the minimap.
     private void SetupMinimap()
     {
         // Move the damaged creature indicators to the correct spots.
@@ -119,6 +121,7 @@ public class HUD : MonoBehaviour
         rectTransform.localPosition = new Vector3(Mathf.Round(pos.x / 5) * 5, Mathf.Round(pos.y / 5) * 5, 0);
     }
 
+    // Update's the player's position and display of damaged creatures on the minimap.
     private void UpdateMinimap()
     {
         // Update the player indicator's position.
@@ -133,8 +136,22 @@ public class HUD : MonoBehaviour
         creatureIndicatorJ.SetActive(damagedCreatureJ.activeSelf);
     }
 
+    // Updates damage repaired and unlocks TURBO when all damage is repaired.
     public void UpdateDamage(int damage)
     {
-        damageIndicator.text = "Damage Left: " + damage.ToString();
+        if (damage == 0)
+        {
+            damageIndicator.text = "Press T to go TURBO!";
+            playerController.turboUnlocked = true;
+            SetTurbo(false);
+        }
+        else damageIndicator.text = "Damage Left: " + damage.ToString();
+    }
+
+    // Sets the turbo indicator's text.
+    public void SetTurbo(bool turbo)
+    {
+        if (turbo) turboIndicator.text = "TURBO engaged!";
+        else turboIndicator.text = "TURBO disengaged!";
     }
 }

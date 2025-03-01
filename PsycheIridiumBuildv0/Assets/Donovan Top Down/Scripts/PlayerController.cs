@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Security;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -7,8 +8,12 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [Header("Player Settings")]
-    [SerializeField] private float moveSpeed;
     [SerializeField] private Vector2 startPosition;
+    [SerializeField] private float moveSpeed;
+    [SerializeField] private float maxVelocity;
+    [SerializeField] private float turboMultiplier;
+    public bool turboUnlocked = false;
+    private bool turbo = false;
 
     [Header("Map Wrap Bounds")]
     [SerializeField] private float topBound;
@@ -26,6 +31,7 @@ public class PlayerController : MonoBehaviour
     [Header("Object References")]
     [SerializeField] private GameManager gameManager;
     [SerializeField] private PlayerInput playerInput;
+    [SerializeField] private HUD hud;
 
     // Events
     public delegate void InteractEvent();
@@ -43,6 +49,7 @@ public class PlayerController : MonoBehaviour
     private InputAction rightAction;
     private InputAction interactAction;
     private InputAction respawnAction;
+    private InputAction turboAction;
 
     // Other Attributes
     private bool interacting;
@@ -64,10 +71,12 @@ public class PlayerController : MonoBehaviour
         rightAction = inputActions.FindAction("Right");
         interactAction = inputActions.FindAction("Interact");
         respawnAction = inputActions.FindAction("Respawn");
+        turboAction = inputActions.FindAction("Turbo");
 
         // Bind action events.
         interactAction.started += InteractAction_performed;
         respawnAction.started += RespawnAction_performed;
+        turboAction.started += TurboAction_performed;
 
         // Set the initial sprite.
         spriteRenderer.sprite = downSprite;
@@ -101,8 +110,16 @@ public class PlayerController : MonoBehaviour
             // Direction of Velocity
             Vector3 direction = new Vector3(directionX, directionY, 0);
 
+            if (turbo) direction = direction * turboMultiplier;
+
             // Add force to the player.
             if (!interacting) rb.AddForce(direction * moveSpeed);
+
+            // Make sure the player's velocity doesn't surpass the maximum.
+            if (rb.velocity.x > maxVelocity) rb.velocity = new Vector2(maxVelocity, rb.velocity.y);
+            if (rb.velocity.x < -maxVelocity) rb.velocity = new Vector2(-maxVelocity, rb.velocity.y);
+            if (rb.velocity.y > maxVelocity) rb.velocity = new Vector2(rb.velocity.x, maxVelocity);
+            if (rb.velocity.y < -maxVelocity) rb.velocity = new Vector2(rb.velocity.x, -maxVelocity);
         }
         else rb.velocity = Vector3.zero;
 
@@ -141,6 +158,32 @@ public class PlayerController : MonoBehaviour
         rb.velocity = Vector3.zero;
     }
 
+    private void Turbo()
+    {
+        if (turboUnlocked)
+        {
+            if (turbo) turbo = false;
+            else turbo = true;
+        }
+        hud.SetTurbo(turbo);
+    }
+
+    // Event Callbacks
+    public void InteractAction_performed(InputAction.CallbackContext context)
+    {
+        Interact();
+    }
+
+    public void RespawnAction_performed(InputAction.CallbackContext context)
+    {
+        Respawn();
+    }
+
+    public void TurboAction_performed(InputAction.CallbackContext context)
+    {
+        Turbo();
+    }
+
     // Unused event callbacks.
     public void UpAction_performed(InputAction.CallbackContext context)
     {
@@ -160,15 +203,5 @@ public class PlayerController : MonoBehaviour
     public void RightAction_performed(InputAction.CallbackContext context)
     {
 
-    }
-
-    public void InteractAction_performed(InputAction.CallbackContext context)
-    {
-        Interact();
-    }
-
-    public void RespawnAction_performed(InputAction.CallbackContext context)
-    {
-        Respawn();
     }
 }
