@@ -27,6 +27,16 @@ public class HUD : MonoBehaviour
     [Header("Minimap")]
     [SerializeField] GameObject minimap;
     [SerializeField] GameObject minimapIndicator;
+    [SerializeField] GameObject creatureIndicatorS;
+    [SerializeField] GameObject creatureIndicatorT;
+    [SerializeField] GameObject creatureIndicatorP;
+    [SerializeField] GameObject creatureIndicatorJ;
+
+    [Header("Damaged Creature References")]
+    [SerializeField] GameObject damagedCreatureS;
+    [SerializeField] GameObject damagedCreatureT;
+    [SerializeField] GameObject damagedCreatureP;
+    [SerializeField] GameObject damagedCreatureJ;
 
     [Header("Damage")]
     [SerializeField] TMP_Text damageIndicator;
@@ -41,6 +51,9 @@ public class HUD : MonoBehaviour
         previewName = minigamePreview.transform.Find("Name").GetComponent<TMP_Text>();
         previewDesc = minigamePreview.transform.Find("Description").GetComponent<TMP_Text>();
         previewImage = minigamePreview.transform.Find("Image").GetComponent<SpriteRenderer>();
+
+        // Minimap Setup
+        SetupMinimap();
     }
 
     private void Update()
@@ -86,11 +99,38 @@ public class HUD : MonoBehaviour
         playerController.ExitInteraction();
     }
 
+    private void SetupMinimap()
+    {
+        // Move the damaged creature indicators to the correct spots.
+        RectTransform rectTransform = creatureIndicatorS.GetComponent<RectTransform>();
+        Vector3 pos = damagedCreatureS.transform.position;
+        rectTransform.localPosition = new Vector3(Mathf.Round(pos.x / 5) * 5, Mathf.Round(pos.y / 5) * 5, 0);
+
+        rectTransform = creatureIndicatorT.GetComponent<RectTransform>();
+        pos = damagedCreatureT.transform.position;
+        rectTransform.localPosition = new Vector3(Mathf.Round(pos.x / 5) * 5, Mathf.Round(pos.y / 5) * 5, 0);
+
+        rectTransform = creatureIndicatorP.GetComponent<RectTransform>();
+        pos = damagedCreatureP.transform.position;
+        rectTransform.localPosition = new Vector3(Mathf.Round(pos.x / 5) * 5, Mathf.Round(pos.y / 5) * 5, 0);
+
+        rectTransform = creatureIndicatorJ.GetComponent<RectTransform>();
+        pos = damagedCreatureJ.transform.position;
+        rectTransform.localPosition = new Vector3(Mathf.Round(pos.x / 5) * 5, Mathf.Round(pos.y / 5) * 5, 0);
+    }
+
     private void UpdateMinimap()
     {
+        // Update the player indicator's position.
         RectTransform rectTransform = minimapIndicator.GetComponent<RectTransform>();
         Vector3 playerPos = playerController.transform.position;
-        rectTransform.localPosition = new Vector3(Mathf.Round(playerPos.x / 10) * 10, Mathf.Round(playerPos.y / 10) * 10, 0);
+        rectTransform.localPosition = new Vector3(Mathf.Round(playerPos.x / 5) * 5, Mathf.Round(playerPos.y / 5) * 5, 0);
+
+        // Update the indicators for each of the damaged creatures.
+        creatureIndicatorS.SetActive(damagedCreatureS.activeSelf);
+        creatureIndicatorT.SetActive(damagedCreatureT.activeSelf);
+        creatureIndicatorP.SetActive(damagedCreatureP.activeSelf);
+        creatureIndicatorJ.SetActive(damagedCreatureJ.activeSelf);
     }
 
     public void UpdateDamage(int damage)

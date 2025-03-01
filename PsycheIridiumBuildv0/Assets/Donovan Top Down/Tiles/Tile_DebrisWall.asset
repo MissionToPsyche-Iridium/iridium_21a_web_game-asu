@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: Tile_DebrisWall
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 2092175236, guid: 3c5703b65cf79d942bf22e3cf331ff4c, type: 3}
+  m_Sprite: {fileID: -9184442, guid: c4b491555663885448d839924a9ad1f2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
