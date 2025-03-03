@@ -38,9 +38,14 @@ public class HUD : MonoBehaviour
     [SerializeField] GameObject damagedCreatureP;
     [SerializeField] GameObject damagedCreatureJ;
 
-    [Header("Damage")]
+    [Header("Status Indicators")]
     [SerializeField] TMP_Text damageIndicator;
     [SerializeField] TMP_Text turboIndicator;
+
+    [Header("Fade")]
+    [SerializeField] Image fade;
+    [SerializeField] float fadeFrames;
+    [SerializeField] float fadeDuration;
 
     private void Start()
     {
@@ -61,6 +66,7 @@ public class HUD : MonoBehaviour
     {
         UpdateMinimap();
     }
+
     public void ShowTextbox(string textName, string text)
     {
         textboxName.text = textName;
@@ -153,5 +159,22 @@ public class HUD : MonoBehaviour
     {
         if (turbo) turboIndicator.text = "TURBO engaged!";
         else turboIndicator.text = "TURBO disengaged!";
+    }
+
+    public void FadeInInstant()
+    {
+        fade.color = new Color(fade.color.r, fade.color.g, fade.color.b, 0);
+        fade.gameObject.SetActive(false);
+    }
+
+    public IEnumerator FadeIn()
+    {
+        while (fade.color.a > 0)
+        {
+            fade.color = new Color(fade.color.r, fade.color.g, fade.color.b, fade.color.a - (1 / fadeFrames));
+            yield return new WaitForSeconds(fadeDuration / fadeFrames);
+        }
+        fade.color = new Color(fade.color.r, fade.color.g, fade.color.b, 0);
+        fade.gameObject.SetActive(false);
     }
 }

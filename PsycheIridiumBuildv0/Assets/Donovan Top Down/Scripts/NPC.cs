@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Security;
 using UnityEngine;
 
 public class NPC : MonoBehaviour
@@ -12,6 +13,10 @@ public class NPC : MonoBehaviour
     [SerializeField] private string textName;
     [SerializeField] private string[] text;
 
+    [Header("Cutscene")]
+    [SerializeField] private bool isCutscene;
+    [SerializeField] private bool fadeInAtEnd;
+
     [Header("Minigame")]
     [SerializeField] private bool minigameNPC;
     [SerializeField] private string minigameScene;
@@ -21,6 +26,7 @@ public class NPC : MonoBehaviour
 
     private bool playerNearby = false;
     private bool speaking = false;
+    private bool cutsceneStarted = false;
     private int currentTextbox = -1;
 
     private void Start()
@@ -28,10 +34,22 @@ public class NPC : MonoBehaviour
         player.Interact += Interacted;
     }
 
-    private void Interacted()
+    public void StartCutscene()
     {
-        if (playerNearby)
+        if (isCutscene)
         {
+            cutsceneStarted = true;
+            Interacted();
+        }
+    }
+
+    public void Interacted()
+    {
+        // Check to make sure the player is nearby.
+        // Cutscenes bypass this check since they are started from scripts.
+        if ((!isCutscene && playerNearby) || (isCutscene && cutsceneStarted))
+        {
+            // First Interaction
             if (!player.Interacting() && !speaking)
             {
                 // Freeze player and show first textbox.
@@ -41,14 +59,19 @@ public class NPC : MonoBehaviour
                 hud.ShowTextbox(textName, text[currentTextbox]);
                 currentTextbox++;
             }
+            // Middle Interactions
             else if (speaking && currentTextbox < text.Length)
             {
                 // Advance to next textbox.
                 hud.ShowTextbox(textName, text[currentTextbox]);
                 currentTextbox++;
             }
+            // Last Interaction
             else if (speaking && currentTextbox >= text.Length)
             {
+                // If the NPC fades in after dialogue, do so.
+                if (fadeInAtEnd) StartCoroutine(hud.FadeIn());
+
                 // Hide textbox and show minigame preview.
                 if (minigameNPC) hud.ShowMinigamePreview(minigameScene, minigameName, minigameDesc);
                 // End interaction, hide textbox, and unfreeze player.
@@ -58,6 +81,7 @@ public class NPC : MonoBehaviour
                 hud.HideTextbox();
                 currentTextbox = -1;
                 speaking = false;
+                cutsceneStarted = false;
             }
         }
     }

@@ -8,6 +8,10 @@ public class GameManager : MonoBehaviour
     [Header("Object References")]
     [SerializeField] HUD hud;
 
+    [Header("Cutscene NPCs")]
+    [SerializeField] private NPC introNPC;
+    [SerializeField] private NPC outroNPC;
+
     [Header("Minigame NPCs")]
     [SerializeField] private GameObject spiderB;
     [SerializeField] private GameObject spiderR;
@@ -18,30 +22,49 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject pidgeonB;
     [SerializeField] private GameObject pidgeonR;
 
-    [Header("Progress")]
+    [Header("Progress (Saved Across Minigames)")]
+    public bool introComplete = false;
+    public bool outroComplete = false;
     public bool spiderRepaired = false;
     public bool jellyfishRepaired = false;
     public bool tardigradeRepaired = false;
     public bool pidgeonRepaired = false;
+    public byte damageRepaired = 0;
 
     [Header("Damage")]
     [SerializeField] private Transform damageParent;
-    private int damageLeft;
 
     private void Start()
     {
-        damageLeft = damageParent.childCount;
-        hud.UpdateDamage(damageLeft);
+        // Play the outro or intro cutscene if the conditions are right.
+        if (spiderRepaired && jellyfishRepaired && tardigradeRepaired && pidgeonRepaired && !outroComplete)
+        {
+            outroComplete = true;
+            hud.FadeInInstant();
+            outroNPC.StartCutscene();
+        }
+        else if (!introComplete)
+        {
+            introComplete = true;
+            introNPC.StartCutscene();
+        }
+        else hud.FadeInInstant();
 
+        // Update the damage indicator on the HUD.
+        hud.UpdateDamage(damageParent.childCount - damageRepaired);
+
+        // Set the currently active mechanical creature NPCs based on their repaired status.
         UpdateNPCs();
     }
 
+    // Fix an optional damage point.
     public void FixDamage()
     {
-        damageLeft--;
-        hud.UpdateDamage(damageLeft);
+        damageRepaired++;
+        hud.UpdateDamage(damageParent.childCount - damageRepaired);
     }
 
+    // Sets whether the damaged or repaired version of each mechanical creature NPC is shown.
     public void UpdateNPCs()
     {
         if (spiderRepaired)
