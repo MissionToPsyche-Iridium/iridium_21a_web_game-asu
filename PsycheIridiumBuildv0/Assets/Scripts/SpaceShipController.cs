@@ -73,3 +73,4 @@ public class SpaceshipController : MonoBehaviour
         transform.position = newPosition;
     }
 }
+
