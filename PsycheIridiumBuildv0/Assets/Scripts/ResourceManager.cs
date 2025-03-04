@@ -11,6 +11,7 @@ public class ResourceManager : MonoBehaviour
     {
         public Asteroid.AsteroidType type;
         public Sprite icon;
+
         public int amount;
     }
 
