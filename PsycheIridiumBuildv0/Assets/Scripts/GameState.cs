@@ -16,7 +16,7 @@ public class GameState : MonoBehaviour
 
     public Level currentLevel = Level.None;
 
-    // Total resources
+    // Total resources (across all levels)
     public int iron = 0;
     public int gold = 0;
     public int tungsten = 0;
