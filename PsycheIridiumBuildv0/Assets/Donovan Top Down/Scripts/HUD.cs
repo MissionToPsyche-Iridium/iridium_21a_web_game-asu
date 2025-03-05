@@ -47,6 +47,12 @@ public class HUD : MonoBehaviour
     [SerializeField] float fadeFrames;
     [SerializeField] float fadeDuration;
 
+    [Header("Sound Effects")]
+    [SerializeField] AudioClip selectSFX;
+    [SerializeField] AudioClip cancelSFX;
+    [SerializeField] AudioClip repairSFX;
+    [SerializeField] AudioClip woopSFX;
+
     private void Start()
     {
         // Textbox Components
@@ -94,6 +100,13 @@ public class HUD : MonoBehaviour
     public void StartMinigame()
     {
         Debug.Log("START MINIGAME " + previewScene + "!");
+        GetComponent<AudioSource>().PlayOneShot(selectSFX);
+        HideMinigamePreview();
+    }
+
+    public void CancelMinigame()
+    {
+        GetComponent<AudioSource>().PlayOneShot(cancelSFX);
         HideMinigamePreview();
     }
 
@@ -143,15 +156,20 @@ public class HUD : MonoBehaviour
     }
 
     // Updates damage repaired and unlocks TURBO when all damage is repaired.
-    public void UpdateDamage(int damage)
+    public void UpdateDamage(int damage, bool playAudio)
     {
         if (damage == 0)
         {
             damageIndicator.text = "Press T to go TURBO!";
             playerController.turboUnlocked = true;
             SetTurbo(false);
+            if (playAudio) GetComponent<AudioSource>().PlayOneShot(woopSFX);
         }
-        else damageIndicator.text = "Damage Left: " + damage.ToString();
+        else
+        {
+            damageIndicator.text = "Damage Left: " + damage.ToString();
+            if (playAudio) GetComponent<AudioSource>().PlayOneShot(repairSFX);
+        }
     }
 
     // Sets the turbo indicator's text.

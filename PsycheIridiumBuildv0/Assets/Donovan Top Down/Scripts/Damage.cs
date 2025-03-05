@@ -21,7 +21,7 @@ public class Damage : MonoBehaviour
         {
             manager.FixDamage();
             player.Interact -= Interacted;
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 

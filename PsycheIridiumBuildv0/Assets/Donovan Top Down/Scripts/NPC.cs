@@ -24,6 +24,10 @@ public class NPC : MonoBehaviour
     [SerializeField] private string minigameDesc;
     [SerializeField] private Sprite minigameThumbnail;
 
+    [Header("Audio")]
+    [SerializeField] AudioSource audioSource;
+
+
     private bool playerNearby = false;
     private bool speaking = false;
     private bool cutsceneStarted = false;
@@ -58,6 +62,7 @@ public class NPC : MonoBehaviour
                 currentTextbox = 0;
                 hud.ShowTextbox(textName, text[currentTextbox]);
                 currentTextbox++;
+                if (!isCutscene) audioSource.Play();
             }
             // Middle Interactions
             else if (speaking && currentTextbox < text.Length)
@@ -65,6 +70,7 @@ public class NPC : MonoBehaviour
                 // Advance to next textbox.
                 hud.ShowTextbox(textName, text[currentTextbox]);
                 currentTextbox++;
+                audioSource.Play();
             }
             // Last Interaction
             else if (speaking && currentTextbox >= text.Length)
@@ -82,6 +88,7 @@ public class NPC : MonoBehaviour
                 currentTextbox = -1;
                 speaking = false;
                 cutsceneStarted = false;
+                audioSource.Play();
             }
         }
     }

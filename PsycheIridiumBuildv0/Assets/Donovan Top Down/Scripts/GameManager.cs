@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
         else hud.FadeInInstant();
 
         // Update the damage indicator on the HUD.
-        hud.UpdateDamage(damageParent.childCount - damageRepaired);
+        hud.UpdateDamage(damageParent.childCount - damageRepaired, false);
 
         // Set the currently active mechanical creature NPCs based on their repaired status.
         UpdateNPCs();
@@ -60,8 +60,8 @@ public class GameManager : MonoBehaviour
     // Fix an optional damage point.
     public void FixDamage()
     {
-        damageRepaired++;
-        hud.UpdateDamage(damageParent.childCount - damageRepaired);
+        damageRepaired += 1;
+        hud.UpdateDamage(damageParent.childCount - damageRepaired, true);
     }
 
     // Sets whether the damaged or repaired version of each mechanical creature NPC is shown.
