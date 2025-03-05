@@ -27,6 +27,8 @@ public class EditorManager : MonoBehaviour
     const float gridWidth = 8f;
     const float gridHeight = 4f;
 
+    [SerializeField] GameObject editText;
+    [SerializeField] GameObject controlText;
 
     // Start is called before the first frame update
     void Start()
@@ -115,6 +117,9 @@ public class EditorManager : MonoBehaviour
         {
             LoadParts();
         }
+
+        editText.SetActive(true);
+        controlText.SetActive(false);
     }
 
     void LoadParts()
@@ -156,6 +161,9 @@ public class EditorManager : MonoBehaviour
 
         // Zoom out camera
         Camera.main.orthographicSize = 10f;
+
+        editText.SetActive(false);
+        controlText.SetActive(true);
     }
 
     static Vector3 GetMouseGridPosition()
