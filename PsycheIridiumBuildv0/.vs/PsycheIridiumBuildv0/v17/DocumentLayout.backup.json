@@ -1,0 +1,175 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\super\\GitHub\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AE02947F-88C2-07D7-D715-C046E5548E6F}|Assembly-CSharp.csproj|C:\\Users\\super\\GitHub\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\assets\\building minigame - jake gresh\\scripts\\backgroundcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE02947F-88C2-07D7-D715-C046E5548E6F}|Assembly-CSharp.csproj|solutionrelative:assets\\building minigame - jake gresh\\scripts\\backgroundcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE02947F-88C2-07D7-D715-C046E5548E6F}|Assembly-CSharp.csproj|C:\\Users\\super\\GitHub\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\assets\\building minigame - jake gresh\\scripts\\goalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE02947F-88C2-07D7-D715-C046E5548E6F}|Assembly-CSharp.csproj|solutionrelative:assets\\building minigame - jake gresh\\scripts\\goalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE02947F-88C2-07D7-D715-C046E5548E6F}|Assembly-CSharp.csproj|C:\\Users\\super\\GitHub\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\assets\\building minigame - jake gresh\\scripts\\obstaclecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE02947F-88C2-07D7-D715-C046E5548E6F}|Assembly-CSharp.csproj|solutionrelative:assets\\building minigame - jake gresh\\scripts\\obstaclecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE02947F-88C2-07D7-D715-C046E5548E6F}|Assembly-CSharp.csproj|c:\\users\\super\\github\\iridium_21a_web_game-asu\\psycheiridiumbuildv0\\assets\\building minigame - jake gresh\\scripts\\spacecraftcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE02947F-88C2-07D7-D715-C046E5548E6F}|Assembly-CSharp.csproj|solutionrelative:assets\\building minigame - jake gresh\\scripts\\spacecraftcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE02947F-88C2-07D7-D715-C046E5548E6F}|Assembly-CSharp.csproj|C:\\Users\\super\\GitHub\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\assets\\building minigame - jake gresh\\scripts\\speedometercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE02947F-88C2-07D7-D715-C046E5548E6F}|Assembly-CSharp.csproj|solutionrelative:assets\\building minigame - jake gresh\\scripts\\speedometercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE02947F-88C2-07D7-D715-C046E5548E6F}|Assembly-CSharp.csproj|C:\\Users\\super\\GitHub\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\assets\\building minigame - jake gresh\\scripts\\editormanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE02947F-88C2-07D7-D715-C046E5548E6F}|Assembly-CSharp.csproj|solutionrelative:assets\\building minigame - jake gresh\\scripts\\editormanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE02947F-88C2-07D7-D715-C046E5548E6F}|Assembly-CSharp.csproj|c:\\users\\super\\github\\iridium_21a_web_game-asu\\psycheiridiumbuildv0\\assets\\building minigame - jake gresh\\scripts\\partstorage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE02947F-88C2-07D7-D715-C046E5548E6F}|Assembly-CSharp.csproj|solutionrelative:assets\\building minigame - jake gresh\\scripts\\partstorage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE02947F-88C2-07D7-D715-C046E5548E6F}|Assembly-CSharp.csproj|C:\\Users\\super\\GitHub\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\assets\\building minigame - jake gresh\\scripts\\thrustercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE02947F-88C2-07D7-D715-C046E5548E6F}|Assembly-CSharp.csproj|solutionrelative:assets\\building minigame - jake gresh\\scripts\\thrustercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE02947F-88C2-07D7-D715-C046E5548E6F}|Assembly-CSharp.csproj|C:\\Users\\super\\GitHub\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\assets\\building minigame - jake gresh\\scripts\\obstaclemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE02947F-88C2-07D7-D715-C046E5548E6F}|Assembly-CSharp.csproj|solutionrelative:assets\\building minigame - jake gresh\\scripts\\obstaclemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SpeedometerController.cs",
+              "DocumentMoniker": "C:\\Users\\super\\GitHub\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\Assets\\Building Minigame - Jake Gresh\\Scripts\\SpeedometerController.cs",
+              "RelativeDocumentMoniker": "Assets\\Building Minigame - Jake Gresh\\Scripts\\SpeedometerController.cs",
+              "ToolTip": "C:\\Users\\super\\GitHub\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\Assets\\Building Minigame - Jake Gresh\\Scripts\\SpeedometerController.cs",
+              "RelativeToolTip": "Assets\\Building Minigame - Jake Gresh\\Scripts\\SpeedometerController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T18:46:28.27Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SpacecraftController.cs",
+              "DocumentMoniker": "C:\\Users\\super\\GitHub\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\Assets\\Building Minigame - Jake Gresh\\Scripts\\SpacecraftController.cs",
+              "RelativeDocumentMoniker": "Assets\\Building Minigame - Jake Gresh\\Scripts\\SpacecraftController.cs",
+              "ToolTip": "C:\\Users\\super\\GitHub\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\Assets\\Building Minigame - Jake Gresh\\Scripts\\SpacecraftController.cs",
+              "RelativeToolTip": "Assets\\Building Minigame - Jake Gresh\\Scripts\\SpacecraftController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-05T23:32:13.235Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EditorManager.cs",
+              "DocumentMoniker": "C:\\Users\\super\\GitHub\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\Assets\\Building Minigame - Jake Gresh\\Scripts\\EditorManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Building Minigame - Jake Gresh\\Scripts\\EditorManager.cs",
+              "ToolTip": "C:\\Users\\super\\GitHub\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\Assets\\Building Minigame - Jake Gresh\\Scripts\\EditorManager.cs",
+              "RelativeToolTip": "Assets\\Building Minigame - Jake Gresh\\Scripts\\EditorManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-30T16:09:14.222Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BackgroundController.cs",
+              "DocumentMoniker": "C:\\Users\\super\\GitHub\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\Assets\\Building Minigame - Jake Gresh\\Scripts\\BackgroundController.cs",
+              "RelativeDocumentMoniker": "Assets\\Building Minigame - Jake Gresh\\Scripts\\BackgroundController.cs",
+              "ToolTip": "C:\\Users\\super\\GitHub\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\Assets\\Building Minigame - Jake Gresh\\Scripts\\BackgroundController.cs",
+              "RelativeToolTip": "Assets\\Building Minigame - Jake Gresh\\Scripts\\BackgroundController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwCcAAABiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-30T16:36:06.352Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GoalController.cs",
+              "DocumentMoniker": "C:\\Users\\super\\GitHub\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\Assets\\Building Minigame - Jake Gresh\\Scripts\\GoalController.cs",
+              "RelativeDocumentMoniker": "Assets\\Building Minigame - Jake Gresh\\Scripts\\GoalController.cs",
+              "ToolTip": "C:\\Users\\super\\GitHub\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\Assets\\Building Minigame - Jake Gresh\\Scripts\\GoalController.cs",
+              "RelativeToolTip": "Assets\\Building Minigame - Jake Gresh\\Scripts\\GoalController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-30T16:28:32.115Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ObstacleController.cs",
+              "DocumentMoniker": "C:\\Users\\super\\GitHub\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\Assets\\Building Minigame - Jake Gresh\\Scripts\\ObstacleController.cs",
+              "RelativeDocumentMoniker": "Assets\\Building Minigame - Jake Gresh\\Scripts\\ObstacleController.cs",
+              "ToolTip": "C:\\Users\\super\\GitHub\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\Assets\\Building Minigame - Jake Gresh\\Scripts\\ObstacleController.cs",
+              "RelativeToolTip": "Assets\\Building Minigame - Jake Gresh\\Scripts\\ObstacleController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-30T16:45:13.223Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PartStorage.cs",
+              "DocumentMoniker": "C:\\Users\\super\\GitHub\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\Assets\\Building Minigame - Jake Gresh\\Scripts\\PartStorage.cs",
+              "RelativeDocumentMoniker": "Assets\\Building Minigame - Jake Gresh\\Scripts\\PartStorage.cs",
+              "ToolTip": "C:\\Users\\super\\GitHub\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\Assets\\Building Minigame - Jake Gresh\\Scripts\\PartStorage.cs",
+              "RelativeToolTip": "Assets\\Building Minigame - Jake Gresh\\Scripts\\PartStorage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-05T23:40:56.333Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ObstacleManager.cs",
+              "DocumentMoniker": "C:\\Users\\super\\GitHub\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\Assets\\Building Minigame - Jake Gresh\\Scripts\\ObstacleManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Building Minigame - Jake Gresh\\Scripts\\ObstacleManager.cs",
+              "ToolTip": "C:\\Users\\super\\GitHub\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\Assets\\Building Minigame - Jake Gresh\\Scripts\\ObstacleManager.cs",
+              "RelativeToolTip": "Assets\\Building Minigame - Jake Gresh\\Scripts\\ObstacleManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-30T00:50:02.436Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ThrusterController.cs",
+              "DocumentMoniker": "C:\\Users\\super\\GitHub\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\Assets\\Building Minigame - Jake Gresh\\Scripts\\ThrusterController.cs",
+              "RelativeDocumentMoniker": "Assets\\Building Minigame - Jake Gresh\\Scripts\\ThrusterController.cs",
+              "ToolTip": "C:\\Users\\super\\GitHub\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\Assets\\Building Minigame - Jake Gresh\\Scripts\\ThrusterController.cs",
+              "RelativeToolTip": "Assets\\Building Minigame - Jake Gresh\\Scripts\\ThrusterController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-05T23:26:24.1Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
