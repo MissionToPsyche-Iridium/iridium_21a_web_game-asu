@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -30,9 +31,13 @@ public class EditorManager : MonoBehaviour
     [SerializeField] GameObject editText;
     [SerializeField] GameObject controlText;
 
+    AudioSource[] audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponents<AudioSource>();
+
         // Assign keycodes to each part
         for (int i = 0; i < partPrefabs.Length; i++)
         {
@@ -42,6 +47,7 @@ public class EditorManager : MonoBehaviour
         Physics2D.gravity = Vector2.zero;
 
         StartEditMode();
+
     }
 
     // Update is called once per frame
@@ -59,7 +65,7 @@ public class EditorManager : MonoBehaviour
 
             SelectedPartEffects();
 
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButtonDown(0))
             {
                 PlacePart();
             }
@@ -179,7 +185,10 @@ public class EditorManager : MonoBehaviour
     void PlacePart()
     {
         // Replace the selected position's part with the selected part
-        DeletePart();
+        if (!DeletePart())
+        {
+            PlayBuildSound();
+        }
         GameObject lastPlacedPart = Instantiate(selectedPrefab, spacecraft.transform);
         lastPlacedPart.transform.SetPositionAndRotation(GetMouseGridPosition(), selectedPart.transform.rotation);
         placedParts.Add(lastPlacedPart);
@@ -187,7 +196,13 @@ public class EditorManager : MonoBehaviour
         // Store the part in partStorage
         partStorage[GetMouseGridPosition()] = new Tuple<KeyCode, Quaternion>(selectedPartKeyCode, lastPlacedPart.transform.rotation);
     }
-    void DeletePart()
+    void PlayBuildSound()
+    {
+        int randomIndex = UnityEngine.Random.Range(0, audioSource.Length);
+        audioSource[randomIndex].pitch = UnityEngine.Random.Range(1.3f, 1.5f);
+        audioSource[randomIndex].Play();
+    }
+    bool DeletePart()
     {
         foreach (GameObject part in placedParts)
         {
@@ -196,9 +211,17 @@ public class EditorManager : MonoBehaviour
                 placedParts.Remove(part);
                 partStorage.Remove(GetMouseGridPosition());
                 Destroy(part);
-                return;
+                PlayDeleteSound();
+                return true;
             }
         }
+        return false;
+    }
+    void PlayDeleteSound()
+    {
+        int randomIndex = UnityEngine.Random.Range(0, audioSource.Length);
+        audioSource[randomIndex].pitch = UnityEngine.Random.Range(1.5f, 1.6f);
+        audioSource[randomIndex].Play();
     }
     void ChoosePart(KeyCode keyCode)
     {
