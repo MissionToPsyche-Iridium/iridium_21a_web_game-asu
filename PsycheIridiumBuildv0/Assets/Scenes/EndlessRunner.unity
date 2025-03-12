@@ -503,8 +503,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -227, y: -69}
-  m_SizeDelta: {x: 60.263, y: 21.453}
+  m_AnchoredPosition: {x: -198.76, y: -69}
+  m_SizeDelta: {x: 74.382, y: 21.453}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &282829270
 MonoBehaviour:
@@ -526,7 +526,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Distance Travelled :'
+  m_text: 'Mission Distance Travelled :'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -705,8 +705,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 153.38, y: -69}
-  m_SizeDelta: {x: 60.263, y: 21.453}
+  m_AnchoredPosition: {x: 172.21, y: -69}
+  m_SizeDelta: {x: 69.679, y: 21.453}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &425594303
 MonoBehaviour:
@@ -728,7 +728,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Time of Flight :'
+  m_text: 'Mission Time of Flight :'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -2665,8 +2665,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 231.57, y: 88}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 251.65715, y: 102.84703}
+  m_SizeDelta: {x: 232.0803, y: 38.8794}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1401368943
 MonoBehaviour:
