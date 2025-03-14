@@ -1560,7 +1560,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 881896470}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: 6fe28944b5d7e6b11939214cbb3b4b7a, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &881896470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2208,6 +2220,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1075742688}
   m_CullTransparentMesh: 1
+--- !u!1 &1122445298
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1122445300}
+  - component: {fileID: 1122445299}
+  m_Layer: 0
+  m_Name: GoBackToPregame
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1122445299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122445298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fe28944b5d7e6b11939214cbb3b4b7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1122445300
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122445298}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.8974321, y: 0.5380903, z: -0.06791213}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1130199602
 GameObject:
   m_ObjectHideFlags: 0
@@ -3814,7 +3870,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f023ee5d1dbcad8b6aee50f170dbc104, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicClip: {fileID: 8300000, guid: d5bed913abf63e1aba147d6408fd0a16, type: 3}
 --- !u!4 &1766830393
 Transform:
   m_ObjectHideFlags: 0
@@ -4385,3 +4440,4 @@ SceneRoots:
   - {fileID: 1710346369}
   - {fileID: 1299272054}
   - {fileID: 1766830393}
+  - {fileID: 1122445300}
