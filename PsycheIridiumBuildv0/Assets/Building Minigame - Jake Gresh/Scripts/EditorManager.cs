@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.U2D;
@@ -13,7 +14,7 @@ public class EditorManager : MonoBehaviour
     [SerializeField] public GameObject spacecraft;
 
     [SerializeField] GameObject[] partPrefabs;
-    List<KeyCode> partKeyCodes = new();
+    readonly List<KeyCode> partKeyCodes = new();
 
     static GameObject selectedPrefab;
     static GameObject selectedPart;
@@ -22,8 +23,9 @@ public class EditorManager : MonoBehaviour
     public static Dictionary<Vector3, Tuple<KeyCode, Quaternion>> partStorage = PartStorage.partStorage;
     public static KeyCode selectedPartKeyCode;
 
-    HashSet<GameObject> connectedParts = new();
+    readonly HashSet<GameObject> connectedParts = new();
     [SerializeField] GameObject ConnectionAlertText;
+    [SerializeField] GameObject NoThrusterAlertText;
 
     const float gridWidth = 8f;
     const float gridHeight = 4f;
@@ -91,13 +93,6 @@ public class EditorManager : MonoBehaviour
             {
                 RotatePart(-90f);
             }
-
-            if (placedParts.Count > 0 && !AreAllPartsConnected())
-            {
-                ConnectionAlertText.SetActive(true);
-                return;
-            }
-            ConnectionAlertText.SetActive(false);
         }
         else
         {
@@ -149,8 +144,20 @@ public class EditorManager : MonoBehaviour
 
     void EndEditMode()
     {
-        if (placedParts.Count == 0 || ConnectionAlertText.activeSelf == true)
+        ConnectionAlertText.SetActive(false);
+        NoThrusterAlertText.SetActive(false);
+        
+        // check for connection
+        if (placedParts.Count == 0 || !AreAllPartsConnected())
         {
+            ConnectionAlertText.SetActive(true);
+            return;
+        }
+
+        // check for a thruster in partstorage
+        if (!partStorage.Values.Any(tuple => tuple.Item1 == partKeyCodes[1]))
+        {
+            NoThrusterAlertText.SetActive(true);
             return;
         }
 
