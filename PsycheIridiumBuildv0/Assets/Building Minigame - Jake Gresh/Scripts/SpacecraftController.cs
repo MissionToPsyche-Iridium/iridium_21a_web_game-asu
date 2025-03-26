@@ -1,4 +1,7 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class SpacecraftController : MonoBehaviour
 {
@@ -12,16 +15,27 @@ public class SpacecraftController : MonoBehaviour
     [SerializeField] float velocityLineOffset = 1f;
     [SerializeField] GameObject velocityIndicatorTip;
 
+    [SerializeField] UnityEngine.UI.Slider damageBar;
+    [SerializeField] TMP_Text damageText;
+    public static float damage;
+
+    public static int activeThrusters;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        
         velocityIndicatorLine = GetComponent<LineRenderer>();
+
+        damage = 0f;
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(activeThrusters);
+
         // Update velocity indicator arrow
         if (EditorManager.IsEditMode || rb.velocity.magnitude == 0)
         {
@@ -42,5 +56,10 @@ public class SpacecraftController : MonoBehaviour
                 CenterOfMass + new Vector3(rb.velocity.x, rb.velocity.y, 0f),
                 Quaternion.Euler(0f, 0f, Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg - 90f));
         }
+
+        // Update damage bar
+        damageText.gameObject.SetActive(!EditorManager.IsEditMode);
+        damageBar.value = damage;
+        damageText.text = $"Damage: {(int)(damage * 100)}%";
     }
 }

@@ -49,7 +49,6 @@ public class EditorManager : MonoBehaviour
         Physics2D.gravity = Vector2.zero;
 
         StartEditMode();
-
     }
 
     // Update is called once per frame
@@ -60,7 +59,12 @@ public class EditorManager : MonoBehaviour
             EndEditMode();
         }
 
-        if (IsEditMode)
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            Camera.main.gameObject.GetComponent<CameraController>().Shake(.15f, .4f);
+        }
+
+            if (IsEditMode)
         {
             // Selected part follows cursor
             selectedPart.transform.position = GetMouseGridPosition();

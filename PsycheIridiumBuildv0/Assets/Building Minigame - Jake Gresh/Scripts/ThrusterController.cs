@@ -23,11 +23,16 @@ public class ThrusterController : MonoBehaviour, IPointerClickHandler
             if (value)
             {
                 audioSource.PlayOneShot(onSound);
+                SpacecraftController.activeThrusters += 1;
             }
             else
             {
                 if (!EditorManager.IsEditMode)
+                {
                     audioSource.PlayOneShot(offSound);
+                    if (SpacecraftController.activeThrusters > 0)
+                        SpacecraftController.activeThrusters -= 1;
+                }
             }
         }
     }
@@ -46,7 +51,9 @@ public class ThrusterController : MonoBehaviour, IPointerClickHandler
     {
         if (IsOn)
         {
-            spacecraft.AddForce(transform.up * 1f);
+            // add more thrust if speed is low
+            spacecraft.AddForce(transform.up/(spacecraft.velocity.magnitude + 0.1f) + transform.up);
+            //spacecraft.AddForce(transform.up * 1f);
         }
     }
 

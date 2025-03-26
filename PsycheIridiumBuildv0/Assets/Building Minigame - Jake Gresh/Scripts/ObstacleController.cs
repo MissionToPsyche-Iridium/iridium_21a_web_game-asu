@@ -1,8 +1,10 @@
+using System.Collections;
 using UnityEngine;
 
 public class ObstacleController : MonoBehaviour
 {
     AudioSource audioSource;
+    bool isIgnoringCollision = false;
 
     // Start is called before the first frame update
     void Start()
@@ -13,12 +15,25 @@ public class ObstacleController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        //EditorManager.Restart();
-        audioSource.Play();
+        if (!isIgnoringCollision)
+        {
+            //EditorManager.Restart();
+            audioSource.Play();
+            SpacecraftController.damage += 0.1f;
+            StartCoroutine(IgnoreCollisionForSeconds(1f));
+            //Camera.main.gameObject.GetComponent<CameraController>().CameraShake();
+        }
+    }
+
+    IEnumerator IgnoreCollisionForSeconds(float seconds)
+    {
+        isIgnoringCollision = true;
+        yield return new WaitForSeconds(seconds);
+        isIgnoringCollision = false;
     }
 }
