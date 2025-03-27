@@ -6,6 +6,7 @@ public class ObstacleController : MonoBehaviour
     AudioSource audioSource;
     bool isIgnoringCollision = false;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,11 +23,11 @@ public class ObstacleController : MonoBehaviour
     {
         if (!isIgnoringCollision)
         {
-            //EditorManager.Restart();
             audioSource.Play();
-            SpacecraftController.damage += 0.1f;
+            Camera.main.gameObject.GetComponent<CameraController>().Shake(0.3f, 0.15f);
+            SpacecraftController.damage += 0.2f;
+
             StartCoroutine(IgnoreCollisionForSeconds(1f));
-            //Camera.main.gameObject.GetComponent<CameraController>().CameraShake();
         }
     }
 

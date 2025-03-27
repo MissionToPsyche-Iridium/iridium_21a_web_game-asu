@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Transactions;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
@@ -26,7 +24,7 @@ public class CameraController : MonoBehaviour
 
         transform.position = originalPosition;
         if (SpacecraftController.rb != null && SpacecraftController.activeThrusters > 0)
-            ConstantShake(SpacecraftController.rb.velocity.magnitude * .01f);
+            ConstantShake(SpacecraftController.rb.velocity.magnitude * .005f);
     }
 
     public void Shake(float duration, float magnitude)

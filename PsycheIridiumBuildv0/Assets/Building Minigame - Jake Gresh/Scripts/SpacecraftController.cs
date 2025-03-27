@@ -1,7 +1,5 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 public class SpacecraftController : MonoBehaviour
 {
@@ -20,6 +18,8 @@ public class SpacecraftController : MonoBehaviour
     public static float damage;
 
     public static int activeThrusters;
+    
+    [SerializeField] GameObject damageAlertText;
 
     // Start is called before the first frame update
     void Start()
@@ -60,6 +60,11 @@ public class SpacecraftController : MonoBehaviour
         // Update damage bar
         damageText.gameObject.SetActive(!EditorManager.IsEditMode);
         damageBar.value = damage;
-        damageText.text = $"Damage: {(int)(damage * 100)}%";
+        damageText.text = $"Damage Sustained: {(int)(damage * 100)}%";
+        if (damage >= 1f)
+        {
+            Debug.Log("Game Over");
+            EditorManager.Restart(true);
+        }
     }
 }

@@ -53,7 +53,6 @@ public class ThrusterController : MonoBehaviour, IPointerClickHandler
         {
             // add more thrust if speed is low
             spacecraft.AddForce(transform.up/(spacecraft.velocity.magnitude + 0.1f) + transform.up);
-            //spacecraft.AddForce(transform.up * 1f);
         }
     }
 

@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -24,8 +23,9 @@ public class EditorManager : MonoBehaviour
     public static KeyCode selectedPartKeyCode;
 
     readonly HashSet<GameObject> connectedParts = new();
-    [SerializeField] GameObject ConnectionAlertText;
-    [SerializeField] GameObject NoThrusterAlertText;
+    [SerializeField] GameObject connectionAlertText;
+    [SerializeField] GameObject noThrusterAlertText;
+    [SerializeField] GameObject damageAlertText;
 
     const float gridWidth = 8f;
     const float gridHeight = 4f;
@@ -59,12 +59,7 @@ public class EditorManager : MonoBehaviour
             EndEditMode();
         }
 
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            Camera.main.gameObject.GetComponent<CameraController>().Shake(.15f, .4f);
-        }
-
-            if (IsEditMode)
+        if (IsEditMode)
         {
             // Selected part follows cursor
             selectedPart.transform.position = GetMouseGridPosition();
@@ -102,7 +97,7 @@ public class EditorManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.R))
             {
-                Restart();
+                Restart(false);
             }
         }
     }
@@ -148,20 +143,21 @@ public class EditorManager : MonoBehaviour
 
     void EndEditMode()
     {
-        ConnectionAlertText.SetActive(false);
-        NoThrusterAlertText.SetActive(false);
-        
+        connectionAlertText.SetActive(false);
+        noThrusterAlertText.SetActive(false);
+        damageAlertText.SetActive(false);
+
         // check for connection
         if (placedParts.Count == 0 || !AreAllPartsConnected())
         {
-            ConnectionAlertText.SetActive(true);
+            connectionAlertText.SetActive(true);
             return;
         }
 
         // check for a thruster in partstorage
         if (!partStorage.Values.Any(tuple => tuple.Item1 == partKeyCodes[1]))
         {
-            NoThrusterAlertText.SetActive(true);
+            noThrusterAlertText.SetActive(true);
             return;
         }
 
@@ -248,9 +244,13 @@ public class EditorManager : MonoBehaviour
         selectedPart.transform.Rotate(0f, 0f, degrees);
     }
 
-    public static void Restart()
+    public static void Restart(bool fromDamage)
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if (fromDamage)
+        {
+            FindObjectOfType<EditorManager>().damageAlertText.SetActive(true);
+        }
     }
 
     bool AreAllPartsConnected()
