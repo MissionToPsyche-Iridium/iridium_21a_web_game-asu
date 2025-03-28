@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HUD : MonoBehaviour
@@ -102,6 +103,7 @@ public class HUD : MonoBehaviour
         Debug.Log("START MINIGAME " + previewScene + "!");
         GetComponent<AudioSource>().PlayOneShot(selectSFX);
         HideMinigamePreview();
+        SceneManager.LoadScene(previewScene);
     }
 
     public void CancelMinigame()

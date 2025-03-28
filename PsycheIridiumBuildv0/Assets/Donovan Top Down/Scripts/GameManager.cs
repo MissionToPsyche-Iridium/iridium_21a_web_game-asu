@@ -19,8 +19,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject jellyfishR;
     [SerializeField] private GameObject tardigradeB;
     [SerializeField] private GameObject tardigradeR;
-    [SerializeField] private GameObject pidgeonB;
-    [SerializeField] private GameObject pidgeonR;
+    [SerializeField] private GameObject pigeonB;
+    [SerializeField] private GameObject pigeonR;
 
     [Header("Progress (Saved Across Minigames)")]
     public bool introComplete = false;
@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     public bool spiderRepaired = false;
     public bool jellyfishRepaired = false;
     public bool tardigradeRepaired = false;
-    public bool pidgeonRepaired = false;
+    public bool pigeonRepaired = false;
     public byte damageRepaired = 0;
 
     [Header("Damage")]
@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         // Play the outro or intro cutscene if the conditions are right.
-        if (spiderRepaired && jellyfishRepaired && tardigradeRepaired && pidgeonRepaired && !outroComplete)
+        if (spiderRepaired && jellyfishRepaired && tardigradeRepaired && pigeonRepaired && !outroComplete)
         {
             outroComplete = true;
             hud.FadeInInstant();
@@ -100,15 +100,15 @@ public class GameManager : MonoBehaviour
             tardigradeR.SetActive(false);
         }
 
-        if (pidgeonRepaired)
+        if (pigeonRepaired)
         {
-            pidgeonB.SetActive(false);
-            pidgeonR.SetActive(true);
+            pigeonB.SetActive(false);
+            pigeonR.SetActive(true);
         }
         else
         {
-            pidgeonB.SetActive(true);
-            pidgeonR.SetActive(false);
+            pigeonB.SetActive(true);
+            pigeonR.SetActive(false);
         }
     }
 }

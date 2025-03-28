@@ -377,11 +377,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameName
-      value: Pidgeon Minigame
+      value: Pigeon Minigame
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameScene
-      value: Pidgeon
+      value: Pigeon
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: text.Array.size
@@ -1111,8 +1111,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameDesc
-      value: 'Testing Testing 1234 Testing Testing 1234 Testing Testing 1234 Testing
-        Testing 1234 '
+      value: Pieces have broken off of this instrument! To repair it, a spacecraft
+        must be constructed and piloted to retrieve the parts.
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameName
@@ -1120,7 +1120,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameScene
-      value: Spider
+      value: Jake Minigame
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: text.Array.data[0]
@@ -3429,11 +3429,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameName
-      value: Pidgeon Minigame
+      value: Pigeon Minigame
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameScene
-      value: Pidgeon
+      value: Pigeon
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: text.Array.data[0]
@@ -122496,8 +122496,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameDesc
-      value: 'Testing Testing 1234 Testing Testing 1234 Testing Testing 1234 Testing
-        Testing 1234 '
+      value: Pieces have broken off of this instrument! To repair it, a spacecraft
+        must be constructed and piloted to retrieve the parts.
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameName
@@ -122505,7 +122505,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameScene
-      value: Spider
+      value: Jake Minigame
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: text.Array.size
@@ -122790,14 +122790,14 @@ MonoBehaviour:
   jellyfishR: {fileID: 1406713921}
   tardigradeB: {fileID: 2029804996}
   tardigradeR: {fileID: 514335512}
-  pidgeonB: {fileID: 500305395}
-  pidgeonR: {fileID: 644650003}
+  pigeonB: {fileID: 500305395}
+  pigeonR: {fileID: 644650003}
   introComplete: 0
   outroComplete: 0
   spiderRepaired: 0
   jellyfishRepaired: 0
   tardigradeRepaired: 0
-  pidgeonRepaired: 0
+  pigeonRepaired: 0
   damageRepaired: 0
   damageParent: {fileID: 168133439}
 --- !u!4 &1378385866

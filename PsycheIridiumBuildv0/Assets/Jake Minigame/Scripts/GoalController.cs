@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GoalController : MonoBehaviour
 {
@@ -31,6 +32,6 @@ public class GoalController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         audioSource.Play();
-        Time.timeScale = 0f;
+        SceneManager.LoadScene("Donovan Top Down");
     }
 }

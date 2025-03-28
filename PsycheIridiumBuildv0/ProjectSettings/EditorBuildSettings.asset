@@ -4,6 +4,12 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Donovan Top Down/Donovan Top Down.unity
+    guid: 8fe629704f572bd41838b08086e7263d
+  - enabled: 1
+    path: Assets/Jake Minigame/Scenes/Jake Minigame.unity
+    guid: 677fcae352b6b4803bc66163d09747c3
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: d0f7d65ca4ac06046b1c4424da9764c6, type: 2}
