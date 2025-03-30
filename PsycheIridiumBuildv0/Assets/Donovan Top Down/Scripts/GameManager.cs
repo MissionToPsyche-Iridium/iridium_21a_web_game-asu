@@ -22,52 +22,53 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject pigeonB;
     [SerializeField] private GameObject pigeonR;
 
-    [Header("Progress (Saved Across Minigames)")]
-    public bool introComplete = false;
-    public bool outroComplete = false;
-    public bool spiderRepaired = false;
-    public bool jellyfishRepaired = false;
-    public bool tardigradeRepaired = false;
-    public bool pigeonRepaired = false;
-    public byte damageRepaired = 0;
-
     [Header("Damage")]
-    [SerializeField] private Transform damageParent;
+    [SerializeField] Damage[] damageObjects;
 
     private void Start()
     {
         // Play the outro or intro cutscene if the conditions are right.
-        if (spiderRepaired && jellyfishRepaired && tardigradeRepaired && pigeonRepaired && !outroComplete)
+        if (GameData.instance.spiderRepaired && GameData.instance.jellyfishRepaired && GameData.instance.tardigradeRepaired && GameData.instance.pigeonRepaired && !GameData.instance.outroComplete)
         {
-            outroComplete = true;
+            GameData.instance.outroComplete = true;
             hud.FadeInInstant();
             outroNPC.StartCutscene();
         }
-        else if (!introComplete)
+        else if (!GameData.instance.introComplete)
         {
-            introComplete = true;
+            GameData.instance.introComplete = true;
             introNPC.StartCutscene();
         }
         else hud.FadeInInstant();
 
-        // Update the damage indicator on the HUD.
-        hud.UpdateDamage(damageParent.childCount - damageRepaired, false);
+        InitializeDamage();
 
         // Set the currently active mechanical creature NPCs based on their repaired status.
         UpdateNPCs();
     }
 
+    private void InitializeDamage()
+    {
+        for (int i = 0; i < damageObjects.Length; i++)
+        {
+            damageObjects[i].DamageInit(i);
+        }
+
+        // Update the damage indicator on the HUD.
+        hud.UpdateDamage(damageObjects.Length - GameData.instance.damageRepaired, false);
+    }
+
     // Fix an optional damage point.
     public void FixDamage()
     {
-        damageRepaired += 1;
-        hud.UpdateDamage(damageParent.childCount - damageRepaired, true);
+        GameData.instance.damageRepaired += 1;
+        hud.UpdateDamage(damageObjects.Length - GameData.instance.damageRepaired, true);
     }
 
     // Sets whether the damaged or repaired version of each mechanical creature NPC is shown.
     public void UpdateNPCs()
     {
-        if (spiderRepaired)
+        if (GameData.instance.spiderRepaired)
         {
             spiderB.SetActive(false);
             spiderR.SetActive(true);
@@ -78,7 +79,7 @@ public class GameManager : MonoBehaviour
             spiderR.SetActive(false);
         }
 
-        if (jellyfishRepaired)
+        if (GameData.instance.jellyfishRepaired)
         {
             jellyfishB.SetActive(false);
             jellyfishR.SetActive(true);
@@ -89,7 +90,7 @@ public class GameManager : MonoBehaviour
             jellyfishR.SetActive(false);
         }
 
-        if (tardigradeRepaired)
+        if (GameData.instance.tardigradeRepaired)
         {
             tardigradeB.SetActive(false);
             tardigradeR.SetActive(true);
@@ -100,7 +101,7 @@ public class GameManager : MonoBehaviour
             tardigradeR.SetActive(false);
         }
 
-        if (pigeonRepaired)
+        if (GameData.instance.pigeonRepaired)
         {
             pigeonB.SetActive(false);
             pigeonR.SetActive(true);
