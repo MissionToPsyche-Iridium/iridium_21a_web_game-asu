@@ -11,5 +11,17 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Jake Minigame/Scenes/Jake Minigame.unity
     guid: 677fcae352b6b4803bc66163d09747c3
+  - enabled: 1
+    path: Assets/Ilia Minigame/Scenes/QuizScene.unity
+    guid: a0ecb84e4e0580268ab4365e0e26dc02
+  - enabled: 1
+    path: Assets/Ilia Minigame/Scenes/ShipUpgradeScene.unity
+    guid: 8be0b3c1a0c50236f878638beb79b42c
+  - enabled: 1
+    path: Assets/Ilia Minigame/Scenes/PregameManager.unity
+    guid: ed59b0b46a399b1498d6a967b0a66b47
+  - enabled: 1
+    path: Assets/Ilia Minigame/Scenes/MiniGameScene.unity
+    guid: 55fe8d126c32545cc9aa668b18957b70
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: d0f7d65ca4ac06046b1c4424da9764c6, type: 2}

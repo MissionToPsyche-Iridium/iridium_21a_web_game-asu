@@ -3,14 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - NPC
-  - Wall
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Obstacles
+  - 
   - Water
   - UI
   - 
@@ -40,9 +38,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
-    uniqueID: 3869070041
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
