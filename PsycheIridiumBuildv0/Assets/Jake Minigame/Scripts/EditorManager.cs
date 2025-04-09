@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.U2D;
@@ -26,14 +27,20 @@ public class EditorManager : MonoBehaviour
     [SerializeField] GameObject connectionAlertText;
     [SerializeField] GameObject noThrusterAlertText;
     [SerializeField] GameObject damageAlertText;
+    [SerializeField] TMP_Text selectedPartText;
+
+    [SerializeField] String[] partNames;
 
     const float gridWidth = 8f;
-    const float gridHeight = 4f;
+    const float gridTop = 4f;
+    const float gridBottom = -3f;
 
     [SerializeField] GameObject editText;
     [SerializeField] GameObject controlText;
 
     AudioSource[] audioSource;
+
+    static bool canPlace;
 
     // Start is called before the first frame update
     void Start()
@@ -54,11 +61,6 @@ public class EditorManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            EndEditMode();
-        }
-
         if (IsEditMode)
         {
             // Selected part follows cursor
@@ -82,6 +84,11 @@ public class EditorManager : MonoBehaviour
                 {
                     ChoosePart(keyCode);
                 }
+            }
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                EndEditMode();
             }
 
             if (Input.GetKeyDown(KeyCode.Q))
@@ -108,27 +115,28 @@ public class EditorManager : MonoBehaviour
         Time.timeScale = 1f;
         Physics2D.simulationMode = SimulationMode2D.Script;
 
-        selectedPrefab = partPrefabs[0];
-        selectedPart = Instantiate(selectedPrefab, spacecraft.transform);
-
-        selectedPartKeyCode = partKeyCodes[0];
-
         if (partStorage.Count > 0)
         {
             LoadParts();
         }
 
+        selectedPrefab = partPrefabs[0];
+        selectedPart = Instantiate(selectedPrefab, spacecraft.transform);
+
+        selectedPartKeyCode = partKeyCodes[0];
+
         editText.SetActive(true);
         controlText.SetActive(false);
+        UpdateSelectedPartText();
     }
 
     void LoadParts()
     {
         for (float x = -gridWidth; x <= gridWidth; x++)
         {
-            for (float y = -gridHeight; y <= gridHeight; y++)
+            for (float y = gridBottom; y <= gridTop; y++)
             {
-                Vector3 position = new Vector3(x, y, 0);
+                Vector3 position = new(x, y, 0);
                 if (partStorage.ContainsKey(position))
                 {
                     selectedPrefab = partPrefabs[partKeyCodes.IndexOf(partStorage[position].Item1)];
@@ -177,20 +185,38 @@ public class EditorManager : MonoBehaviour
 
         editText.SetActive(false);
         controlText.SetActive(true);
+        UpdateSelectedPartText();
+    }
+
+    void UpdateSelectedPartText()
+    {
+        selectedPartText.text = "Selected Part: " + partNames[(int)(selectedPartKeyCode - 48)];
+        selectedPartText.gameObject.SetActive(IsEditMode);
     }
 
     static Vector3 GetMouseGridPosition()
     {
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        // Dont allow mousePosition to be offscreen
-        mousePosition.x = Mathf.Clamp(mousePosition.x, -gridWidth, gridWidth);
-        mousePosition.y = Mathf.Clamp(mousePosition.y, -gridHeight, gridHeight);
+        Vector3 gridPosition = new Vector3(Mathf.Round(mousePosition.x), Mathf.Round(mousePosition.y), 0f);
 
-        return new Vector3(Mathf.Round(mousePosition.x), Mathf.Round(mousePosition.y), 0f);
+        canPlace = true;
+        if (Math.Abs(gridPosition.x) > gridWidth || gridPosition.y > gridTop || gridPosition.y < gridBottom)
+        {
+            canPlace = false;
+            gridPosition.x = Mathf.Clamp(gridPosition.x, -gridWidth, gridWidth);
+            gridPosition.y = Mathf.Clamp(gridPosition.y, gridBottom, gridTop);
+        }
+
+        return gridPosition;
     }
     void PlacePart()
     {
+        if (!canPlace)
+        {
+            return;
+        }
+
         // Replace the selected position's part with the selected part
         if (!DeletePart())
         {
@@ -230,7 +256,7 @@ public class EditorManager : MonoBehaviour
         audioSource[randomIndex].pitch = UnityEngine.Random.Range(1.5f, 1.6f);
         audioSource[randomIndex].Play();
     }
-    void ChoosePart(KeyCode keyCode)
+    public void ChoosePart(KeyCode keyCode)
     {
         selectedPrefab = partPrefabs[partKeyCodes.IndexOf(keyCode)];
         Destroy(selectedPart);
@@ -238,6 +264,8 @@ public class EditorManager : MonoBehaviour
         selectedPart.transform.position = GetMouseGridPosition();
 
         selectedPartKeyCode = keyCode;
+
+        UpdateSelectedPartText();
     }
     static void RotatePart(float degrees)
     {

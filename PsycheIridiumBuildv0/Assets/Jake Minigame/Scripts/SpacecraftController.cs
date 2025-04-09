@@ -34,8 +34,6 @@ public class SpacecraftController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(activeThrusters);
-
         // Update velocity indicator arrow
         if (EditorManager.IsEditMode || rb.velocity.magnitude == 0)
         {
@@ -63,7 +61,6 @@ public class SpacecraftController : MonoBehaviour
         damageText.text = $"Damage Sustained: {(int)(damage * 100)}%";
         if (damage >= 1f)
         {
-            Debug.Log("Game Over");
             EditorManager.Restart(true);
         }
     }
