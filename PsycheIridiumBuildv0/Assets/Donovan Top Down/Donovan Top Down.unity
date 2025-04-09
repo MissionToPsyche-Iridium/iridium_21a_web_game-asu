@@ -377,11 +377,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameName
-      value: Pigeon Minigame
+      value: Harsh's Minigame
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameScene
-      value: Pigeon
+      value: HarshIntroScene
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: text.Array.size
@@ -3429,11 +3429,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameName
-      value: Pigeon Minigame
+      value: Harsh's Minigame
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameScene
-      value: Pigeon
+      value: HarshIntroScene
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: text.Array.data[0]
