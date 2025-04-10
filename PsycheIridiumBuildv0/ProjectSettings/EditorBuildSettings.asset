@@ -26,5 +26,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/HarshGameAssets/Scenes/MainMenu.unity
     guid: 2f8aa32b726133740aa0fca32f82e72c
+  - enabled: 1
+    path: Assets/Tanishq_Asteriod_minigame/Scenes/TanishqGameScene.unity
+    guid: ccd1709be232847d4a5570f1355d258e
+  - enabled: 1
+    path: Assets/Tanishq_Asteriod_minigame/Scenes/TanishqMenuScene.unity
+    guid: 7e3fed8d2393c4aeb836694a8a32a450
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: d0f7d65ca4ac06046b1c4424da9764c6, type: 2}

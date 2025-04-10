@@ -57,8 +57,6 @@ public class GameController : MonoBehaviour
         }
     }
 
-
-
     /* Buttons */
 
 
@@ -148,7 +146,7 @@ public class GameController : MonoBehaviour
     // Goes to menu
     public void MainMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("TanishqMenuScene");
     }
 
 
@@ -198,6 +196,7 @@ public class GameController : MonoBehaviour
     void GameOverScreen()
     {
         int solutionNumber = -1;
+        if (GameData.instance != null) GameData.instance.jellyfishRepaired = true;
 
         SolutionLine[] solutions = SolutionLines(board);
         for (int i = 0; i < solutions.Length; i++)

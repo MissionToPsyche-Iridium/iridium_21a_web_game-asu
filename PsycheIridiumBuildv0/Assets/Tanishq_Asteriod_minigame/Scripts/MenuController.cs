@@ -10,13 +10,15 @@ public class MenuController : MonoBehaviour
     public void Play(int who)
     {
         PlayerPrefs.SetInt("ai", who);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("TanishqGameScene");
     }
 
     // Quits game and resets all PlayerPrefs
     public void Quit()
     {
         PlayerPrefs.DeleteAll();
-        Application.Quit();
+        bgMusicLoop.instance.StopMusic();
+        SceneManager.LoadScene("Donovan Top Down");
+        // Application.Quit();
     }
 }

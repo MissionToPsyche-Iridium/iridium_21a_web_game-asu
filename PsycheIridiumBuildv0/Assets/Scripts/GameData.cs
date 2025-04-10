@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameData : MonoBehaviour
 {
-    public static GameData instance;
+    public static GameData instance = null;
     private static bool instanceCreated = false;
 
     public bool introComplete = false;
