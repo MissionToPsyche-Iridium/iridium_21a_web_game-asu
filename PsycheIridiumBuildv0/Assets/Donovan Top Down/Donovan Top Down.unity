@@ -1547,7 +1547,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameScene
-      value: PregameManager
+      value: Ilia_PregameManager
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: text.Array.data[0]
@@ -123030,7 +123030,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameScene
-      value: Tardigrade
+      value: Ilia_PregameManager
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: text.Array.size
