@@ -31,15 +31,14 @@ public class GameManager : MonoBehaviour
         if (GameData.instance.spiderRepaired && GameData.instance.jellyfishRepaired && GameData.instance.tardigradeRepaired && GameData.instance.pigeonRepaired && !GameData.instance.outroComplete)
         {
             GameData.instance.outroComplete = true;
-            hud.FadeInInstant();
-            outroNPC.StartCutscene();
+            StartCoroutine(hud.FadeIn(outroNPC));
         }
         else if (!GameData.instance.introComplete)
         {
             GameData.instance.introComplete = true;
             introNPC.StartCutscene();
         }
-        else hud.FadeInInstant();
+        else StartCoroutine(hud.FadeIn(null));
 
         InitializeDamage();
 

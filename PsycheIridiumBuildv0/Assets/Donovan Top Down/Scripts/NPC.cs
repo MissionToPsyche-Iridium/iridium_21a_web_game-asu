@@ -76,7 +76,7 @@ public class NPC : MonoBehaviour
             else if (speaking && currentTextbox >= text.Length)
             {
                 // If the NPC fades in after dialogue, do so.
-                if (fadeInAtEnd) StartCoroutine(hud.FadeIn());
+                if (fadeInAtEnd) StartCoroutine(hud.FadeIn(null));
 
                 // Hide textbox and show minigame preview.
                 if (minigameNPC) hud.ShowMinigamePreview(minigameScene, minigameName, minigameDesc);

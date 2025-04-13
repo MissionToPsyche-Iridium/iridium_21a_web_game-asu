@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem.HID;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -54,6 +55,9 @@ public class HUD : MonoBehaviour
     [SerializeField] AudioClip repairSFX;
     [SerializeField] AudioClip woopSFX;
 
+    private bool fadingIn = false;
+    private bool fadingOut = false;
+
     private void Start()
     {
         // Textbox Components
@@ -103,7 +107,7 @@ public class HUD : MonoBehaviour
         Debug.Log("START MINIGAME " + previewScene + "!");
         GetComponent<AudioSource>().PlayOneShot(selectSFX);
         HideMinigamePreview();
-        SceneManager.LoadScene(previewScene);
+        StartCoroutine(FadeOut(previewScene));
     }
 
     public void CancelMinigame()
@@ -187,8 +191,9 @@ public class HUD : MonoBehaviour
         fade.gameObject.SetActive(false);
     }
 
-    public IEnumerator FadeIn()
+    public IEnumerator FadeIn(NPC startCutsceneNPC)
     {
+        fadingIn = true;
         while (fade.color.a > 0)
         {
             fade.color = new Color(fade.color.r, fade.color.g, fade.color.b, fade.color.a - (1 / fadeFrames));
@@ -196,5 +201,29 @@ public class HUD : MonoBehaviour
         }
         fade.color = new Color(fade.color.r, fade.color.g, fade.color.b, 0);
         fade.gameObject.SetActive(false);
+        fadingIn = false;
+
+        if (startCutsceneNPC != null) { startCutsceneNPC.StartCutscene(); }
+    }
+
+    public void FadeOutInstant()
+    {
+        fade.gameObject.SetActive(true);
+        fade.color = new Color(fade.color.r, fade.color.g, fade.color.b, 1);
+    }
+
+    public IEnumerator FadeOut(string sceneTransition)
+    {
+        fadingOut = true;
+        fade.gameObject.SetActive(true);
+        while (fade.color.a < 1)
+        {
+            fade.color = new Color(fade.color.r, fade.color.g, fade.color.b, fade.color.a + (1 / fadeFrames));
+            yield return new WaitForSeconds(fadeDuration / fadeFrames);
+        }
+        fade.color = new Color(fade.color.r, fade.color.g, fade.color.b, 1);
+        fadingOut = false;
+
+        if (sceneTransition != null) SceneManager.LoadScene(sceneTransition);
     }
 }
