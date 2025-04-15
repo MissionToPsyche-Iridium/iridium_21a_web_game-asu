@@ -7,6 +7,7 @@ public class ButtonClickHandlerAssigner : MonoBehaviour
 {
     public Button[] levelButtons; // Array of level buttons
     public Button shipUpgradeButton; // Button for ship upgrades
+    public Button quitButton; // Button to return to HUB
     public TMPro.TextMeshProUGUI errorText; // Pre-existing Text UI element for displaying errors
 
     void Start()
@@ -43,6 +44,16 @@ public class ButtonClickHandlerAssigner : MonoBehaviour
         {
             Debug.LogError("Ship Upgrade button is not assigned!");
         }
+
+        // Assign handler to the quit button
+        if (quitButton != null)
+        {
+            quitButton.onClick.AddListener(OnQuitButtonClick);
+        }
+        else
+        {
+            Debug.LogError("Quit button is not assigned!");
+        }
     }
 
     void OnLevelButtonClick(int level, int maxAsteroids, float interval)
@@ -72,6 +83,14 @@ public class ButtonClickHandlerAssigner : MonoBehaviour
 
         // Load the ship upgrade scene
         SceneManager.LoadScene("Ilia_ShipUpgradeScene"); // Replace with your actual scene name
+    }
+
+    void OnQuitButtonClick()
+    {
+        Debug.Log("Quit button clicked. Loading HUB scene...");
+
+        MusicPlayer.instance.StopMusic();
+        SceneManager.LoadScene("Donovan Top Down");
     }
 
     bool IsLevelUnlocked(int level)

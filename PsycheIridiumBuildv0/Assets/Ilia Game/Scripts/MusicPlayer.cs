@@ -3,7 +3,7 @@ using UnityEngine;
 public class MusicPlayer : MonoBehaviour
 {
     // Static instance to hold the singleton reference.
-    private static MusicPlayer instance;
+    public static MusicPlayer instance;
     private AudioSource audioSource;
 
     void Awake()
