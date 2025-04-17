@@ -372,12 +372,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameDesc
-      value: 'Testing Testing 1234 Testing Testing 1234 Testing Testing 1234 Testing
-        Testing 1234 '
+      value: Build a rocked and launch into space! Escape the atmosphere to repair
+        this creature!
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameName
-      value: Harsh's Minigame
+      value: Harsh Minigame
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameScene
@@ -387,6 +387,10 @@ PrefabInstance:
       propertyPath: text.Array.size
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: minigameThumbnail
+      value: 
+      objectReference: {fileID: 21300000, guid: 41a63ac92876ba04a8ee9ce51caefca9, type: 3}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: text.Array.data[0]
       value: Ow ow ow ow OW!
@@ -1111,17 +1115,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameDesc
-      value: Pieces have broken off of this instrument! To repair it, a spacecraft
-        must be constructed and piloted to retrieve the parts.
+      value: Collect resources and answer quiz questions to buy components! Buy the
+        multispectral imager to repair this creature!
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameName
-      value: Spider Minigame
+      value: Ilia Minigame
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameScene
-      value: Jake Minigame
+      value: Ilia_PregameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: minigameThumbnail
+      value: 
+      objectReference: {fileID: 21300000, guid: e4836594595ad9c41bd2b41446056fe3, type: 3}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: text.Array.data[0]
       value: "Oh\u2026oh me oh my\u2026what kind of multispectral imager can\u2019t
@@ -1538,17 +1546,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameDesc
-      value: "This tool isn\u2019t working! Gather all the required resources in
-        the minigame to repair it!"
+      value: Build a spacecraft and retrieve the lost parts to repair this creature!
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameName
-      value: Asteroid Minigame
+      value: Jake Minigame
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameScene
-      value: Ilia_PregameManager
+      value: Jake Minigame
       objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: minigameThumbnail
+      value: 
+      objectReference: {fileID: 21300000, guid: 1fb4ae8291425224bbd8385972c47b55, type: 3}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: text.Array.data[0]
       value: "That\u2019s more like it. Time to get back to work."
@@ -3424,17 +3435,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameDesc
-      value: 'Testing Testing 1234 Testing Testing 1234 Testing Testing 1234 Testing
-        Testing 1234 '
+      value: Build a rocked and launch into space! Escape the atmosphere to repair
+        this creature!
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameName
-      value: Harsh's Minigame
+      value: Harsh Minigame
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameScene
       value: HarshIntroScene
       objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: minigameThumbnail
+      value: 
+      objectReference: {fileID: 21300000, guid: 41a63ac92876ba04a8ee9ce51caefca9, type: 3}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: text.Array.data[0]
       value: "Phew! That wasn\u2019t pleasant! Glad to be back in shape!"
@@ -4012,8 +4027,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2f78e221c13f408b28611670989fa062, type: 2}
+  m_sharedMaterial: {fileID: 5523568714984527737, guid: 2f78e221c13f408b28611670989fa062, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -122529,21 +122544,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameDesc
-      value: Pieces have broken off of this instrument! To repair it, a spacecraft
-        must be constructed and piloted to retrieve the parts.
+      value: Collect resources and answer quiz questions to buy components! Buy the
+        multispectral imager to repair this creature!
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameName
-      value: Spider Minigame
+      value: Ilia Minigame
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameScene
-      value: Jake Minigame
+      value: Ilia_PregameManager
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: text.Array.size
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: minigameThumbnail
+      value: 
+      objectReference: {fileID: 21300000, guid: e4836594595ad9c41bd2b41446056fe3, type: 3}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: text.Array.data[0]
       value: "Yipee! I\u2019m feeling right as rain!"
@@ -123021,21 +123040,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameDesc
-      value: 'Testing Testing 1234 Testing Testing 1234 Testing Testing 1234 Testing
-        Testing 1234 '
+      value: Build a spacecraft and retrieve the lost parts to repair this creature!
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameName
-      value: Tardigrade Minigame
+      value: Jake Minigame
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameScene
-      value: Ilia_PregameManager
+      value: Jake Minigame
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: text.Array.size
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: minigameThumbnail
+      value: 
+      objectReference: {fileID: 21300000, guid: 1fb4ae8291425224bbd8385972c47b55, type: 3}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: text.Array.data[0]
       value: "Well isn\u2019t this peachy? "
@@ -123926,8 +123948,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameDesc
-      value: 'Testing Testing 1234 Testing Testing 1234 Testing Testing 1234 Testing
-        Testing 1234 '
+      value: 'It''s tic-tac-toe with asteroids! Finish a game to repair this creature! '
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameName
@@ -123937,6 +123958,10 @@ PrefabInstance:
       propertyPath: minigameScene
       value: TanishqMenuScene
       objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: minigameThumbnail
+      value: 
+      objectReference: {fileID: 21300000, guid: 5cf27e4542f177c46b5ea5ebe089373c, type: 3}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: text.Array.data[0]
       value: (The X-Band High Gain Antenna waves a tentacle at you.)
@@ -124389,8 +124414,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameDesc
-      value: 'Testing Testing 1234 Testing Testing 1234 Testing Testing 1234 Testing
-        Testing 1234 '
+      value: 'It''s tic-tac-toe with asteroids! Finish a game to repair this creature! '
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameName
@@ -124400,6 +124424,10 @@ PrefabInstance:
       propertyPath: minigameScene
       value: TanishqMenuScene
       objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: minigameThumbnail
+      value: 
+      objectReference: {fileID: 21300000, guid: 5cf27e4542f177c46b5ea5ebe089373c, type: 3}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: text.Array.data[0]
       value: (The X-Band High Gain Antenna shifts slowly.)
@@ -124721,8 +124749,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Damage Left: '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2f78e221c13f408b28611670989fa062, type: 2}
+  m_sharedMaterial: {fileID: 5523568714984527737, guid: 2f78e221c13f408b28611670989fa062, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -124746,7 +124774,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35.8
+  m_fontSize: 55.8
   m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -134541,6 +134569,64 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1455800171518123822, guid: e90b6c9f9a49b62429fff8612a777e28, type: 3}
+      propertyPath: m_text
+      value: Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+        Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+        Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+      objectReference: {fileID: 0}
+    - target: {fileID: 1455800171518123822, guid: e90b6c9f9a49b62429fff8612a777e28, type: 3}
+      propertyPath: m_fontSize
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 1455800171518123822, guid: e90b6c9f9a49b62429fff8612a777e28, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2f78e221c13f408b28611670989fa062, type: 2}
+    - target: {fileID: 1455800171518123822, guid: e90b6c9f9a49b62429fff8612a777e28, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 1455800171518123822, guid: e90b6c9f9a49b62429fff8612a777e28, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 5523568714984527737, guid: 2f78e221c13f408b28611670989fa062, type: 2}
+    - target: {fileID: 1455800171518123822, guid: e90b6c9f9a49b62429fff8612a777e28, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1455800171518123822, guid: e90b6c9f9a49b62429fff8612a777e28, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 1455800171518123822, guid: e90b6c9f9a49b62429fff8612a777e28, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210953326149265211, guid: e90b6c9f9a49b62429fff8612a777e28, type: 3}
+      propertyPath: m_fontSize
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210953326149265211, guid: e90b6c9f9a49b62429fff8612a777e28, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2f78e221c13f408b28611670989fa062, type: 2}
+    - target: {fileID: 5210953326149265211, guid: e90b6c9f9a49b62429fff8612a777e28, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210953326149265211, guid: e90b6c9f9a49b62429fff8612a777e28, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 5523568714984527737, guid: 2f78e221c13f408b28611670989fa062, type: 2}
+    - target: {fileID: 5210953326149265211, guid: e90b6c9f9a49b62429fff8612a777e28, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210953326149265211, guid: e90b6c9f9a49b62429fff8612a777e28, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6581222285877583223, guid: e90b6c9f9a49b62429fff8612a777e28, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -134661,6 +134747,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3513627416857527227, guid: 0e827e1ed0b43fb4d865715384e0ba30, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2f78e221c13f408b28611670989fa062, type: 2}
+    - target: {fileID: 3513627416857527227, guid: 0e827e1ed0b43fb4d865715384e0ba30, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3962523775592147973, guid: 0e827e1ed0b43fb4d865715384e0ba30, type: 3}
       propertyPath: m_Interactable
       value: 0
@@ -134693,6 +134787,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4765936068088084253, guid: 0e827e1ed0b43fb4d865715384e0ba30, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2f78e221c13f408b28611670989fa062, type: 2}
+    - target: {fileID: 4765936068088084253, guid: 0e827e1ed0b43fb4d865715384e0ba30, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5340926183345269301, guid: 0e827e1ed0b43fb4d865715384e0ba30, type: 3}
       propertyPath: m_Interactable
       value: 0
@@ -134724,6 +134826,14 @@ PrefabInstance:
     - target: {fileID: 5340926183345269301, guid: 0e827e1ed0b43fb4d865715384e0ba30, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190047236438676852, guid: 0e827e1ed0b43fb4d865715384e0ba30, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2f78e221c13f408b28611670989fa062, type: 2}
+    - target: {fileID: 6190047236438676852, guid: 0e827e1ed0b43fb4d865715384e0ba30, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7728891663212304340, guid: 0e827e1ed0b43fb4d865715384e0ba30, type: 3}
       propertyPath: m_Pivot.x
@@ -134804,6 +134914,14 @@ PrefabInstance:
     - target: {fileID: 7728891663212304340, guid: 0e827e1ed0b43fb4d865715384e0ba30, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8876079996523650777, guid: 0e827e1ed0b43fb4d865715384e0ba30, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2f78e221c13f408b28611670989fa062, type: 2}
+    - target: {fileID: 8876079996523650777, guid: 0e827e1ed0b43fb4d865715384e0ba30, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

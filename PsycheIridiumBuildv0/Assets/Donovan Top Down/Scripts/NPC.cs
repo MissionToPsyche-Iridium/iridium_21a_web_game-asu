@@ -79,7 +79,7 @@ public class NPC : MonoBehaviour
                 if (fadeInAtEnd) StartCoroutine(hud.FadeIn(null));
 
                 // Hide textbox and show minigame preview.
-                if (minigameNPC) hud.ShowMinigamePreview(minigameScene, minigameName, minigameDesc);
+                if (minigameNPC) hud.ShowMinigamePreview(minigameScene, minigameName, minigameDesc, minigameThumbnail);
                 // End interaction, hide textbox, and unfreeze player.
                 else player.ExitInteraction();
 

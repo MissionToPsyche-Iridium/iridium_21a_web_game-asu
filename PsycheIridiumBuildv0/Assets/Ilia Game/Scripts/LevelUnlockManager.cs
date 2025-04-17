@@ -169,8 +169,8 @@ public class LevelUnlockManager : MonoBehaviour
     {
         switch (levelIndex)
         {
-            case 0: GameState.Instance.level2Purchased = true; break;
-            case 1: GameState.Instance.level3Purchased = true; GameData.instance.tardigradeRepaired = true; break;
+            case 0: GameState.Instance.level2Purchased = true; GameData.instance.spiderRepaired = true; break;
+            case 1: GameState.Instance.level3Purchased = true; break;
             case 2: GameState.Instance.level4Purchased = true; break;
         }
 

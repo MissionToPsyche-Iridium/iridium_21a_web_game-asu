@@ -32,7 +32,7 @@ public class GoalController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         audioSource.Play();
-        GameData.instance.spiderRepaired = true;
+        GameData.instance.tardigradeRepaired = true;
         SceneManager.LoadScene("Donovan Top Down");
     }
 }

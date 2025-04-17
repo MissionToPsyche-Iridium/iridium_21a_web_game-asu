@@ -23,7 +23,7 @@ public class HUD : MonoBehaviour
     [SerializeField] private Button cancelButton;
     private TMP_Text previewName;
     private TMP_Text previewDesc;
-    private SpriteRenderer previewImage;
+    private Image previewImage;
     private string previewScene;
 
     [Header("Minimap")]
@@ -67,7 +67,7 @@ public class HUD : MonoBehaviour
         // Minigame Preview Components
         previewName = minigamePreview.transform.Find("Name").GetComponent<TMP_Text>();
         previewDesc = minigamePreview.transform.Find("Description").GetComponent<TMP_Text>();
-        previewImage = minigamePreview.transform.Find("Image").GetComponent<SpriteRenderer>();
+        previewImage = minigamePreview.transform.Find("Image").GetComponent<Image>();
 
         // Minimap Setup
         SetupMinimap();
@@ -90,11 +90,13 @@ public class HUD : MonoBehaviour
         textbox.SetActive(false);
     }
 
-    public void ShowMinigamePreview(string minigameScene, string minigameName, string minigameDesc)
+    public void ShowMinigamePreview(string minigameScene, string minigameName, string minigameDesc, Sprite thumbnail)
     {
         previewName.text = minigameName;
         previewDesc.text = minigameDesc;
         previewScene = minigameScene;
+        previewImage.sprite = thumbnail;
+
 
         minigamePreview.SetActive(true);
 
