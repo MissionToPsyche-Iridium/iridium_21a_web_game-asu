@@ -36,11 +36,12 @@ public class PregameManager : MonoBehaviour
 
     private Dictionary<Asteroid.AsteroidType, int> LoadResourcesFromGameState()
     {
+        // Reset progress
         return new Dictionary<Asteroid.AsteroidType, int>
         {
-            { Asteroid.AsteroidType.Iron, GameState.Instance.iron },
-            { Asteroid.AsteroidType.Gold, GameState.Instance.gold },
-            { Asteroid.AsteroidType.Tungsten, GameState.Instance.tungsten }
+            { Asteroid.AsteroidType.Iron, 0 },
+            { Asteroid.AsteroidType.Gold, 0 },
+            { Asteroid.AsteroidType.Tungsten, 0 }
         };
     }
 
