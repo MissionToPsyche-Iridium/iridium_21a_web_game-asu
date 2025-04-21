@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -13,45 +12,54 @@ public class Resource
 
 public class PregameManager : MonoBehaviour
 {
-    public GameObject canvas; // Reference to the Canvas
+    public GameObject canvas;
     public Vector2 startingPosition = new Vector2(-10, -10);
     public float verticalSpacing = 50f;
-    public TMP_FontAsset eightBitFont; // Reference to the 8-bit font
-    public List<Resource> resources = new List<Resource>(); // List of resources
+    public TMP_FontAsset eightBitFont;
+    public List<Resource> resources = new List<Resource>();
 
-    private Dictionary<Asteroid.AsteroidType, int> totalResources; // Total collected resources
-    private Dictionary<Asteroid.AsteroidType, TextMeshProUGUI> resourceTexts = new Dictionary<Asteroid.AsteroidType, TextMeshProUGUI>();
+    private Dictionary<Asteroid.AsteroidType, int> totalResources;
+    private Dictionary<Asteroid.AsteroidType, TextMeshProUGUI> resourceTexts = new();
 
     void Start()
     {
-        // Ensure game state is loaded
         GameState.Instance.LoadGameState();
-
-        // Load resources from GameState
-        totalResources = LoadResourcesFromGameState();
-
-        // Generate resource UI
+        totalResources = SetResourcesToTenThousand();
+        GameState.Instance.SaveGameState();
         GenerateResourceUI();
     }
 
-    private Dictionary<Asteroid.AsteroidType, int> LoadResourcesFromGameState()
+    private Dictionary<Asteroid.AsteroidType, int> SetResourcesToTenThousand()
     {
-        // Reset progress
-        return new Dictionary<Asteroid.AsteroidType, int>
+        var result = new Dictionary<Asteroid.AsteroidType, int>();
+
+        foreach (var res in resources)
         {
-            { Asteroid.AsteroidType.Iron, 0 },
-            { Asteroid.AsteroidType.Gold, 0 },
-            { Asteroid.AsteroidType.Tungsten, 0 }
-        };
+            result[res.type] = 10000;
+
+            switch (res.type)
+            {
+                case Asteroid.AsteroidType.Iron:
+                    GameState.Instance.iron = 10000;
+                    break;
+                case Asteroid.AsteroidType.Gold:
+                    GameState.Instance.gold = 10000;
+                    break;
+                case Asteroid.AsteroidType.Tungsten:
+                    GameState.Instance.tungsten = 10000;
+                    break;
+            }
+        }
+
+        return result;
     }
 
-    void GenerateResourceUI()
+    private void GenerateResourceUI()
     {
         Vector2 positionOffset = startingPosition;
 
         foreach (var resource in resources)
         {
-            // Create container for each resource
             GameObject resourceContainer = new GameObject(resource.type + "Container");
             resourceContainer.transform.SetParent(canvas.transform, false);
 
@@ -67,26 +75,22 @@ public class PregameManager : MonoBehaviour
             layoutGroup.childControlWidth = false;
             layoutGroup.childControlHeight = false;
 
-            // Add icon
             GameObject iconObject = new GameObject(resource.type + "Icon");
             iconObject.transform.SetParent(resourceContainer.transform, false);
             Image iconImage = iconObject.AddComponent<Image>();
-            iconImage.sprite = resource.icon; // Assign the icon
-            RectTransform iconRect = iconObject.GetComponent<RectTransform>();
-            iconRect.sizeDelta = new Vector2(40, 40);
+            iconImage.sprite = resource.icon;
+            iconObject.GetComponent<RectTransform>().sizeDelta = new Vector2(40, 40);
 
-            // Add text
             GameObject textObject = new GameObject(resource.type + "Text");
             textObject.transform.SetParent(resourceContainer.transform, false);
             TextMeshProUGUI text = textObject.AddComponent<TextMeshProUGUI>();
-            text.font = eightBitFont; // Use the 8-bit font
-            text.text = totalResources.ContainsKey(resource.type) ? totalResources[resource.type].ToString() : "0";
+            text.font = eightBitFont;
+            text.text = totalResources[resource.type].ToString();
             text.fontSize = 24;
             text.alignment = TextAlignmentOptions.Left;
 
             resourceTexts.Add(resource.type, text);
-
-            positionOffset += new Vector2(0, -verticalSpacing); // Move down for the next resource
+            positionOffset += new Vector2(0, -verticalSpacing);
         }
     }
 }

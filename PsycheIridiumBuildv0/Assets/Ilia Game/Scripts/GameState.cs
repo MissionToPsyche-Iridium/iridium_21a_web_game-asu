@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class GameState : MonoBehaviour
@@ -79,7 +80,6 @@ public class GameState : MonoBehaviour
         level2Purchased = PlayerPrefs.GetInt("Level2Purchased", 0) == 1;
         level3Purchased = PlayerPrefs.GetInt("Level3Purchased", 0) == 1;
         level4Purchased = PlayerPrefs.GetInt("Level4Purchased", 0) == 1;
-
         Debug.Log("Game state loaded.");
     }
 
@@ -126,5 +126,10 @@ public class GameState : MonoBehaviour
         Debug.Log("Loading Quiz Scene...");
         SaveGameState(); // Ensure resources are saved before transitioning
         UnityEngine.SceneManagement.SceneManager.LoadScene("Ilia_QuizScene");
+    }
+
+    internal object GetResources()
+    {
+        throw new NotImplementedException();
     }
 }
