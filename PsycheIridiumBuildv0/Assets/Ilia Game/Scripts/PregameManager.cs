@@ -35,18 +35,18 @@ public class PregameManager : MonoBehaviour
 
         foreach (var res in resources)
         {
-            result[res.type] = 10000;
+            result[res.type] = 0;
 
             switch (res.type)
             {
                 case Asteroid.AsteroidType.Iron:
-                    GameState.Instance.iron = 10000;
+                    GameState.Instance.iron = 0;
                     break;
                 case Asteroid.AsteroidType.Gold:
-                    GameState.Instance.gold = 10000;
+                    GameState.Instance.gold = 0;
                     break;
                 case Asteroid.AsteroidType.Tungsten:
-                    GameState.Instance.tungsten = 10000;
+                    GameState.Instance.tungsten = 0;
                     break;
             }
         }
