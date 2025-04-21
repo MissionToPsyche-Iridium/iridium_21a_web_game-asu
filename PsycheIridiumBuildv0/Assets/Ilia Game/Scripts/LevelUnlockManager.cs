@@ -22,8 +22,8 @@ public class LevelUnlockManager : MonoBehaviour
 
     private readonly int[,] levelCosts = {
         { 200, 100, 80 },       // Costs for Level 2
-        { 1, 1, 1 }, //{ 4000, 1000, 900 },    // Costs for Level 3
-        { 9000, 7000, 3600 }    // Costs for Level 4
+        { 4000, 1000, 900 }, //{ 4000, 1000, 900 },    // Costs for Level 3
+        { 9000, 7000, 3000 }    // Costs for Level 4
     };
 
     void Start()
