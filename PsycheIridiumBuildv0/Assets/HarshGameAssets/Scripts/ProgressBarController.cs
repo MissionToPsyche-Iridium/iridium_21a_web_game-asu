@@ -1,46 +1,70 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro; // Import TextMeshPro
+using TMPro;
+using System.Collections;
+using UnityEngine.SceneManagement; // Import TextMeshPro
 
 public class ProgressBarController : MonoBehaviour
 {
-    public Image progressBarFillImage;  // Assign in the Inspector
-    public float fillDuration = 10f;    // Time in seconds for full progress
+    public Image progressBarFillImage;
+    public float fillDuration = 10f;
     private float elapsedTime = 0f;
     private bool isStopped = false;
+    private bool hasCompleted = false; // Prevent multiple triggers
+    public static bool gameOver = false; // Global static flag
 
-    public TMP_Text distanceText;  // Assign TMP_Text for numerical distance
-    public TMP_Text timeText;      // Assign TMP_Text for numerical time
+    public TMP_Text distanceText;
+    public TMP_Text timeText;
 
-    public float maxDistance = 430f; // Example: 62 miles to reach space (100 km)
-    public float maxTime = 10f; // Example: 10 minutes for full ascent
+    public float maxDistance = 430f;
+    public float maxTime = 10f;
+
+    [Header("End Game Settings")]
+    public GameObject endGamePanel; // Assign optional win screen
+    public string nextSceneName;    // Optional scene to load
 
     void Update()
     {
-        if (isStopped) return; // Stop updating if the rocket collides
+        if (isStopped || hasCompleted) return;
 
-        // Update elapsed time
         elapsedTime += Time.deltaTime;
         float fillAmount = Mathf.Clamp01(elapsedTime / fillDuration);
 
-        // Update progress bar
         progressBarFillImage.fillAmount = fillAmount;
 
-        // Scale distance and time
         float traveledDistance = fillAmount * maxDistance;
-        float scaledTime = fillAmount * maxTime; // Scale time based on progress
+        float scaledTime = fillAmount * maxTime;
 
-        // Update UI with only numerical values
         if (distanceText != null)
-            distanceText.text = traveledDistance.ToString("F1"); // One decimal place
+            distanceText.text = traveledDistance.ToString("F1");
 
         if (timeText != null)
-            timeText.text = scaledTime.ToString("F1"); // One decimal place
+            timeText.text = scaledTime.ToString("F1");
+
+        // End game trigger
+        if (fillAmount >= 1f)
+        {
+            hasCompleted = true;
+            StartCoroutine(HandleEndGame());
+        }
     }
 
-    // Call this method to stop the progress bar and tracking
     public void StopProgress()
     {
         isStopped = true;
     }
+
+    IEnumerator HandleEndGame()
+    {
+        Debug.Log("Rocket reached orbit!");
+        gameOver = true; // Stops movement/spawning if other scripts check this
+
+        if (endGamePanel != null)
+        {
+            endGamePanel.SetActive(true); // Show "Next" button or message
+        }
+
+        yield return null; // Wait here — transition will happen on button press
+    }
 }
+

@@ -1,33 +1,51 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class Obstacle : MonoBehaviour
 {
     private GameObject player;
-    // Start is called before the first frame update
+    private ProgressBarController progressBarController;
 
-    private ProgressBarController progressBarController; //Reference to Pbc
+    [Header("Collision Sound")]
+    public AudioClip collisionSound;         // Assign in Inspector
+    public float volume = 1f;
+
+    private AudioSource audioSource;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         progressBarController = FindObjectOfType<ProgressBarController>();
+
+        // Optional: Add AudioSource if not already on the GameObject
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+
+        audioSource.playOnAwake = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Border")
+        if (collision.tag == "Border")
         {
             Destroy(this.gameObject);
-        } 
-        else if(collision.tag == "Player")
+        }
+        else if (collision.tag == "Player")
         {
+            if (collisionSound != null)
+            {
+                AudioSource.PlayClipAtPoint(collisionSound, transform.position, volume);
+            }
+
             if (progressBarController != null)
             {
-                progressBarController.StopProgress(); // Stop the progress bar when hitting the player
+                progressBarController.StopProgress();
             }
+
             Destroy(player.gameObject);
         }
     }

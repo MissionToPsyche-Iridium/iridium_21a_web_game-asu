@@ -9,10 +9,14 @@ public class DropSlot : MonoBehaviour, IDropHandler
     public Image statusImage; // Separate image for tick/cross
     public Sprite tickSprite; //  Assign a tick sprite in Inspector
     public Sprite crossSprite; // Assign a cross sprite in Inspector
+    private DragAndDropManager manager;
+    private bool alreadyCompleted = false;
+
 
     private void Start()
     {
         slotImage = GetComponent<Image>(); // Get the slot's Image component
+        manager = FindObjectOfType<DragAndDropManager>();
 
         // Ensure the status image starts as a cross 
         if (statusImage != null)
@@ -27,40 +31,61 @@ public class DropSlot : MonoBehaviour, IDropHandler
 
         if (droppedObject != null)
         {
-            droppedObject.GetComponent<RectTransform>().position = GetComponent<RectTransform>().position; // Snap into place
+            // Get reference to the draggable script
+            DraggableUI draggable = droppedObject.GetComponent<DraggableUI>();
 
-            // Correct placement
-            if (droppedObject.name == correctDraggableName)
+            // Make sure we have a valid draggable object
+            if (draggable != null)
             {
-                Debug.Log(" Correct placement!");
-
-                // Set placeholder transparency to 0%
-                if (slotImage != null)
+                // Correct placement
+                if (droppedObject.name == correctDraggableName)
                 {
-                    Color newColor = slotImage.color;
-                    newColor.a = 0f; // Fully transparent
-                    slotImage.color = newColor;
-                }
+                    Debug.Log("Correct placement!");
 
-                // Update status image to tick 
-                if (statusImage != null)
+                    // Snap to the slot position
+                    droppedObject.GetComponent<RectTransform>().position = GetComponent<RectTransform>().position;
+
+                    // Hide placeholder
+                    if (slotImage != null)
+                    {
+                        Color newColor = slotImage.color;
+                        newColor.a = 0f;
+                        slotImage.color = newColor;
+                    }
+
+                    // Show tick sprite
+                    if (statusImage != null)
+                    {
+                        statusImage.sprite = tickSprite;
+                    }
+
+                    if (!alreadyCompleted)
+                    {
+                        alreadyCompleted = true;
+
+                        if (manager != null)
+                        {
+                            manager.RegisterCorrectPlacement();
+                        }
+                    }
+
+                    // Optional: disable dragging after correct placement
+                    draggable.enabled = false;
+                }
+                // Incorrect placement
+                else
                 {
-                    statusImage.sprite = tickSprite;
-                }
-            }
-            // Incorrect placement
-            else
-            {
-                Debug.Log(" Incorrect placement!");
+                    Debug.Log("Incorrect placement!");
 
-                // Keep status image as a cross 
-                if (statusImage != null)
-                {
-                    statusImage.sprite = crossSprite;
-                }
+                    // Show cross sprite
+                    if (statusImage != null)
+                    {
+                        statusImage.sprite = crossSprite;
+                    }
 
-                // Reset object position
-                droppedObject.GetComponent<RectTransform>().position = droppedObject.GetComponent<DraggableUI>().originalPosition;
+                    // Snap back to original position
+                    droppedObject.GetComponent<RectTransform>().position = draggable.originalPosition;
+                }
             }
         }
     }

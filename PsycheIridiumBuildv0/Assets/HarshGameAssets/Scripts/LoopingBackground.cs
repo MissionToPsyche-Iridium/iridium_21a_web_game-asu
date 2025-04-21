@@ -11,6 +11,7 @@ public class LoopingBackground : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (ProgressBarController.gameOver) return;
         backgroundRenderer.material.mainTextureOffset += new Vector2(BackgroundSpeed * Time.deltaTime, 0f);
     }
 }

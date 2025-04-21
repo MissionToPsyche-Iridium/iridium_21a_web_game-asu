@@ -3,20 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\somes\\Desktop\\SocketProject\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AE02947F-88C2-07D7-D715-C046E5548E6F}|Assembly-CSharp.csproj|c:\\users\\somes\\desktop\\socketproject\\iridium_21a_web_game-asu\\psycheiridiumbuildv0\\assets\\harshgameassets\\scripts\\ignition\\rocketanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE02947F-88C2-07D7-D715-C046E5548E6F}|Assembly-CSharp.csproj|solutionrelative:assets\\harshgameassets\\scripts\\ignition\\rocketanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AE02947F-88C2-07D7-D715-C046E5548E6F}|Assembly-CSharp.csproj|c:\\users\\somes\\desktop\\socketproject\\iridium_21a_web_game-asu\\psycheiridiumbuildv0\\assets\\harshgameassets\\scripts\\progressbarcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE02947F-88C2-07D7-D715-C046E5548E6F}|Assembly-CSharp.csproj|solutionrelative:assets\\harshgameassets\\scripts\\progressbarcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AE02947F-88C2-07D7-D715-C046E5548E6F}|Assembly-CSharp.csproj|c:\\users\\somes\\desktop\\socketproject\\iridium_21a_web_game-asu\\psycheiridiumbuildv0\\assets\\harshgameassets\\scripts\\clickanddragscripts\\birduibehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE02947F-88C2-07D7-D715-C046E5548E6F}|Assembly-CSharp.csproj|solutionrelative:assets\\harshgameassets\\scripts\\clickanddragscripts\\birduibehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AE02947F-88C2-07D7-D715-C046E5548E6F}|Assembly-CSharp.csproj|c:\\users\\somes\\desktop\\socketproject\\iridium_21a_web_game-asu\\psycheiridiumbuildv0\\assets\\harshgameassets\\scripts\\spawnobstacles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE02947F-88C2-07D7-D715-C046E5548E6F}|Assembly-CSharp.csproj|solutionrelative:assets\\harshgameassets\\scripts\\spawnobstacles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AE02947F-88C2-07D7-D715-C046E5548E6F}|Assembly-CSharp.csproj|C:\\Users\\somes\\Desktop\\SocketProject\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\assets\\harshgameassets\\scripts\\ignition\\boosterframeanimator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE02947F-88C2-07D7-D715-C046E5548E6F}|Assembly-CSharp.csproj|solutionrelative:assets\\harshgameassets\\scripts\\ignition\\boosterframeanimator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AE02947F-88C2-07D7-D715-C046E5548E6F}|Assembly-CSharp.csproj|c:\\users\\somes\\desktop\\socketproject\\iridium_21a_web_game-asu\\psycheiridiumbuildv0\\assets\\harshgameassets\\scripts\\loopingbackground.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE02947F-88C2-07D7-D715-C046E5548E6F}|Assembly-CSharp.csproj|solutionrelative:assets\\harshgameassets\\scripts\\loopingbackground.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AE02947F-88C2-07D7-D715-C046E5548E6F}|Assembly-CSharp.csproj|C:\\Users\\somes\\Desktop\\SocketProject\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\assets\\harshgameassets\\scripts\\ignition\\rocketboosterignition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE02947F-88C2-07D7-D715-C046E5548E6F}|Assembly-CSharp.csproj|solutionrelative:assets\\harshgameassets\\scripts\\ignition\\rocketboosterignition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AE02947F-88C2-07D7-D715-C046E5548E6F}|Assembly-CSharp.csproj|c:\\users\\somes\\desktop\\socketproject\\iridium_21a_web_game-asu\\psycheiridiumbuildv0\\assets\\harshgameassets\\scripts\\gameover.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE02947F-88C2-07D7-D715-C046E5548E6F}|Assembly-CSharp.csproj|solutionrelative:assets\\harshgameassets\\scripts\\gameover.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE02947F-88C2-07D7-D715-C046E5548E6F}|Assembly-CSharp.csproj|c:\\users\\somes\\desktop\\socketproject\\iridium_21a_web_game-asu\\psycheiridiumbuildv0\\assets\\harshgameassets\\scripts\\cameramovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE02947F-88C2-07D7-D715-C046E5548E6F}|Assembly-CSharp.csproj|solutionrelative:assets\\harshgameassets\\scripts\\cameramovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE02947F-88C2-07D7-D715-C046E5548E6F}|Assembly-CSharp.csproj|c:\\users\\somes\\desktop\\socketproject\\iridium_21a_web_game-asu\\psycheiridiumbuildv0\\assets\\harshgameassets\\scripts\\backgroundmusic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE02947F-88C2-07D7-D715-C046E5548E6F}|Assembly-CSharp.csproj|solutionrelative:assets\\harshgameassets\\scripts\\backgroundmusic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE02947F-88C2-07D7-D715-C046E5548E6F}|Assembly-CSharp.csproj|c:\\users\\somes\\desktop\\socketproject\\iridium_21a_web_game-asu\\psycheiridiumbuildv0\\assets\\harshgameassets\\scripts\\backgroundchanger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE02947F-88C2-07D7-D715-C046E5548E6F}|Assembly-CSharp.csproj|solutionrelative:assets\\harshgameassets\\scripts\\backgroundchanger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,52 +43,93 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "RocketAnimation.cs",
-              "DocumentMoniker": "C:\\Users\\somes\\Desktop\\SocketProject\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\Assets\\HarshGameAssets\\Scripts\\Ignition\\RocketAnimation.cs",
-              "RelativeDocumentMoniker": "Assets\\HarshGameAssets\\Scripts\\Ignition\\RocketAnimation.cs",
-              "ToolTip": "C:\\Users\\somes\\Desktop\\SocketProject\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\Assets\\HarshGameAssets\\Scripts\\Ignition\\RocketAnimation.cs",
-              "RelativeToolTip": "Assets\\HarshGameAssets\\Scripts\\Ignition\\RocketAnimation.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAADwv0oAAAAAAAAAAAAAAA==",
+              "Title": "ProgressBarController.cs",
+              "DocumentMoniker": "C:\\Users\\somes\\Desktop\\SocketProject\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\Assets\\HarshGameAssets\\Scripts\\ProgressBarController.cs",
+              "RelativeDocumentMoniker": "Assets\\HarshGameAssets\\Scripts\\ProgressBarController.cs",
+              "ToolTip": "C:\\Users\\somes\\Desktop\\SocketProject\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\Assets\\HarshGameAssets\\Scripts\\ProgressBarController.cs",
+              "RelativeToolTip": "Assets\\HarshGameAssets\\Scripts\\ProgressBarController.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAzwEIAAABQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T01:24:24.93Z",
+              "WhenOpened": "2025-04-21T02:46:48.576Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "BirdUIBehavior.cs",
-              "DocumentMoniker": "C:\\Users\\somes\\Desktop\\SocketProject\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\Assets\\HarshGameAssets\\Scripts\\ClickAndDragScripts\\BirdUIBehavior.cs",
-              "RelativeDocumentMoniker": "Assets\\HarshGameAssets\\Scripts\\ClickAndDragScripts\\BirdUIBehavior.cs",
-              "ToolTip": "C:\\Users\\somes\\Desktop\\SocketProject\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\Assets\\HarshGameAssets\\Scripts\\ClickAndDragScripts\\BirdUIBehavior.cs",
-              "RelativeToolTip": "Assets\\HarshGameAssets\\Scripts\\ClickAndDragScripts\\BirdUIBehavior.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAkwD0AAABOAAAAAAAAAA==",
+              "Title": "SpawnObstacles.cs",
+              "DocumentMoniker": "C:\\Users\\somes\\Desktop\\SocketProject\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\Assets\\HarshGameAssets\\Scripts\\SpawnObstacles.cs",
+              "RelativeDocumentMoniker": "Assets\\HarshGameAssets\\Scripts\\SpawnObstacles.cs",
+              "ToolTip": "C:\\Users\\somes\\Desktop\\SocketProject\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\Assets\\HarshGameAssets\\Scripts\\SpawnObstacles.cs",
+              "RelativeToolTip": "Assets\\HarshGameAssets\\Scripts\\SpawnObstacles.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T01:21:18.011Z",
+              "WhenOpened": "2025-04-21T02:45:18.925Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "BoosterFrameAnimator.cs",
-              "DocumentMoniker": "C:\\Users\\somes\\Desktop\\SocketProject\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\Assets\\HarshGameAssets\\Scripts\\Ignition\\BoosterFrameAnimator.cs",
-              "RelativeDocumentMoniker": "Assets\\HarshGameAssets\\Scripts\\Ignition\\BoosterFrameAnimator.cs",
-              "ToolTip": "C:\\Users\\somes\\Desktop\\SocketProject\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\Assets\\HarshGameAssets\\Scripts\\Ignition\\BoosterFrameAnimator.cs",
-              "RelativeToolTip": "Assets\\HarshGameAssets\\Scripts\\Ignition\\BoosterFrameAnimator.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAADwvzwAAAAAAAAAAAAAAA==",
+              "Title": "LoopingBackground.cs",
+              "DocumentMoniker": "C:\\Users\\somes\\Desktop\\SocketProject\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\Assets\\HarshGameAssets\\Scripts\\LoopingBackground.cs",
+              "RelativeDocumentMoniker": "Assets\\HarshGameAssets\\Scripts\\LoopingBackground.cs",
+              "ToolTip": "C:\\Users\\somes\\Desktop\\SocketProject\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\Assets\\HarshGameAssets\\Scripts\\LoopingBackground.cs",
+              "RelativeToolTip": "Assets\\HarshGameAssets\\Scripts\\LoopingBackground.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T00:53:24.351Z"
+              "WhenOpened": "2025-04-21T02:45:01.784Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "RocketBoosterIgnition.cs",
-              "DocumentMoniker": "C:\\Users\\somes\\Desktop\\SocketProject\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\Assets\\HarshGameAssets\\Scripts\\Ignition\\RocketBoosterIgnition.cs",
-              "RelativeDocumentMoniker": "Assets\\HarshGameAssets\\Scripts\\Ignition\\RocketBoosterIgnition.cs",
-              "ToolTip": "C:\\Users\\somes\\Desktop\\SocketProject\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\Assets\\HarshGameAssets\\Scripts\\Ignition\\RocketBoosterIgnition.cs",
-              "RelativeToolTip": "Assets\\HarshGameAssets\\Scripts\\Ignition\\RocketBoosterIgnition.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAADwvxsAAAATAAAAAAAAAA==",
+              "Title": "GameOver.cs",
+              "DocumentMoniker": "C:\\Users\\somes\\Desktop\\SocketProject\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\Assets\\HarshGameAssets\\Scripts\\GameOver.cs",
+              "RelativeDocumentMoniker": "Assets\\HarshGameAssets\\Scripts\\GameOver.cs",
+              "ToolTip": "C:\\Users\\somes\\Desktop\\SocketProject\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\Assets\\HarshGameAssets\\Scripts\\GameOver.cs",
+              "RelativeToolTip": "Assets\\HarshGameAssets\\Scripts\\GameOver.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T00:46:29.687Z"
+              "WhenOpened": "2025-04-21T02:44:33.142Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CameraMovement.cs",
+              "DocumentMoniker": "C:\\Users\\somes\\Desktop\\SocketProject\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\Assets\\HarshGameAssets\\Scripts\\CameraMovement.cs",
+              "RelativeDocumentMoniker": "Assets\\HarshGameAssets\\Scripts\\CameraMovement.cs",
+              "ToolTip": "C:\\Users\\somes\\Desktop\\SocketProject\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\Assets\\HarshGameAssets\\Scripts\\CameraMovement.cs",
+              "RelativeToolTip": "Assets\\HarshGameAssets\\Scripts\\CameraMovement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T02:44:16.755Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BackgroundMusic.cs",
+              "DocumentMoniker": "C:\\Users\\somes\\Desktop\\SocketProject\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\Assets\\HarshGameAssets\\Scripts\\BackgroundMusic.cs",
+              "RelativeDocumentMoniker": "Assets\\HarshGameAssets\\Scripts\\BackgroundMusic.cs",
+              "ToolTip": "C:\\Users\\somes\\Desktop\\SocketProject\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\Assets\\HarshGameAssets\\Scripts\\BackgroundMusic.cs",
+              "RelativeToolTip": "Assets\\HarshGameAssets\\Scripts\\BackgroundMusic.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T02:43:44.947Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BackgroundChanger.cs",
+              "DocumentMoniker": "C:\\Users\\somes\\Desktop\\SocketProject\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\Assets\\HarshGameAssets\\Scripts\\BackgroundChanger.cs",
+              "RelativeDocumentMoniker": "Assets\\HarshGameAssets\\Scripts\\BackgroundChanger.cs",
+              "ToolTip": "C:\\Users\\somes\\Desktop\\SocketProject\\iridium_21a_web_game-asu\\PsycheIridiumBuildv0\\Assets\\HarshGameAssets\\Scripts\\BackgroundChanger.cs",
+              "RelativeToolTip": "Assets\\HarshGameAssets\\Scripts\\BackgroundChanger.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T02:42:58.736Z",
+              "EditorCaption": ""
             }
           ]
         }

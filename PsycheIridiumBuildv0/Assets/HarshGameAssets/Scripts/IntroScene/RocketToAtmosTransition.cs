@@ -1,16 +1,18 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class RocketToAtmosTransition : MonoBehaviour
 {
-
+    [Header("Text Setup")]
     public TextMeshProUGUI storyText;
     public TextMeshProUGUI continuePrompt;
     public float textSpeed = 0.03f;
     public string[] storyLines;
+
+    [Header("Scene Transition")]
+    public string nextSceneName = "AtmosClickAndDrag"; // Editable in Inspector
 
     private int currentLine = 0;
     private bool isTyping = false;
@@ -21,7 +23,6 @@ public class RocketToAtmosTransition : MonoBehaviour
         continuePrompt.gameObject.SetActive(false);
         storyText.text = "";
 
-        // Start fade in
         SceneFader fader = FindObjectOfType<SceneFader>();
         if (fader != null)
         {
@@ -39,7 +40,6 @@ public class RocketToAtmosTransition : MonoBehaviour
         {
             if (isTyping)
             {
-                // Skip typing and show full line
                 StopAllCoroutines();
                 storyText.text = storyLines[currentLine];
                 isTyping = false;
@@ -94,7 +94,13 @@ public class RocketToAtmosTransition : MonoBehaviour
             yield return fader.FadeOut();
         }
 
-        // Replace with your next scene's name
-        SceneManager.LoadScene("AtmosClickAndDrag");
+        if (!string.IsNullOrEmpty(nextSceneName))
+        {
+            SceneManager.LoadScene(nextSceneName);
+        }
+        else
+        {
+            Debug.LogWarning("No scene name specified! Add one to the script in the Inspector.");
+        }
     }
 }

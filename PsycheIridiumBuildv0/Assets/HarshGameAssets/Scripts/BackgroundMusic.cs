@@ -7,7 +7,8 @@ public class BackgroundMusic : MonoBehaviour
     private static BackgroundMusic backgroundMusic;
     void Awake()
     {
-        if(backgroundMusic == null)
+        if (ProgressBarController.gameOver) return;
+        if (backgroundMusic == null)
         {
             backgroundMusic = this;
             DontDestroyOnLoad(backgroundMusic);
@@ -16,4 +17,9 @@ public class BackgroundMusic : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    public void DestroyMusic()
+    {
+        Destroy(gameObject);
+    }
+
 }

@@ -21,14 +21,20 @@ EditorBuildSettings:
     path: Assets/HarshGameAssets/Scenes/ClickAndDrag.unity
     guid: e31a4e6343f6d1749bd007b19e26d6b1
   - enabled: 1
-    path: Assets/HarshGameAssets/Scenes/IgnitionSequence.unity
-    guid: c14a4b1b8acecf84c9755f678f23c599
-  - enabled: 1
     path: Assets/HarshGameAssets/Scenes/RocketToAstroTransition.unity
     guid: ca34b69be43a4924693b77e2403d9a13
   - enabled: 1
     path: Assets/HarshGameAssets/Scenes/AtmosClickAndDrag.unity
     guid: c5bc505d1f409984faca33038761b65d
+  - enabled: 1
+    path: Assets/HarshGameAssets/Scenes/AstroToIgnition.unity
+    guid: fd0114ff35f96c84d8ec44c5e391b55c
+  - enabled: 1
+    path: Assets/HarshGameAssets/Scenes/IgnitionSequence.unity
+    guid: c14a4b1b8acecf84c9755f678f23c599
+  - enabled: 1
+    path: Assets/HarshGameAssets/Scenes/IgnitionToEndless.unity
+    guid: 8c3bd0c7253ba414fa68116e218d6c63
   - enabled: 1
     path: Assets/HarshGameAssets/Scenes/EndlessRunner.unity
     guid: 285d44e2646cbab44a668a8f8c0f98f7
