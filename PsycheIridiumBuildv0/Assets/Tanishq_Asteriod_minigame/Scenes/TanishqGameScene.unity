@@ -452,7 +452,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 14a3a749808864695a05939c0af76431, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f72353c9944afd845b1e6292cbe6b563, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1259,7 +1259,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f2bb166989ee64d13980d2666c45e170, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c005f621c618ba443ae76258880be0b9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3098,8 +3098,7 @@ AudioSource:
   m_GameObject: {fileID: 843296652}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 243635350106398570, guid: cfc5e2fdc975444019564fd4d5b8f9d8,
-    type: 2}
+  OutputAudioMixerGroup: {fileID: 243635350106398570, guid: cfc5e2fdc975444019564fd4d5b8f9d8, type: 2}
   m_audioClip: {fileID: 8300000, guid: ae44838ad242c49ffb6af7462fd07e6e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -6814,8 +6813,8 @@ MonoBehaviour:
   - {fileID: 254385902}
   - {fileID: 208382070}
   playerIcons:
-  - {fileID: 21300000, guid: f2bb166989ee64d13980d2666c45e170, type: 3}
-  - {fileID: 21300000, guid: 14a3a749808864695a05939c0af76431, type: 3}
+  - {fileID: 21300000, guid: c005f621c618ba443ae76258880be0b9, type: 3}
+  - {fileID: 21300000, guid: f72353c9944afd845b1e6292cbe6b563, type: 3}
   tictactoeSpaces:
   - {fileID: 1429173188}
   - {fileID: 1096057597}

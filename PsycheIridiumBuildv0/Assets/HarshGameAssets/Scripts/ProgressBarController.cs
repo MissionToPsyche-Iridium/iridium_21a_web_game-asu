@@ -57,6 +57,7 @@ public class ProgressBarController : MonoBehaviour
     IEnumerator HandleEndGame()
     {
         Debug.Log("Rocket reached orbit!");
+        GameData.instance.pigeonRepaired = true;
         gameOver = true; // Stops movement/spawning if other scripts check this
 
         if (endGamePanel != null)
