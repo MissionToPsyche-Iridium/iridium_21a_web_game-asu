@@ -152,20 +152,17 @@ public class EditorManager : MonoBehaviour
     void EndEditMode()
     {
         connectionAlertText.SetActive(false);
-        noThrusterAlertText.SetActive(false);
         damageAlertText.SetActive(false);
+
+        if (!CheckForThruster(true))
+        {
+            return;
+        }
 
         // check for connection
         if (placedParts.Count == 0 || !AreAllPartsConnected())
         {
             connectionAlertText.SetActive(true);
-            return;
-        }
-
-        // check for a thruster in partstorage
-        if (!partStorage.Values.Any(tuple => tuple.Item1 == partKeyCodes[1]))
-        {
-            noThrusterAlertText.SetActive(true);
             return;
         }
 
@@ -228,6 +225,9 @@ public class EditorManager : MonoBehaviour
 
         // Store the part in partStorage
         partStorage[GetMouseGridPosition()] = new Tuple<KeyCode, Quaternion>(selectedPartKeyCode, lastPlacedPart.transform.rotation);
+
+        // Remove thruster alert if thruster is placed
+        CheckForThruster(false);
     }
     void PlayBuildSound()
     {
@@ -344,5 +344,20 @@ public class EditorManager : MonoBehaviour
             spriteShapeRenderer.color = selectedPartColor;
             spriteShapeRenderer.sortingOrder = 1;
         }
+    }
+
+    bool CheckForThruster(bool causeAlert)
+    {
+        // Check for no thruster in partstorage
+        if (!partStorage.Values.Any(tuple => tuple.Item1 == partKeyCodes[1]))
+        {
+            if (causeAlert)
+            {
+                noThrusterAlertText.SetActive(true);
+            }
+            return false;
+        }
+        noThrusterAlertText.SetActive(false);
+        return true;
     }
 }
