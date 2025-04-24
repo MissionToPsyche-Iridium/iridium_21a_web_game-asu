@@ -50,6 +50,7 @@ public class NPC : MonoBehaviour
 
     public void Interacted()
     {
+        StartCoroutine(WaitForPlayer());
         // Check to make sure the player is nearby.
         // Cutscenes bypass this check since they are started from scripts.
         if ((!isCutscene && playerNearby) || (isCutscene && cutsceneStarted))
@@ -58,7 +59,6 @@ public class NPC : MonoBehaviour
             if (!player.Interacting() && !speaking)
             {
                 // Freeze player and show first textbox.
-                StartCoroutine(WaitForPlayer());
                 player.EnterInteraction();
                 speaking = true;
                 currentTextbox = 0;
