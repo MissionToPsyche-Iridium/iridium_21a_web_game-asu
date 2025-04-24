@@ -138,6 +138,7 @@ public class PlayerController : MonoBehaviour
     public void EnterInteraction()
     {
         interacting = true;
+        if (rb == null) rb = GetComponent<Rigidbody2D>();
         rb.velocity = Vector3.zero;
     }
 
