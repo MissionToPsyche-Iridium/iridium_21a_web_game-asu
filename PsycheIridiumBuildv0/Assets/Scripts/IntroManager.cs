@@ -25,7 +25,7 @@ public class IntroManager : MonoBehaviour
 
     IEnumerator SwitchScene()
     {
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(0.9f);
         SceneManager.LoadScene("Donovan Top Down");
     }
 }
