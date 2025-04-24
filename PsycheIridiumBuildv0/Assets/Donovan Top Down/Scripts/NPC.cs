@@ -35,6 +35,7 @@ public class NPC : MonoBehaviour
 
     private void Start()
     {
+        StartCoroutine(WaitForPlayer());
         player.Interact += Interacted;
     }
 
@@ -96,8 +97,9 @@ public class NPC : MonoBehaviour
 
     private IEnumerator WaitForPlayer()
     {
-        if (player == null)
+        while (player == null)
         {
+            Debug.Log("Waiting for player...");
             yield return new WaitForEndOfFrame();
         }
     }
