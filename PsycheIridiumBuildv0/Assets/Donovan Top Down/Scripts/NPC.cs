@@ -35,7 +35,6 @@ public class NPC : MonoBehaviour
 
     private void Start()
     {
-        //StartCoroutine(WaitForPlayer());
         while (player == null) { }
 
         player.Interact += Interacted;
@@ -52,7 +51,6 @@ public class NPC : MonoBehaviour
 
     public void Interacted()
     {
-        //StartCoroutine(WaitForPlayer());
         while (player == null) { }
 
         // Check to make sure the player is nearby.
@@ -96,15 +94,6 @@ public class NPC : MonoBehaviour
                 cutsceneStarted = false;
                 audioSource.Play();
             }
-        }
-    }
-
-    private IEnumerator WaitForPlayer()
-    {
-        while (player == null)
-        {
-            Debug.Log("Waiting for player...");
-            yield return new WaitForEndOfFrame();
         }
     }
 
