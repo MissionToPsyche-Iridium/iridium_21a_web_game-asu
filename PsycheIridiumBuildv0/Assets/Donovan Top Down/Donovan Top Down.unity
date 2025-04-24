@@ -134478,6 +134478,10 @@ PrefabInstance:
       value: -150
       objectReference: {fileID: 0}
     - target: {fileID: 8132089826454867196, guid: 8a07da679462cfb4dbdf01f52270286e, type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132089826454867196, guid: 8a07da679462cfb4dbdf01f52270286e, type: 3}
       propertyPath: rightBound
       value: 150
       objectReference: {fileID: 0}

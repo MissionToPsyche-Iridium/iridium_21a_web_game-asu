@@ -57,7 +57,7 @@ public class NPC : MonoBehaviour
             if (!player.Interacting() && !speaking)
             {
                 // Freeze player and show first textbox.
-                // player.EnterInteraction();
+                player.EnterInteraction();
                 speaking = true;
                 currentTextbox = 0;
                 hud.ShowTextbox(textName, text[currentTextbox]);
