@@ -57,6 +57,7 @@ public class NPC : MonoBehaviour
             if (!player.Interacting() && !speaking)
             {
                 // Freeze player and show first textbox.
+                StartCoroutine(WaitForPlayer());
                 player.EnterInteraction();
                 speaking = true;
                 currentTextbox = 0;
@@ -90,6 +91,14 @@ public class NPC : MonoBehaviour
                 cutsceneStarted = false;
                 audioSource.Play();
             }
+        }
+    }
+
+    private IEnumerator WaitForPlayer()
+    {
+        if (player == null)
+        {
+            yield return new WaitForEndOfFrame();
         }
     }
 
