@@ -390,7 +390,7 @@ PrefabInstance:
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameThumbnail
       value: 
-      objectReference: {fileID: 21300000, guid: 41a63ac92876ba04a8ee9ce51caefca9, type: 3}
+      objectReference: {fileID: 21300000, guid: 966a1e0066f870d4ca93b786e1d62912, type: 3}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: text.Array.data[0]
       value: Ow ow ow ow OW!
@@ -3449,7 +3449,7 @@ PrefabInstance:
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameThumbnail
       value: 
-      objectReference: {fileID: 21300000, guid: 41a63ac92876ba04a8ee9ce51caefca9, type: 3}
+      objectReference: {fileID: 21300000, guid: 966a1e0066f870d4ca93b786e1d62912, type: 3}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: text.Array.data[0]
       value: "Phew! That wasn\u2019t pleasant! Glad to be back in shape!"
@@ -123961,7 +123961,7 @@ PrefabInstance:
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameThumbnail
       value: 
-      objectReference: {fileID: 21300000, guid: 5cf27e4542f177c46b5ea5ebe089373c, type: 3}
+      objectReference: {fileID: 21300000, guid: c61b4a5661a83014a9e3e3370ec04eb6, type: 3}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: text.Array.data[0]
       value: (The X-Band High Gain Antenna waves a tentacle at you.)
@@ -124427,7 +124427,7 @@ PrefabInstance:
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: minigameThumbnail
       value: 
-      objectReference: {fileID: 21300000, guid: 5cf27e4542f177c46b5ea5ebe089373c, type: 3}
+      objectReference: {fileID: 21300000, guid: c61b4a5661a83014a9e3e3370ec04eb6, type: 3}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: text.Array.data[0]
       value: (The X-Band High Gain Antenna shifts slowly.)
@@ -134476,6 +134476,10 @@ PrefabInstance:
     - target: {fileID: 8132089826454867196, guid: 8a07da679462cfb4dbdf01f52270286e, type: 3}
       propertyPath: leftBound
       value: -150
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132089826454867196, guid: 8a07da679462cfb4dbdf01f52270286e, type: 3}
+      propertyPath: moveSpeed
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8132089826454867196, guid: 8a07da679462cfb4dbdf01f52270286e, type: 3}
       propertyPath: rightBound

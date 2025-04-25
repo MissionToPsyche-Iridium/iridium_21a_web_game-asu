@@ -92,6 +92,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c2a718199e8ca148897fa197faa7d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionSound: {fileID: 8300000, guid: 32d6cc12cbd1811418d7d28ce19c04e8, type: 3}
+  volume: 1
 --- !u!50 &-5196551050813641802
 Rigidbody2D:
   serializedVersion: 4

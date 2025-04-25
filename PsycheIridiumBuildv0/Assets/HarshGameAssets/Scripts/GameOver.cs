@@ -9,7 +9,8 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameObject.FindGameObjectWithTag("Player") == null)
+        if (ProgressBarController.gameOver) return;
+        if (GameObject.FindGameObjectWithTag("Player") == null)
         {
             gameOverPanel.SetActive(true);
         }

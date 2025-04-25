@@ -23,11 +23,11 @@ public class ObstacleController : MonoBehaviour
     {
         if (!isIgnoringCollision)
         {
-            audioSource.Play();
-            Camera.main.gameObject.GetComponent<CameraController>().Shake(0.3f, 0.15f);
-            SpacecraftController.damage += 0.2f;
-
             StartCoroutine(IgnoreCollisionForSeconds(1f));
+
+            audioSource.Play();
+            Camera.main.gameObject.GetComponent<CameraController>().TimedShake(0.3f, 0.15f);
+            SpacecraftController.damage += 0.2f;
         }
     }
 

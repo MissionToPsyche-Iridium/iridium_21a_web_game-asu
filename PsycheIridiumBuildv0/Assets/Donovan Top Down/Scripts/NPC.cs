@@ -35,6 +35,8 @@ public class NPC : MonoBehaviour
 
     private void Start()
     {
+        while (player == null) { }
+
         player.Interact += Interacted;
     }
 
@@ -49,6 +51,8 @@ public class NPC : MonoBehaviour
 
     public void Interacted()
     {
+        while (player == null) { }
+
         // Check to make sure the player is nearby.
         // Cutscenes bypass this check since they are started from scripts.
         if ((!isCutscene && playerNearby) || (isCutscene && cutsceneStarted))

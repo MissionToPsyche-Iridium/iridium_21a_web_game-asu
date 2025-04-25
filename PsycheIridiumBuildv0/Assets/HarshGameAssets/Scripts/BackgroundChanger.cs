@@ -18,6 +18,7 @@ public class BackgroundManager : MonoBehaviour
 
     void Update()
     {
+        if (ProgressBarController.gameOver) return;
         // Update elapsed time
         elapsedTime += Time.deltaTime;
 
@@ -30,6 +31,7 @@ public class BackgroundManager : MonoBehaviour
 
     void ChangeBackground()
     {
+        if (ProgressBarController.gameOver) return;
         // Deactivate the current background
         backgroundElements[currentLayerIndex].SetActive(false);
 

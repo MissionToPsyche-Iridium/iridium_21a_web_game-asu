@@ -23,16 +23,18 @@ public class CameraController : MonoBehaviour
         }
 
         transform.position = originalPosition;
-        if (SpacecraftController.rb != null && SpacecraftController.activeThrusters > 0)
+        if (SpacecraftController.rb != null && SpacecraftController.activeThrusters > 0 && !GoalController.isComplete)
+        {
             ConstantShake(SpacecraftController.rb.velocity.magnitude * .005f);
+        }
     }
 
-    public void Shake(float duration, float magnitude)
+    public void TimedShake(float duration, float magnitude)
     {
-        StartCoroutine(TimedShake(duration, magnitude));
+        StartCoroutine(TimedShakeCoroutine(duration, magnitude));
     }
 
-    IEnumerator TimedShake(float duration, float magnitude)
+    IEnumerator TimedShakeCoroutine(float duration, float magnitude)
     {
         Vector3 originalPosition = transform.position;
         float elapsed = 0.0f;

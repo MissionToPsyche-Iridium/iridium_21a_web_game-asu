@@ -15,6 +15,7 @@ public class SpawnObstacles : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (ProgressBarController.gameOver) return;
         if (Time.time > spawnTime)
         {
             Spawn();
@@ -22,7 +23,7 @@ public class SpawnObstacles : MonoBehaviour
         }
     }
     void Spawn()
-    {
+    {   
         float randomX = Random.Range(minX, maxX);
         float randomY = Random.Range(minY, maxY);
 
