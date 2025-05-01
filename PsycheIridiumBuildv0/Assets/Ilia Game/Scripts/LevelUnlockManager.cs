@@ -21,9 +21,9 @@ public class LevelUnlockManager : MonoBehaviour
     private Dictionary<string, TextMeshProUGUI> resourceTexts = new Dictionary<string, TextMeshProUGUI>();
 
     private readonly int[,] levelCosts = {
-        { 0, 0, 0 },   // Costs for Level 2 (was  200,  100,   80)
-        { 0, 0, 0 },   // Costs for Level 3 (was 4000, 1000,  900)
-        { 0, 0, 0 }    // Costs for Level 4 (was 9000, 7000, 3000)
+        { 100, 100, 100 },   // Costs for Level 2 (was  200,  100,   80)
+        { 200, 200, 200 },   // Costs for Level 3 (was 4000, 1000,  900)
+        { 300, 300, 300 }    // Costs for Level 4 (was 9000, 7000, 3000)
     };
 
     void Start()
