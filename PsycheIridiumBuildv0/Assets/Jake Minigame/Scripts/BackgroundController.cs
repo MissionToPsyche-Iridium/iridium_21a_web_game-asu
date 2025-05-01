@@ -3,7 +3,8 @@ using UnityEngine;
 public class BackgroundController : MonoBehaviour
 {
     static Vector3 startPosition;
-    public static float sideLength;
+    public static float length;
+    public static float height;
     [SerializeField] GameObject backgroundPrefab;
     [SerializeField][Range(0, 1)] float parallaxScale;
     ObstacleManager obstacleManager;
@@ -12,11 +13,14 @@ public class BackgroundController : MonoBehaviour
     void Start()
     {
         startPosition = transform.position;
-        sideLength = GetComponent<SpriteRenderer>().bounds.size.x;
+        length = GetComponent<SpriteRenderer>().bounds.size.x;
+        height = GetComponent<SpriteRenderer>().bounds.size.y;
 
         obstacleManager = GetComponent<ObstacleManager>();
-        ObstacleManager.backgroundSideLength = sideLength;
+        ObstacleManager.backgroundSideLength = height;
         obstacleManager.InitializeObstacleManager();
+
+        backgroundPrefab.GetComponent<SpriteRenderer>().sprite = GetComponent<SpriteRenderer>().sprite;
 
         // Initialize surrounding background objects
         for (int i = -2; i <= 2; i++)
@@ -25,7 +29,7 @@ public class BackgroundController : MonoBehaviour
             {
                 if (!(i == 0 && j == 0))
                 {
-                    Instantiate(backgroundPrefab, new Vector3(startPosition.x + i * sideLength, startPosition.y + j * sideLength, 0f), Quaternion.identity, gameObject.transform);
+                    Instantiate(backgroundPrefab, new Vector3(startPosition.x + i * length, startPosition.y + j * height, 0f), Quaternion.identity, gameObject.transform);
                 }
             }
         }
@@ -41,25 +45,25 @@ public class BackgroundController : MonoBehaviour
         if (transform.position != newPosition)
         {
             transform.position = newPosition;
-            obstacleManager.SpawnObstacles(new Vector2Int((int)newPosition.x, (int)newPosition.y) / (int)sideLength);
+            obstacleManager.SpawnObstacles(new Vector2Int((int)newPosition.x, (int)newPosition.y) / (int)height);
         }
 
-        if (movement.x > startPosition.x + sideLength)
+        if (movement.x > startPosition.x + length)
         {
-            startPosition.x += sideLength;
+            startPosition.x += length;
         }
-        else if (movement.x < startPosition.x - sideLength)
+        else if (movement.x < startPosition.x - length)
         {
-            startPosition.x -= sideLength;
+            startPosition.x -= length;
         }
 
-        if (movement.y > startPosition.y + sideLength)
+        if (movement.y > startPosition.y + height)
         {
-            startPosition.y += sideLength;
+            startPosition.y += height;
         }
-        else if (movement.y < startPosition.y - sideLength)
+        else if (movement.y < startPosition.y - height)
         {
-            startPosition.y -= sideLength;
+            startPosition.y -= height;
         }
     }
 }

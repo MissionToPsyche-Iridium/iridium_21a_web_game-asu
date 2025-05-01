@@ -33,11 +33,15 @@ public class NPC : MonoBehaviour
     private bool cutsceneStarted = false;
     private int currentTextbox = -1;
 
+    private GameObject buttonPromptCanvas;
+
     private void Start()
     {
         //while (player == null) { }
 
         player.Interact += Interacted;
+
+        buttonPromptCanvas = player.gameObject.transform.GetChild(1).gameObject;
     }
 
     public void StartCutscene()
@@ -100,10 +104,12 @@ public class NPC : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         playerNearby = true;
+        buttonPromptCanvas.SetActive(true);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         playerNearby = false;
+        buttonPromptCanvas.SetActive(false);
     }
 }
