@@ -23,9 +23,7 @@ public class PregameManager : MonoBehaviour
 
     void Start()
     {
-        GameState.Instance.LoadGameState();
         totalResources = SetResourcesToTenThousand();
-        GameState.Instance.SaveGameState();
         GenerateResourceUI();
     }
 
@@ -40,13 +38,13 @@ public class PregameManager : MonoBehaviour
             switch (res.type)
             {
                 case Asteroid.AsteroidType.Iron:
-                    GameState.Instance.iron = 0;
+                    result[res.type] = GameState.Instance.iron;
                     break;
                 case Asteroid.AsteroidType.Gold:
-                    GameState.Instance.gold = 0;
+                    result[res.type] = GameState.Instance.gold;
                     break;
                 case Asteroid.AsteroidType.Tungsten:
-                    GameState.Instance.tungsten = 0;
+                    result[res.type] = GameState.Instance.tungsten;
                     break;
             }
         }

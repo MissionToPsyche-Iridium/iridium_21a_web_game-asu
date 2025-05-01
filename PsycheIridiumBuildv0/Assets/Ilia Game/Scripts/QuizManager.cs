@@ -3,6 +3,8 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
+using System;
 
 public class QuizManager : MonoBehaviour
 {
@@ -27,6 +29,13 @@ public class QuizManager : MonoBehaviour
     private List<Question> questions = new List<Question>();
     private int currentQuestionIndex = 0;
     private int questionsAnswered = 0;
+
+    [SerializeField] private GameObject answerButtonsParent;
+    [SerializeField] private GameObject nextButton;
+
+    [SerializeField] private AudioClip correctAudio;
+    [SerializeField] private AudioClip incorrectAudio;
+    [SerializeField] private AudioSource audioSource;
 
     void Start()
     {
@@ -106,28 +115,36 @@ public class QuizManager : MonoBehaviour
     void InitializeQuestions()
     {
         questions.Add(new Question("What is Psyche's main mission?",
-            new string[] { "Study an asteroid", "Study a comet", "Study Mars", "Study the Moon" }, 0));
+            //new string[] { "Study an asteroid", "Study a comet", "Study Mars", "Study the Moon" }, 0));
+            new string[] { "Study Mars", "Study a comet", "Study an asteroid", "Study the Moon" }, 2));
         questions.Add(new Question("What kind of asteroid is Psyche targeting?",
-            new string[] { "Metal-rich", "Ice-rich", "Carbon-rich", "Gas-rich" }, 0));
+            //new string[] { "Metal-rich", "Ice-rich", "Carbon-rich", "Gas-rich" }, 0));
+            new string[] { "Gas-rich", "Ice-rich", "Carbon-rich", "Metal-rich" }, 3));
         questions.Add(new Question("When was Psyche launched?",
             new string[] { "2023", "2021", "2020", "2019" }, 0));
         questions.Add(new Question("What is Psyche made primarily of?",
-            new string[] { "Metal", "Ice", "Rock", "Gas" }, 0));
+            //new string[] { "Metal", "Ice", "Rock", "Gas" }, 0));
+            new string[] { "Ice", "Metal", "Rock", "Gas" }, 1));
         questions.Add(new Question("How far is Psyche's target asteroid?",
-            new string[] { "280 million miles", "150 million miles", "400 million miles", "500 million miles" }, 0));
+            //new string[] { "280 million miles", "150 million miles", "400 million miles", "500 million miles" }, 0));
+            new string[] { "400 million miles", "150 million miles", "280 million miles", "500 million miles" }, 2));
         questions.Add(new Question("Which organization leads Psyche?",
-            new string[] { "NASA", "ESA", "SpaceX", "Blue Origin" }, 0));
+            //new string[] { "NASA", "ESA", "SpaceX", "Blue Origin" }, 0));
+            new string[] { "Blue Origin", "ESA", "SpaceX", "NASA" }, 3));
         questions.Add(new Question("What will Psyche study?",
             new string[] { "Asteroid composition", "Moon craters", "Martian soil", "Comet tails" }, 0));
         questions.Add(new Question("What is the mission's goal?",
-            new string[] { "Understand planet formation", "Study black holes", "Explore Europa", "Map the Sun" }, 0));
+            //new string[] { "Understand planet formation", "Study black holes", "Explore Europa", "Map the Sun" }, 0));
+            new string[] { "Study black holes", "Understand planet formation", "Explore Europa", "Map the Sun" }, 1));
         questions.Add(new Question("How long will the Psyche mission last?",
-            new string[] { "4 years", "2 years", "6 years", "1 year" }, 0));
+            //new string[] { "4 years", "2 years", "6 years", "1 year" }, 0));
+            new string[] { "6 years", "2 years", "4 years", "1 year" }, 2));
         questions.Add(new Question("What instrument does Psyche use?",
-            new string[] { "Gamma Ray Spectrometer", "Lidar", "X-ray camera", "Optical telescope" }, 0));
+            //new string[] { "Gamma Ray Spectrometer", "Lidar", "X-ray camera", "Optical telescope" }, 0));
+            new string[] { "Optical telescope", "Lidar", "X-ray camera", "Gamma Ray Spectrometer" }, 3));
     }
 
-    void LoadNextQuestion()
+    public void LoadNextQuestion()
     {
         if (questionsAnswered >= 3)
         {
@@ -136,7 +153,7 @@ public class QuizManager : MonoBehaviour
             return;
         }
 
-        currentQuestionIndex = Random.Range(0, questions.Count);
+        currentQuestionIndex = UnityEngine.Random.Range(0, questions.Count);
         Question question = questions[currentQuestionIndex];
         questionText.text = question.text;
 
@@ -147,6 +164,9 @@ public class QuizManager : MonoBehaviour
             answerButtons[i].onClick.RemoveAllListeners();
             answerButtons[i].onClick.AddListener(() => OnAnswerSelected(buttonIndex));
         }
+
+        nextButton.SetActive(false);
+        answerButtonsParent.SetActive(true);
     }
 
     void OnAnswerSelected(int selectedIndex)
@@ -155,20 +175,29 @@ public class QuizManager : MonoBehaviour
         if (selectedIndex == question.correctAnswerIndex)
         {
             Debug.Log("Correct answer!");
+            audioSource.PlayOneShot(correctAudio);
+            questionText.text = "CORRECT!\nGained 10% resources!";
             UpdateResources(1.1f); // Increase by 10%
         }
         else
         {
             Debug.Log("Incorrect answer.");
+            audioSource.PlayOneShot(incorrectAudio);
+            questionText.text = "INCORRECT!\nLost 5% resources!";
             UpdateResources(0.95f); // Decrease by 5%
         }
 
         questionsAnswered++;
-        LoadNextQuestion();
+        answerButtonsParent.SetActive(false);
+        nextButton.SetActive(true);
     }
 
     void UpdateResources(float multiplier)
     {
+        GameState.Instance.collectedIron = (int)Math.Round(GameState.Instance.collectedIron * multiplier);
+        GameState.Instance.collectedGold = (int)Math.Round(GameState.Instance.collectedGold * multiplier);
+        GameState.Instance.collectedTungsten = (int)Math.Round(GameState.Instance.collectedTungsten * multiplier);
+
         foreach (var resource in resources)
         {
             int updatedAmount = Mathf.RoundToInt(resource.amount * multiplier);
@@ -179,16 +208,7 @@ public class QuizManager : MonoBehaviour
 
     void FinalizeResources()
     {
-        // Add updated resources to total
-        GameState.Instance.iron += resources.Find(r => r.name == "Iron").amount;
-        GameState.Instance.gold += resources.Find(r => r.name == "Gold").amount;
-        GameState.Instance.tungsten += resources.Find(r => r.name == "Tungsten").amount;
-
-        // Reset collected resources to 0
-        GameState.Instance.SetCollectedResources(0, 0, 0);
-
-        // Save game state
-        GameState.Instance.SaveGameState();
+        GameState.Instance.AddCollectedToTotal();
     }
 
     class Question

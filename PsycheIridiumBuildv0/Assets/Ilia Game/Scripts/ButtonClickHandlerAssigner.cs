@@ -10,6 +10,8 @@ public class ButtonClickHandlerAssigner : MonoBehaviour
     public Button quitButton; // Button to return to HUB
     public TMPro.TextMeshProUGUI errorText; // Pre-existing Text UI element for displaying errors
 
+    [SerializeField] private Color levelButtonLockedColor;
+
     void Start()
     {
         if (levelButtons.Length != 4)
@@ -33,6 +35,7 @@ public class ButtonClickHandlerAssigner : MonoBehaviour
         {
             int levelIndex = i; // Capture the current index for the lambda
             levelButtons[i].onClick.AddListener(() => OnLevelButtonClick(levelIndex + 1, maxAsteroids[levelIndex], intervals[levelIndex]));
+            UpdateLevelButtonAppearance(levelButtons[i], levelButtons[i].gameObject.GetComponent<Image>(), levelIndex + 1);
         }
 
         // Assign handler to the ship upgrade button
@@ -56,6 +59,32 @@ public class ButtonClickHandlerAssigner : MonoBehaviour
         }
     }
 
+    void UpdateLevelButtonAppearance(Button button, Image image, int levelNumber)
+    {
+        bool unlocked = false;
+        switch (levelNumber)
+        {
+            case 1:
+                unlocked = true;
+                break;
+            case 2:
+                if (GameState.Instance.level2Purchased) unlocked = true;
+                break;
+            case 3:
+                if (GameState.Instance.level3Purchased) unlocked = true;
+                break;
+            case 4:
+                if (GameState.Instance.level4Purchased) unlocked = true;
+            break;
+        }
+
+        if (!unlocked)
+        {
+            button.interactable = false;
+            image.color = levelButtonLockedColor;
+        }
+    }
+
     void OnLevelButtonClick(int level, int maxAsteroids, float interval)
     {
         // Check if the level is unlocked
@@ -63,9 +92,9 @@ public class ButtonClickHandlerAssigner : MonoBehaviour
         {
             Debug.Log($"Level {level} selected. Parameters: maxAsteroids={maxAsteroids}, interval={interval}");
 
-            // Save parameters to PlayerPrefs to pass them to the next scene
-            PlayerPrefs.SetInt("MaxAsteroids", maxAsteroids);
-            PlayerPrefs.SetFloat("AsteroidInterval", interval);
+            // Save parameters to GameState to pass them to the next scene
+            GameState.Instance.maxAsteroids = maxAsteroids;
+            GameState.Instance.asteroidInterval = interval;
 
             // Load the level scene
             SceneManager.LoadScene("Ilia_MiniGameScene"); // Replace with your actual scene name
@@ -90,6 +119,7 @@ public class ButtonClickHandlerAssigner : MonoBehaviour
         Debug.Log("Quit button clicked. Loading HUB scene...");
 
         MusicPlayer.instance.StopMusic();
+        MusicPlayer.instance.DestroyMusic();
         SceneManager.LoadScene("Donovan Top Down");
     }
 
@@ -99,9 +129,9 @@ public class ButtonClickHandlerAssigner : MonoBehaviour
         switch (level)
         {
             case 1: return true; // Level 1 is always unlocked
-            case 2: return PlayerPrefs.GetInt("Level2Unlocked", 0) == 1;
-            case 3: return PlayerPrefs.GetInt("Level3Unlocked", 0) == 1;
-            case 4: return PlayerPrefs.GetInt("Level4Unlocked", 0) == 1;
+            case 2: return GameState.Instance.level2Purchased;
+            case 3: return GameState.Instance.level3Purchased;
+            case 4: return GameState.Instance.level4Purchased;
             default: return false;
         }
     }

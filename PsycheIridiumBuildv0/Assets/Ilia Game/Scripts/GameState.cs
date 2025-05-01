@@ -32,55 +32,22 @@ public class GameState : MonoBehaviour
     public bool level3Purchased = false;
     public bool level4Purchased = false;
 
+    public int maxAsteroids = 0;
+    public float asteroidInterval = 0;
+
     void Awake()
     {
         // Ensure this object persists across scenes
         if (Instance == null)
         {
+            Debug.Log("Instantiating GameState");
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            LoadGameState();
         }
         else
         {
             Destroy(gameObject);
         }
-    }
-
-    // Save the game state to PlayerPrefs
-    public void SaveGameState()
-    {
-        PlayerPrefs.SetInt("Iron", iron);
-        PlayerPrefs.SetInt("Gold", gold);
-        PlayerPrefs.SetInt("Tungsten", tungsten);
-
-        PlayerPrefs.SetInt("CollectedIron", collectedIron);
-        PlayerPrefs.SetInt("CollectedGold", collectedGold);
-        PlayerPrefs.SetInt("CollectedTungsten", collectedTungsten);
-
-        PlayerPrefs.SetInt("Level2Purchased", level2Purchased ? 1 : 0);
-        PlayerPrefs.SetInt("Level3Purchased", level3Purchased ? 1 : 0);
-        PlayerPrefs.SetInt("Level4Purchased", level4Purchased ? 1 : 0);
-
-        PlayerPrefs.Save();
-        Debug.Log("Game state saved.");
-    }
-
-    // Load the game state from PlayerPrefs
-    public void LoadGameState()
-    {
-        iron = PlayerPrefs.GetInt("Iron", 0);
-        gold = PlayerPrefs.GetInt("Gold", 0);
-        tungsten = PlayerPrefs.GetInt("Tungsten", 0);
-
-        collectedIron = PlayerPrefs.GetInt("CollectedIron", 0);
-        collectedGold = PlayerPrefs.GetInt("CollectedGold", 0);
-        collectedTungsten = PlayerPrefs.GetInt("CollectedTungsten", 0);
-
-        level2Purchased = PlayerPrefs.GetInt("Level2Purchased", 0) == 1;
-        level3Purchased = PlayerPrefs.GetInt("Level3Purchased", 0) == 1;
-        level4Purchased = PlayerPrefs.GetInt("Level4Purchased", 0) == 1;
-        Debug.Log("Game state loaded.");
     }
 
     // Check if a level is unlocked
@@ -109,9 +76,12 @@ public class GameState : MonoBehaviour
     // Add collected resources to total and reset collected values
     public void AddCollectedToTotal()
     {
+        Debug.Log(iron);
+        Debug.Log(collectedIron);
         iron += collectedIron;
         gold += collectedGold;
         tungsten += collectedTungsten;
+        Debug.Log(iron);
 
         collectedIron = 0;
         collectedGold = 0;
@@ -124,7 +94,6 @@ public class GameState : MonoBehaviour
     public void LoadQuizScene()
     {
         Debug.Log("Loading Quiz Scene...");
-        SaveGameState(); // Ensure resources are saved before transitioning
         UnityEngine.SceneManagement.SceneManager.LoadScene("Ilia_QuizScene");
     }
 

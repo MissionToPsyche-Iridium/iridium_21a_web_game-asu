@@ -8,6 +8,10 @@ public class DragAndDropManager : MonoBehaviour
 
     public GameObject nextStepUI; // UI to show when complete (e.g. button or panel)
 
+    [SerializeField] private AudioClip correctAudio;
+    [SerializeField] private AudioClip incorrectAudio;
+    [SerializeField] private AudioSource audioSource;
+
     void Start()
     {
         correctPlacements = 0;
@@ -21,6 +25,7 @@ public class DragAndDropManager : MonoBehaviour
     public void RegisterCorrectPlacement()
     {
         correctPlacements++;
+        audioSource.PlayOneShot(correctAudio);
 
         if (correctPlacements >= totalSlots)
         {
@@ -33,5 +38,10 @@ public class DragAndDropManager : MonoBehaviour
             // Optional: auto-progress or trigger next phase
             // StartCoroutine(ProceedToNextPhase());
         }
+    }
+
+    public void RegisterIncorrectPlacement()
+    {
+        audioSource.PlayOneShot(incorrectAudio);
     }
 }

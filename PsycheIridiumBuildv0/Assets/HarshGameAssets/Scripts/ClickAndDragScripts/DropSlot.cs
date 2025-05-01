@@ -83,6 +83,12 @@ public class DropSlot : MonoBehaviour, IDropHandler
                         statusImage.sprite = crossSprite;
                     }
 
+                    // Tell the manager to play incorrect audio.
+                    if (manager != null)
+                    {
+                        manager.RegisterIncorrectPlacement();
+                    }
+
                     // Snap back to original position
                     droppedObject.GetComponent<RectTransform>().position = draggable.originalPosition;
                 }

@@ -9,14 +9,17 @@ public class MusicPlayer : MonoBehaviour
     void Awake()
     {
         // If an instance already exists and it's not this, destroy this duplicate.
-        if (instance != null && instance != this)
+        if (instance != null)
         {
             Destroy(gameObject);
             return;
         }
-        // Set this as the singleton instance and persist across scenes.
-        instance = this;
-        DontDestroyOnLoad(gameObject);
+        else
+        {
+            // Set this as the singleton instance and persist across scenes.
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
     }
 
     void Start()
@@ -38,6 +41,15 @@ public class MusicPlayer : MonoBehaviour
         if (audioSource.isPlaying)
         {
             audioSource.Stop();
+        }
+    }
+
+    public void DestroyMusic()
+    {
+        if (instance != null)
+        {
+            instance = null;
+            Destroy(gameObject);
         }
     }
 }

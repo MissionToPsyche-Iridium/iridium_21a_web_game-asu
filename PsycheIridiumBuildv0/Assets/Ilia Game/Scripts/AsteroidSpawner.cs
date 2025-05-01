@@ -12,9 +12,9 @@ public class AsteroidSpawner : MonoBehaviour
 
     void Start()
     {
-        // Load parameters from PlayerPrefs
-        maxAsteroids = PlayerPrefs.GetInt("MaxAsteroids", maxAsteroids); // Use default if not set
-        spawnInterval = PlayerPrefs.GetFloat("AsteroidInterval", spawnInterval); // Use default if not set
+        // Load parameters from GameState
+        maxAsteroids = GameState.Instance.maxAsteroids;
+        spawnInterval = GameState.Instance.asteroidInterval;
 
         Debug.Log($"AsteroidSpawner initialized with maxAsteroids={maxAsteroids}, spawnInterval={spawnInterval}");
 

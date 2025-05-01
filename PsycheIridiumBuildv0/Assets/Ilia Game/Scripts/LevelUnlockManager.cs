@@ -21,9 +21,9 @@ public class LevelUnlockManager : MonoBehaviour
     private Dictionary<string, TextMeshProUGUI> resourceTexts = new Dictionary<string, TextMeshProUGUI>();
 
     private readonly int[,] levelCosts = {
-        { 200, 100, 80 },       // Costs for Level 2
-        { 4000, 1000, 900 }, //{ 4000, 1000, 900 },    // Costs for Level 3
-        { 9000, 7000, 3000 }    // Costs for Level 4
+        { 0, 0, 0 },   // Costs for Level 2 (was  200,  100,   80)
+        { 0, 0, 0 },   // Costs for Level 3 (was 4000, 1000,  900)
+        { 0, 0, 0 }    // Costs for Level 4 (was 9000, 7000, 3000)
     };
 
     void Start()
@@ -117,7 +117,14 @@ public class LevelUnlockManager : MonoBehaviour
         for (int i = 0; i < unlockButtons.Length; i++)
         {
             int levelIndex = i; // Capture index for lambda
-            unlockButtons[i].onClick.AddListener(() => TryUnlockLevel(levelIndex));
+            if (IsLevelPurchased(levelIndex))
+            {
+                unlockButtons[i].gameObject.SetActive(false);
+            }
+            else
+            {
+                unlockButtons[i].onClick.AddListener(() => TryUnlockLevel(levelIndex));
+            }
         }
     }
 
@@ -174,7 +181,7 @@ public class LevelUnlockManager : MonoBehaviour
             case 2: GameState.Instance.level4Purchased = true; break;
         }
 
-        GameState.Instance.SaveGameState(); // Persist changes
+        unlockButtons[levelIndex].gameObject.SetActive(false);
     }
 
     void SubtractResources(int iron, int gold, int tungsten)
@@ -184,7 +191,6 @@ public class LevelUnlockManager : MonoBehaviour
         GameState.Instance.tungsten -= tungsten;
 
         UpdateResourceDisplay();
-        GameState.Instance.SaveGameState(); // Persist changes
     }
 
     void UpdateResourceDisplay()

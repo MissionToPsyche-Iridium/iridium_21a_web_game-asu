@@ -76,6 +76,7 @@ public class ResourceManager : MonoBehaviour
             textObject.transform.SetParent(resourceContainer.transform, false);
             TextMeshProUGUI text = textObject.AddComponent<TextMeshProUGUI>();
             text.text = "0";
+            text.font = eightBitFont;
             text.fontSize = 24;
             text.alignment = TextAlignmentOptions.Left;
 
@@ -140,8 +141,7 @@ public class ResourceManager : MonoBehaviour
                 tungsten: resources.Find(r => r.type == Asteroid.AsteroidType.Tungsten)?.amount ?? 0
             );
 
-            // Save the game state and load the quiz scene
-            GameState.Instance.SaveGameState();
+            // Load the quiz scene
             GameState.Instance.LoadQuizScene();
         }
     }
