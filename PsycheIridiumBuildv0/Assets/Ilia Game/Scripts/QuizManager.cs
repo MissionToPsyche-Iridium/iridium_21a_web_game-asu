@@ -140,8 +140,8 @@ public class QuizManager : MonoBehaviour
             //new string[] { "4 years", "2 years", "6 years", "1 year" }, 0));
             new string[] { "6 years", "2 years", "4 years", "1 year" }, 2));
         questions.Add(new Question("What instrument does Psyche use?",
-            //new string[] { "Gamma Ray Spectrometer", "Lidar", "X-ray camera", "Optical telescope" }, 0));
-            new string[] { "Optical telescope", "Lidar", "X-ray camera", "Gamma Ray Spectrometer" }, 3));
+            //new string[] { "Gamma-Ray Spectrometer", "Lidar", "X-ray camera", "Optical telescope" }, 0));
+            new string[] { "Optical telescope", "Lidar", "X-ray camera", "Gamma-Ray Spectrometer" }, 3));
     }
 
     public void LoadNextQuestion()
@@ -178,6 +178,9 @@ public class QuizManager : MonoBehaviour
             audioSource.PlayOneShot(correctAudio);
             questionText.text = "CORRECT!\nGained 10% resources!";
             UpdateResources(1.1f); // Increase by 10%
+
+            // Remove the question from the list to avoid repetition
+            questions.RemoveAt(currentQuestionIndex);
         }
         else
         {

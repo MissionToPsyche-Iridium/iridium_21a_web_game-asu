@@ -97,8 +97,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: 31f28122762c84f1fa5e00fa6d2e4f11,
-    type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 31f28122762c84f1fa5e00fa6d2e4f11, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -3510,8 +3509,7 @@ AudioSource:
   m_GameObject: {fileID: 1058241808}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 243635350106398570, guid: cfc5e2fdc975444019564fd4d5b8f9d8,
-    type: 2}
+  OutputAudioMixerGroup: {fileID: 243635350106398570, guid: cfc5e2fdc975444019564fd4d5b8f9d8, type: 2}
   m_audioClip: {fileID: 8300000, guid: ae44838ad242c49ffb6af7462fd07e6e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -3797,8 +3795,7 @@ AudioSource:
   m_GameObject: {fileID: 1087365794}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 243124160263049580, guid: cfc5e2fdc975444019564fd4d5b8f9d8,
-    type: 2}
+  OutputAudioMixerGroup: {fileID: 243124160263049580, guid: cfc5e2fdc975444019564fd4d5b8f9d8, type: 2}
   m_audioClip: {fileID: 8300000, guid: 43a7fff1c35cc4b7d80991bd995097db, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -5880,7 +5877,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontColor: {r: 1, g: 1, b: 1, a: 0.29803923}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
