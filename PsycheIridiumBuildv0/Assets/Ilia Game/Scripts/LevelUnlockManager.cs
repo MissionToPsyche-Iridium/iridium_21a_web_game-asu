@@ -157,8 +157,8 @@ public class LevelUnlockManager : MonoBehaviour
 
         // Unlock the level and subtract resources
         SubtractResources(requiredIron, requiredGold, requiredTungsten);
-        UnlockLevel(levelIndex);
         errorText.text = $"Level {levelIndex + 2} unlocked!";
+        UnlockLevel(levelIndex);
     }
 
     bool IsLevelPurchased(int levelIndex)
@@ -174,6 +174,11 @@ public class LevelUnlockManager : MonoBehaviour
 
     void UnlockLevel(int levelIndex)
     {
+        if (GameData.instance == null)
+        {
+            errorText.text = $"GameData is null";
+
+        }
         switch (levelIndex)
         {
             case 0: GameState.Instance.level2Purchased = true; GameData.instance.spiderRepaired = true; break;
