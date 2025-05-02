@@ -48,8 +48,8 @@ PlayerSettings:
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1920
   defaultScreenHeight: 1080
-  defaultScreenWidthWeb: 1920
-  defaultScreenHeightWeb: 1080
+  defaultScreenWidthWeb: 960
+  defaultScreenHeightWeb: 600
   m_StereoRenderingPath: 0
   m_ActiveColorSpace: 0
   unsupportedMSAAFallback: 0
@@ -307,7 +307,8 @@ PlayerSettings:
   openGLRequireES31: 0
   openGLRequireES31AEP: 0
   openGLRequireES32: 0
-  m_TemplateCustomTags: {}
+  m_TemplateCustomTags:
+    PRODUCT_DESCRIPTION: 
   mobileMTRendering:
     Android: 1
     VisionOS: 1
@@ -549,8 +550,8 @@ PlayerSettings:
   ps4IncludedModules: []
   ps4attribVROutputEnabled: 0
   monoEnv: 
-  splashScreenBackgroundSourceLandscape: {fileID: 21300000, guid: 740064294aab01546ab82b284c1bd8ee, type: 3}
-  splashScreenBackgroundSourcePortrait: {fileID: 21300000, guid: 740064294aab01546ab82b284c1bd8ee, type: 3}
+  splashScreenBackgroundSourceLandscape: {fileID: 21300000, guid: 94c21d0910fea474a9b412aa6b24fbbc, type: 3}
+  splashScreenBackgroundSourcePortrait: {fileID: 21300000, guid: 94c21d0910fea474a9b412aa6b24fbbc, type: 3}
   blurSplashScreenBackground: 0
   spritePackerPolicy: 
   webGLMemorySize: 32

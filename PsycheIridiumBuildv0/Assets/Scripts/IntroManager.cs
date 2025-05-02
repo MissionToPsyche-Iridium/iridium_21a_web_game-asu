@@ -26,6 +26,8 @@ public class IntroManager : MonoBehaviour
     IEnumerator SwitchScene()
     {
         yield return new WaitForSecondsRealtime(0.9f);
-        SceneManager.LoadScene("Donovan Top Down");
+        // Go to the next scene index
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
     }
 }

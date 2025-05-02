@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Intro.unity
     guid: 36261b7e36f1f9f4682c050073aba19c
+  - enabled: 0
+    path: Assets/Scenes/Title.unity
+    guid: f3643056d1f9f4e43a983f8ef400dc88
   - enabled: 1
     path: Assets/Donovan Top Down/Donovan Top Down.unity
     guid: 8fe629704f572bd41838b08086e7263d

@@ -3058,7 +3058,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: text.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: text.Array.data[0]
@@ -3079,6 +3079,11 @@ PrefabInstance:
       propertyPath: text.Array.data[3]
       value: "With its critical systems in disarray, the satellite won\u2019t be
         able to complete its mission. It\u2019s up to you to get everything ship-shape!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755519593518852666, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
+      propertyPath: text.Array.data[4]
+      value: Explore the satellite with the arrow keys to fix the four instruments
+        of Psyche!
       objectReference: {fileID: 0}
     - target: {fileID: 9033966634432106422, guid: c7577bcf075fe8e48a30b13b4c369f71, type: 3}
       propertyPath: m_Sprite
@@ -4023,7 +4028,7 @@ SpriteRenderer:
   m_SortingLayerID: -425897255
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 740064294aab01546ab82b284c1bd8ee, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 94c21d0910fea474a9b412aa6b24fbbc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

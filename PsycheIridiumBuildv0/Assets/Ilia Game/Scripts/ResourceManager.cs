@@ -110,7 +110,7 @@ public class ResourceManager : MonoBehaviour
         instructionText.font = eightBitFont; // Assign the 8-bit font
         instructionText.fontSize = 28;
         instructionText.alignment = TextAlignmentOptions.Bottom;
-        instructionText.text = "Collect as many resources as you can!";
+        instructionText.text = "Move with the arrow keys to collect as many resources as you can!";
         instructionText.color = Color.white;
         instructionText.rectTransform.anchorMin = new Vector2(0.5f, 0);
         instructionText.rectTransform.anchorMax = new Vector2(0.5f, 0);
