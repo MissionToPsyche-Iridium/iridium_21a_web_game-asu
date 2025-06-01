@@ -11,10 +11,12 @@ public class Damage : MonoBehaviour
     public int damageIndex = -1;
 
     private bool playerNearby = false;
+    private GameObject buttonPromptCanvas;
 
     private void Start()
     {
         player.Interact += Interacted;
+        buttonPromptCanvas = player.gameObject.transform.GetChild(1).gameObject;
     }
 
     public void DamageInit(int index)
@@ -37,10 +39,12 @@ public class Damage : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         playerNearby = true;
+        buttonPromptCanvas.SetActive(true);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         playerNearby = false;
+        buttonPromptCanvas.SetActive(false);
     }
 }

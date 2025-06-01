@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     [Header("Object References")]
     [SerializeField] HUD hud;
+    [SerializeField] Transform playerTransform;
 
     [Header("Cutscene NPCs")]
     [SerializeField] private NPC introNPC;
@@ -27,6 +28,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        playerTransform.position = GameData.instance.hubSpawnPosition;
+
         // Play the outro or intro cutscene if the conditions are right.
         if (GameData.instance.spiderRepaired && GameData.instance.jellyfishRepaired && GameData.instance.tardigradeRepaired && GameData.instance.pigeonRepaired && !GameData.instance.outroComplete)
         {

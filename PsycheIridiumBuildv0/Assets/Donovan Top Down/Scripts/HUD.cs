@@ -41,6 +41,7 @@ public class HUD : MonoBehaviour
     [SerializeField] GameObject damagedCreatureJ;
 
     [Header("Status Indicators")]
+    [SerializeField] TMP_Text creaturesIndicator;
     [SerializeField] TMP_Text damageIndicator;
     [SerializeField] TMP_Text turboIndicator;
 
@@ -106,6 +107,7 @@ public class HUD : MonoBehaviour
 
     public void StartMinigame()
     {
+        GameData.instance.hubSpawnPosition = playerController.transform.position;
         Debug.Log("START MINIGAME " + previewScene + "!");
         GetComponent<AudioSource>().PlayOneShot(selectSFX);
         HideMinigamePreview();
@@ -161,6 +163,14 @@ public class HUD : MonoBehaviour
         creatureIndicatorT.SetActive(damagedCreatureT.activeSelf);
         creatureIndicatorP.SetActive(damagedCreatureP.activeSelf);
         creatureIndicatorJ.SetActive(damagedCreatureJ.activeSelf);
+
+        // Update the creatures indicator on the status screen.
+        byte creaturesLeft = 0;
+        if (damagedCreatureS.activeSelf) creaturesLeft++;
+        if (damagedCreatureT.activeSelf) creaturesLeft++;
+        if (damagedCreatureP.activeSelf) creaturesLeft++;
+        if (damagedCreatureJ.activeSelf) creaturesLeft++;
+        creaturesIndicator.text = "Components Left: " + creaturesLeft;
     }
 
     // Updates damage repaired and unlocks TURBO when all damage is repaired.

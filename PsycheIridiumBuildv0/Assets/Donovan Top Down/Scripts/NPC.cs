@@ -55,7 +55,6 @@ public class NPC : MonoBehaviour
 
     public void Interacted()
     {
-        //while (player == null) { }
 
         // Check to make sure the player is nearby.
         // Cutscenes bypass this check since they are started from scripts.
@@ -64,6 +63,7 @@ public class NPC : MonoBehaviour
             // First Interaction
             if (!player.Interacting() && !speaking)
             {
+                buttonPromptCanvas.SetActive(false);
                 // Freeze player and show first textbox.
                 player.EnterInteraction();
                 speaking = true;
@@ -96,6 +96,7 @@ public class NPC : MonoBehaviour
                 currentTextbox = -1;
                 speaking = false;
                 cutsceneStarted = false;
+                if (!isCutscene) buttonPromptCanvas.SetActive(true);
                 audioSource.Play();
             }
         }

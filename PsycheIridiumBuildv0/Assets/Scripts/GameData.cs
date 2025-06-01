@@ -15,6 +15,7 @@ public class GameData : MonoBehaviour
     public bool pigeonRepaired = false;
     public int damageRepaired = 0;
     public bool[] repairedDamageObjects = new bool[20];
+    public Vector3 hubSpawnPosition = Vector3.zero;
 
     private void Awake()
     {
